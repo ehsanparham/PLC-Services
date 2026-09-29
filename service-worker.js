@@ -1,4 +1,4 @@
-const CACHE_NAME = 'plc-service-v1';
+const CACHE_NAME = 'plc-service-v2';
 
 const urlsToCache = [
   './',
