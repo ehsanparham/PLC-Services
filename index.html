@@ -223,20 +223,11 @@ input[type=radio]{
 }
 .app-header .header-controls{
   display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:6px;
+  align-items:center;
+  gap:8px;
   margin-right:auto;
   position:relative;
   z-index:1;
-}
-.app-header .header-controls .theme-selector-wrap{
-  width:100%;
-  justify-content:flex-end;
-}
-.app-header .header-controls .user-area{
-  width:100%;
-  justify-content:flex-end;
 }
 .app-header .logo-placeholder{
   width:60px;height:48px;background:#fff;border-radius:6px;
@@ -251,19 +242,40 @@ input[type=radio]{
 }
 .app-header p{font-size:15px;margin:0;opacity:.95;}
 .user-area{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.2);padding:8px 14px;border-radius:6px;
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.2);padding:6px 12px;border-radius:6px;
   border:1px solid rgba(255,255,255,.35);position:relative;z-index:1;
 }
 .user-area .uname{
-  font-size:16px;font-weight:bold;line-height:1.3;
+  font-size:15px;font-weight:bold;line-height:1.3;
   font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
+  white-space:nowrap;
 }
 .user-area button{
-  background:#dc2626;color:#fff;border:none;padding:6px 11px;
-  border-radius:5px;cursor:pointer;font-size:14px;font-weight:bold;
+  background:#dc2626;color:#fff;border:none;padding:5px 10px;
+  border-radius:5px;cursor:pointer;font-size:13px;font-weight:bold;
+  white-space:nowrap;
 }
 .user-area button:hover{background:#991b1b;}
+
+.theme-select-inline{
+  background:rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  font-family:'BKoodB',Tahoma,sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  border-radius:5px;
+  padding:5px 6px;
+  cursor:pointer;
+  outline:none;
+  max-width:95px;
+}
+.theme-select-inline option{
+  background:#1e293b;
+  color:#fff;
+  font-family:'BKoodB',Tahoma,sans-serif;
+}
 
 .welcome-notif{
   position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
@@ -359,24 +371,96 @@ table.form-table td select{
 .brand-trigger:hover{background:#dbeafe;border-color:#3b82f6;}
 .brand-trigger img{max-height:28px;max-width:95%;object-fit:contain;}
 .brand-trigger .placeholder{color:#475569;font-size:15px;}
-.brand-dropdown{
-  display:none;position:absolute;top:100%;right:0;left:0;
-  background:#fff;border:1px solid #3b82f6;border-radius:6px;
-  box-shadow:0 6px 20px rgba(15,23,42,.25);z-index:100;
-  margin-top:4px;padding:5px;
+
+/* ═══════════ مودال انتخاب برند ═══════════ */
+.brand-modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(15,23,42,.85);
+  z-index:99998;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
-.brand-dropdown.open{display:block;}
-.brand-option{
-  display:inline-block;width:48%;margin:1%;
-  align-items:center;justify-content:center;
-  padding:5px;border-radius:5px;cursor:pointer;
-  border:1px solid #cbd5e1;background:#fff;
-  transition:background .15s;min-height:40px;
-  vertical-align:top;text-align:center;
+.brand-modal.show{display:flex;}
+
+.brand-modal-box{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  width:100%;
+  max-width:420px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  max-height:80vh;
+  display:flex;
+  flex-direction:column;
 }
-.brand-option:hover{background:#dbeafe;border-color:#3b82f6;}
-.brand-option img{max-height:28px;max-width:100%;object-fit:contain;display:inline-block;vertical-align:middle;}
-.brand-option.selected{background:#3b82f6;border-color:#1e40af;}
+
+.brand-modal-title{
+  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
+  font-size:17px;
+  font-weight:bold;
+  color:#1e293b;
+  text-align:center;
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:2px solid #dbeafe;
+}
+
+.brand-modal-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:14px;
+  overflow-y:auto;
+  flex:1;
+  padding:2px;
+}
+
+.brand-modal-item{
+  border:2px solid #cbd5e1;
+  border-radius:10px;
+  padding:14px 10px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  transition:all .2s;
+  min-height:70px;
+}
+.brand-modal-item:hover,
+.brand-modal-item:active{
+  background:#dbeafe;
+  border-color:#3b82f6;
+  transform:scale(1.02);
+}
+.brand-modal-item.selected{
+  background:#3b82f6;
+  border-color:#1e40af;
+  box-shadow:0 4px 12px rgba(59,130,246,.4);
+}
+.brand-modal-item.selected img{filter:brightness(0) invert(1);}
+.brand-modal-item img{
+  max-width:100%;
+  max-height:44px;
+  object-fit:contain;
+}
+
+.brand-modal-cancel{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#e2e8f0;
+  color:#1e293b;
+  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.brand-modal-cancel:hover{background:#cbd5e1;}
 
 .checklist-grid{
   display:block;margin-bottom:10px;
@@ -788,28 +872,6 @@ table.tele-table td select{
 
 @media screen{.print-header{display:none !important;}}
 
-/* ═══════════ Theme Selector ═══════════ */
-.theme-selector-wrap{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.18);
-  padding:6px 11px;border-radius:6px;
-  border:1px solid rgba(255,255,255,.28);
-  position:relative;z-index:1;
-}
-.theme-selector-wrap .ts-label{
-  font-size:13px;color:#fff;font-weight:bold;white-space:nowrap;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.theme-selector-wrap select{
-  background:rgba(255,255,255,.95);
-  border:none;border-radius:5px;padding:5px 10px;
-  font-size:13.5px;font-weight:bold;color:#0f2338;
-  cursor:pointer;font-family:'BKoodB',Tahoma,sans-serif;
-  outline:none;min-width:130px;transition:background .2s;
-}
-.theme-selector-wrap select:hover{background:#fff;}
-.theme-selector-wrap select:focus{background:#fff;}
-
 /* ═══════════ Classic Navy Theme ═══════════ */
 body.theme-navy{
   --navy:#1a4a75;--navy-dark:#123657;--navy-light:#2c6690;
@@ -832,10 +894,8 @@ body.theme-navy .reset-row{border-right-color:#4a90c2;}
 body.theme-navy .sign-box{border-top-color:#4a90c2;}
 body.theme-navy .sign-box .row input[readonly]{background:#d8e8f5;border-bottom-color:#4a90c2;}
 body.theme-navy .check-item .num{background:#1a4a75;}
-body.theme-navy .brand-option.selected{background:#4a90c2;border-color:#1a4a75;}
 body.theme-navy .brand-trigger{border-color:#7eadd0;}
 body.theme-navy .brand-trigger:hover{border-color:#4a90c2;}
-body.theme-navy .brand-dropdown{border-color:#4a90c2;}
 body.theme-navy .service-row .opts input[type=text]{border-bottom-color:#4a90c2;}
 body.theme-navy .check-item input.inline-input{border-bottom-color:#4a90c2;}
 body.theme-navy .bd-station-box select.bd-station-select,
@@ -850,7 +910,7 @@ body.theme-navy #dimatForm .dimat-grid-table td.cell-label{background:#d8e8f5;}
 body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 
 /* ═══════════════════════════════════════════════════════════════
-   PRINT STYLES — دقیقاً مثل Chrome ویندوز
+   PRINT STYLES
    ═══════════════════════════════════════════════════════════════ */
 @page{size:A4 portrait;margin:5mm;}
 
@@ -865,7 +925,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     color-adjust:exact !important;
   }
 
-  .app-header,.tabs,.actions,.welcome-notif,#loginPage,.app-footer,#dateModal,.theme-selector-wrap{
+  .app-header,.tabs,.actions,.welcome-notif,#loginPage,.app-footer,#dateModal{
     display:none !important;
   }
 
@@ -927,7 +987,6 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   }
 
   body{font-size:8px !important;}
-  .brand-dropdown{display:none !important;}
   .brand-trigger{border:none !important;background:transparent !important;min-height:auto !important;padding:0 !important;}
   .brand-trigger img{max-height:22px !important;}
 
@@ -977,17 +1036,10 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   table.tele-table td select:invalid,
   table.tele-table td select option:checked[value=""]{color:transparent !important;}
 
-  #lmuForm table.tele-table td.lmu-sig-desc{
-    font-size:11.5px !important;
-    font-weight:bold;
-  }
-  #lmuForm table.tele-table td.lmu-sig-desc + td input,
-  #lmuForm table.tele-table td.lmu-sig-desc ~ td input{
-    font-size:15px !important;
-  }
+  #lmuForm table.tele-table td.lmu-sig-desc{font-size:11.5px !important;font-weight:bold;}
 
   .reset-row{padding:1px 4px !important;font-size:8px !important;margin:2px 0 !important;}
-  .reset-row input[type=checkbox]{width:9px !important;height:9px !important;min-width:9px !important;min-height:9px !important;}
+  .reset-row input[type=checkbox]{width:9px !important;height:9px !important;}
 
   .usage-row{padding:2px 6px !important;font-size:9px !important;margin-bottom:3px !important;}
   .usage-row .u-title,.usage-row label{font-size:10px !important;}
@@ -1034,21 +1086,18 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .usage-row .u-title{display:inline-block !important;}
   .usage-row .u-items{display:inline-block !important;}
   .usage-row label{display:inline-block !important;}
-  .brand-option{width:48% !important;display:inline-block !important;vertical-align:top !important;}
   .actions{display:none !important;}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE IMPROVEMENTS — برای کار راحت با گوشی
+   MOBILE IMPROVEMENTS
    ═══════════════════════════════════════════════════════════════ */
 @media screen and (max-width: 900px) {
-  /* ═══ لاگین ═══ */
   #loginPage{padding:16px;}
   .login-box{max-width:100%;padding:28px 22px;}
   .login-box input{font-size:16px !important;padding:14px !important;min-height:48px;}
   .login-box button{padding:15px !important;font-size:17px !important;}
 
-  /* ═══ مودال تاریخ ═══ */
   #dateModal{padding:16px;}
   .date-modal-box{max-width:100%;padding:24px 20px;}
   .date-modal-box h3{font-size:18px !important;}
@@ -1057,24 +1106,42 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 }
 
 @media screen and (max-width: 700px) {
-  /* ═══ بدنه ═══ */
-  body{padding:6px !important;font-size:16px !important;}
-  *{font-size:16px;}
+  body{padding:6px !important;font-size:15px !important;}
 
   /* ═══ هدر ═══ */
   .app-header{
-    padding:10px !important;
+    padding:8px 10px !important;
     flex-direction:column !important;
-    gap:10px !important;
+    gap:8px !important;
   }
-  .app-header .logo-placeholder{width:55px !important;height:55px !important;}
-  .app-header h1{font-size:16px !important;line-height:1.4 !important;}
-  .app-header p{font-size:13px !important;}
-  .app-header .header-controls{width:100% !important;align-items:center !important;margin-right:0 !important;}
-  .app-header .header-controls .theme-selector-wrap,
-  .app-header .header-controls .user-area{width:100% !important;justify-content:center !important;}
+  .app-header .logo-placeholder{width:48px !important;height:44px !important;}
+  .app-header h1{font-size:14px !important;line-height:1.4 !important;}
+  .app-header p{font-size:11.5px !important;}
+  .app-header .header-controls{
+    width:100% !important;
+    align-items:center !important;
+    justify-content:center !important;
+    margin-right:0 !important;
+  }
 
-  /* ═══ تب‌ها — اسکرول افقی ═══ */
+  /* ═══ user-area افقی ═══ */
+  .user-area{
+    flex-wrap:nowrap !important;
+    gap:5px !important;
+    padding:5px 8px !important;
+    justify-content:center !important;
+    width:auto !important;
+    max-width:100% !important;
+  }
+  .user-area .uname{font-size:12.5px !important;}
+  .user-area button{padding:4px 8px !important;font-size:11.5px !important;}
+  .theme-select-inline{
+    font-size:11px !important;
+    padding:4px 5px !important;
+    max-width:78px !important;
+  }
+
+  /* ═══ تب‌ها ═══ */
   .tabs{
     display:flex !important;
     flex-wrap:nowrap !important;
@@ -1089,106 +1156,127 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .tabs::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px;}
   .tabs button{
     flex:0 0 auto !important;
-    min-width:120px !important;
-    padding:10px 14px !important;
-    font-size:14.5px !important;
+    min-width:110px !important;
+    padding:9px 12px !important;
+    font-size:13.5px !important;
     white-space:nowrap !important;
   }
 
-  /* ═══ کارت فرم — اسکرول افقی ═══ */
-  .form-card{padding:8px !important;overflow-x:auto !important;}
+  /* ═══ کارت فرم — بدون اسکرول افقی ═══ */
+  .form-card{padding:8px !important;overflow-x:visible !important;}
 
-  /* ═══ جدول فرم ═══ */
-  table.form-table{font-size:14px !important;min-width:640px;}
-  table.form-table th{font-size:13.5px !important;padding:8px 5px !important;white-space:nowrap;}
-  table.form-table td{padding:6px 4px !important;}
+  /* ═══ جدول‌ها — فشرده بدون اسکرول ═══ */
+  table.form-table,
+  table.tele-table,
+  .abb-grid-table,
+  .dimat-grid-table{
+    min-width:0 !important;
+    width:100% !important;
+    table-layout:fixed !important;
+  }
+
+  table.form-table{font-size:11px !important;}
+  table.form-table th{font-size:10px !important;padding:5px 2px !important;word-break:break-word;}
+  table.form-table td{padding:4px 2px !important;}
   table.form-table td input[type=text],
-  table.form-table td select{font-size:17px !important;padding:6px 3px !important;min-height:36px;}
+  table.form-table td select{font-size:13px !important;padding:4px 2px !important;min-height:30px;}
+
+  table.tele-table{font-size:11px !important;}
+  table.tele-table th{font-size:10px !important;padding:5px 2px !important;word-break:break-word;}
+  table.tele-table td{padding:4px 2px !important;}
+  table.tele-table td input,
+  table.tele-table td select{font-size:13px !important;padding:4px 2px !important;min-height:30px;}
+
+  .abb-grid-table,
+  .dimat-grid-table{font-size:10px !important;}
+  #abbForm .abb-grid-table th,
+  #dimatForm .dimat-grid-table th{font-size:10px !important;padding:5px 1px !important;word-break:break-word;}
+  #abbForm .abb-grid-table td,
+  #dimatForm .dimat-grid-table td{padding:4px 1px !important;}
+  #abbForm .abb-grid-table td input,
+  #dimatForm .dimat-grid-table td input{font-size:12px !important;padding:3px 1px !important;min-height:28px;}
+
+  /* ═══ فیلدهای فرکانس ═══ */
+  .freq-cell{font-size:13px !important;padding:6px 3px !important;}
+  .freq-cell input{font-size:14px !important;min-height:30px;}
+  .freq-cell .eq-sign{font-size:18px !important;margin:0 1px !important;}
 
   /* ═══ چک‌لیست ═══ */
   .check-item{width:100% !important;border-left:none !important;padding:4px 0 !important;}
-  .check-item .num{width:38px !important;font-size:15px !important;padding:14px 0 !important;}
-  .check-item .txt{width:calc(100% - 38px - 140px) !important;font-size:15px !important;padding:8px !important;line-height:1.5 !important;}
-  .check-item .opts{width:140px !important;padding:6px 4px !important;}
-  .check-item .opts label{font-size:15px !important;padding:6px 10px !important;margin:2px !important;}
-  .check-item .opts input[type=radio]{width:18px !important;height:18px !important;}
+  .check-item .num{width:32px !important;font-size:13px !important;padding:12px 0 !important;}
+  .check-item .txt{
+    width:calc(100% - 32px - 120px) !important;
+    font-size:13px !important;
+    padding:6px 6px !important;
+    line-height:1.45 !important;
+  }
+  .check-item .opts{width:120px !important;padding:4px 3px !important;}
+  .check-item .opts label{font-size:13px !important;padding:5px 7px !important;margin:1px !important;}
+  .check-item .opts input[type=radio]{width:16px !important;height:16px !important;}
 
-  /* ═══ جدول tele ═══ */
-  table.tele-table{font-size:14px !important;min-width:520px;}
-  table.tele-table th{font-size:13.5px !important;padding:7px 4px !important;}
-  table.tele-table td{padding:6px 3px !important;}
-  table.tele-table td input,
-  table.tele-table td select{font-size:16px !important;padding:6px 3px !important;min-height:34px;}
-
-  /* ═══ ردیف‌های سرویس ═══ */
-  .service-row{padding:9px 12px !important;}
-  .service-row .label,
+  /* ═══ service-row ═══ */
+  .service-row{padding:7px 8px !important;}
+  .service-row .label{width:100% !important;font-size:13px !important;display:block;margin-bottom:6px;}
+  .service-row .opts{width:100% !important;}
   .service-row .opts label,
-  .lmu-service-label{font-size:15px !important;}
-  .service-row .opts input[type=text]{font-size:16px !important;min-width:100% !important;display:block;margin-top:6px;}
+  .lmu-service-label{font-size:13px !important;}
+  .service-row .opts label{margin:0 8px 4px 0 !important;display:inline-block;}
+  .service-row .opts input[type=text]{width:100% !important;font-size:14px !important;min-height:34px;}
 
-  /* ═══ چک‌باکس‌ها بزرگ‌تر ═══ */
+  /* ═══ چک‌باکس‌ها ═══ */
   input[type=checkbox]{width:20px !important;height:20px !important;min-width:20px !important;min-height:20px !important;}
 
   /* ═══ دکمه‌ها — عمودی ═══ */
   .actions{padding:10px 8px !important;display:flex !important;flex-direction:column !important;gap:8px !important;}
-  .actions button{width:100% !important;padding:14px !important;font-size:16px !important;margin:0 !important;}
+  .actions button{width:100% !important;padding:14px !important;font-size:15px !important;margin:0 !important;}
 
   /* ═══ امضاها ═══ */
-  .sign-box{width:100% !important;margin-left:0 !important;margin-bottom:12px !important;}
-  .sign-box .row label{font-size:15.5px !important;}
-  .sign-box .row input{font-size:16px !important;padding:8px !important;min-height:40px;}
-
-  /* ═══ فرکانس TX/RX ═══ */
-  .freq-cell{font-size:17px !important;padding:8px !important;}
-  .freq-cell input{font-size:18px !important;min-height:36px;}
-  .freq-cell .eq-sign{font-size:24px !important;}
+  .signatures{display:block !important;}
+  .sign-box{width:100% !important;margin:0 0 10px 0 !important;}
+  .sign-box .row label{font-size:14px !important;}
+  .sign-box .row input{font-size:14px !important;padding:7px !important;min-height:36px;}
 
   /* ═══ باکس ایستگاه ═══ */
   .bd-station-box{padding:10px 12px !important;}
   .bd-station-box .bd-item{display:block !important;margin:0 0 10px 0 !important;}
-  .bd-station-box .bd-item label{font-size:15px !important;display:block;margin-bottom:5px;}
+  .bd-station-box .bd-item label{font-size:14px !important;display:block;margin-bottom:5px;}
   .bd-station-box select.bd-station-select,
   .bd-station-box input.bd-station-name{
     width:100% !important;min-width:100% !important;
-    font-size:16px !important;padding:9px !important;min-height:42px;
+    font-size:15px !important;padding:9px !important;min-height:40px;
   }
 
-  /* ═══ جدول ABB و DIMAT ═══ */
-  .abb-grid-table,
-  .dimat-grid-table{min-width:700px !important;font-size:13px !important;}
-  #abbForm .abb-grid-table th,
-  #dimatForm .dimat-grid-table th{font-size:12.5px !important;padding:7px 3px !important;}
-  #abbForm .abb-grid-table td input,
-  #dimatForm .dimat-grid-table td input{font-size:15px !important;min-height:34px;padding:4px 2px !important;}
-
-  /* ═══ فرم Bardasht — انتخاب برند ═══ */
-  .brand-option{width:98% !important;margin:1% !important;}
-  .brand-trigger{min-height:44px !important;}
-  .brand-trigger img{max-height:32px !important;}
+  /* ═══ مودال برند در موبایل ═══ */
+  .brand-modal-box{max-width:100% !important;padding:16px !important;}
+  .brand-modal-title{font-size:15.5px !important;}
+  .brand-modal-list{gap:8px !important;}
+  .brand-modal-item{min-height:60px !important;padding:10px 8px !important;}
+  .brand-modal-item img{max-height:38px !important;}
+  .brand-modal-cancel{padding:11px !important;font-size:14px !important;}
 }
 
-/* ═══ گوشی‌های خیلی کوچیک ═══ */
 @media screen and (max-width: 400px) {
-  .check-item .txt{width:calc(100% - 38px - 120px) !important;font-size:14px !important;}
-  .check-item .opts{width:120px !important;}
-  .check-item .opts label{font-size:14px !important;padding:5px 8px !important;}
-  .tabs button{min-width:110px !important;font-size:13.5px !important;}
-  .app-header h1{font-size:15px !important;}
+  .check-item .txt{width:calc(100% - 32px - 105px) !important;font-size:12.5px !important;}
+  .check-item .opts{width:105px !important;}
+  .check-item .opts label{font-size:12.5px !important;padding:4px 6px !important;}
+  .tabs button{min-width:100px !important;font-size:12.5px !important;}
+  .app-header h1{font-size:13px !important;}
+  .user-area .uname{font-size:11.5px !important;}
+  .user-area button{padding:3px 7px !important;font-size:11px !important;}
+  .theme-select-inline{font-size:10.5px !important;max-width:70px !important;}
 }
 
-/* ═══ بهبود کلیک‌پذیری در لمسی ═══ */
+/* ═══ لمسی ═══ */
 @media (hover: none) and (pointer: coarse) {
   button, input[type=submit], select {
-    min-height:44px;
+    min-height:42px;
     -webkit-tap-highlight-color:transparent;
   }
   input[type=text], input[type=password] {
-    min-height:42px;
+    min-height:40px;
   }
 }
 
-/* ═══ Force exact color printing ═══ */
 @media print {
   * {
     -webkit-print-color-adjust: exact !important;
@@ -1250,16 +1338,13 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
       <p>سامانه ی دیجیتال سرویس های دوره ای بخش PLC</p>
     </div>
     <div class="header-controls">
-      <div class="theme-selector-wrap">
-        <span class="ts-label">طرح:</span>
-        <select id="themeSelect" onchange="changeTheme(this.value)">
-          <option value="slate">Corporate Slate</option>
-          <option value="navy">Classic Navy</option>
-        </select>
-      </div>
       <div class="user-area">
         <div class="uname" id="userDisplay">---</div>
         <button onclick="doLogout()">خروج</button>
+        <select id="themeSelect" class="theme-select-inline" onchange="changeTheme(this.value)" title="تغییر طرح">
+          <option value="slate">🎨 Slate</option>
+          <option value="navy">🎨 Navy</option>
+        </select>
       </div>
     </div>
   </header>
@@ -1305,17 +1390,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td rowspan="2"><input type="text" id="plc_line_no"></td>
           <td rowspan="2">
             <div class="brand-picker" id="plcBrandPicker">
-              <div class="brand-trigger" onclick="toggleBrand('plcBrandPicker')">
+              <div class="brand-trigger" onclick="openBrandModal('plcBrandPicker')">
                 <span class="placeholder">انتخاب برند</span>
                 <img src="" alt="" style="display:none;">
               </div>
               <input type="hidden" id="plc_device" value="">
-              <div class="brand-dropdown">
-                <div class="brand-option" data-brand="SELTA" onclick="selectBrand('plcBrandPicker','SELTA','Selta.png')"><img src="Selta.png" alt="SELTA" onerror="this.parentElement.style.display='none'"></div>
-                <div class="brand-option" data-brand="ABB" onclick="selectBrand('plcBrandPicker','ABB','Abb.png')"><img src="Abb.png" alt="ABB" onerror="this.parentElement.style.display='none'"></div>
-                <div class="brand-option" data-brand="DIMAT" onclick="selectBrand('plcBrandPicker','DIMAT','Dimat.png')"><img src="Dimat.png" alt="DIMAT" onerror="this.parentElement.style.display='none'"></div>
-                <div class="brand-option" data-brand="ALCATEL" onclick="selectBrand('plcBrandPicker','ALCATEL','Alcatel.png')"><img src="Alcatel.png" alt="ALCATEL" onerror="this.parentElement.style.display='none'"></div>
-              </div>
             </div>
           </td>
           <td class="freq-cell">TX <span class="eq-sign">=</span> <input type="text" id="plc_tx" style="width:55%;display:inline-block;"></td>
@@ -1551,13 +1630,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         <td><input type="text" id="bd_plc_device" value="PLC Terminal"></td>
         <td>
           <div class="brand-picker" id="bdBrandPicker">
-            <div class="brand-trigger" onclick="toggleBrand('bdBrandPicker')"><span class="placeholder">انتخاب برند</span><img src="" alt="" style="display:none;"></div>
-            <input type="hidden" id="bd_plc_brand" value="">
-            <div class="brand-dropdown">
-              <div class="brand-option" data-brand="SELTA" onclick="selectBrand('bdBrandPicker','SELTA','Selta.png');setBdForm('selta');"><img src="Selta.png" alt="SELTA" onerror="this.parentElement.style.display='none'"></div>
-              <div class="brand-option" data-brand="DIMAT" onclick="selectBrand('bdBrandPicker','DIMAT','Dimat.png');setBdForm('dimat');"><img src="Dimat.png" alt="DIMAT" onerror="this.parentElement.style.display='none'"></div>
-              <div class="brand-option" data-brand="ABB" onclick="selectBrand('bdBrandPicker','ABB','Abb.png');setBdForm('abb');"><img src="Abb.png" alt="ABB" onerror="this.parentElement.style.display='none'"></div>
+            <div class="brand-trigger" onclick="openBrandModal('bdBrandPicker')">
+              <span class="placeholder">انتخاب برند</span>
+              <img src="" alt="" style="display:none;">
             </div>
+            <input type="hidden" id="bd_plc_brand" value="">
           </div>
         </td>
         <td>
@@ -1625,13 +1702,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         <td><input type="text" id="bd_tps_device" value="TPS Terminal"></td>
         <td>
           <div class="brand-picker" id="bdTpsBrandPicker">
-            <div class="brand-trigger" onclick="toggleBrand('bdTpsBrandPicker')"><span class="placeholder">انتخاب برند</span><img src="" alt="" style="display:none;"></div>
-            <input type="hidden" id="bd_tps_brand" value="">
-            <div class="brand-dropdown">
-              <div class="brand-option" data-brand="SELTA" onclick="selectBrand('bdTpsBrandPicker','SELTA','Selta.png');setBdForm('selta');"><img src="Selta.png" alt="SELTA" onerror="this.parentElement.style.display='none'"></div>
-              <div class="brand-option" data-brand="DIMAT" onclick="selectBrand('bdTpsBrandPicker','DIMAT','Dimat.png');setBdForm('dimat');"><img src="Dimat.png" alt="DIMAT" onerror="this.parentElement.style.display='none'"></div>
-              <div class="brand-option" data-brand="ABB" onclick="selectBrand('bdTpsBrandPicker','ABB','Abb.png');setBdForm('abb');"><img src="Abb.png" alt="ABB" onerror="this.parentElement.style.display='none'"></div>
+            <div class="brand-trigger" onclick="openBrandModal('bdTpsBrandPicker')">
+              <span class="placeholder">انتخاب برند</span>
+              <img src="" alt="" style="display:none;">
             </div>
+            <input type="hidden" id="bd_tps_brand" value="">
           </div>
         </td>
         <td><select id="bd_tps_model"><option value=""></option><option value="TPS-N">TPS-N</option><option value="TPS-NU">TPS-NU</option></select></td>
@@ -2281,9 +2356,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 // ═══════════════════════════════════════════════════════════════
 function changeTheme(themeName){
   document.body.classList.remove('theme-slate','theme-navy');
-  if(themeName === 'navy'){
-    document.body.classList.add('theme-navy');
-  }
+  if(themeName === 'navy'){ document.body.classList.add('theme-navy'); }
   try{ localStorage.setItem('selected_theme', themeName); }catch(e){}
 }
 (function loadSavedTheme(){
@@ -2345,6 +2418,96 @@ function isDateField(el){
 });
 
 // ═══════════════════════════════════════════════════════════════
+//  انتخاب برند با مودال
+// ═══════════════════════════════════════════════════════════════
+var BRANDS = [
+  { id: 'SELTA',   name: 'SELTA',   img: 'Selta.png',   form: 'selta' },
+  { id: 'ABB',     name: 'ABB',     img: 'Abb.png',     form: 'abb' },
+  { id: 'DIMAT',   name: 'DIMAT',   img: 'Dimat.png',   form: 'dimat' },
+  { id: 'ALCATEL', name: 'ALCATEL', img: 'Alcatel.png', form: null }
+];
+
+var currentBrandPickerId = null;
+
+function openBrandModal(pickerId){
+  currentBrandPickerId = pickerId;
+
+  var modal = document.getElementById('brandModal');
+  if(!modal){
+    modal = document.createElement('div');
+    modal.id = 'brandModal';
+    modal.className = 'brand-modal';
+    modal.innerHTML =
+      '<div class="brand-modal-box">' +
+        '<div class="brand-modal-title">انتخاب برند دستگاه</div>' +
+        '<div class="brand-modal-list" id="brandModalList"></div>' +
+        '<button class="brand-modal-cancel" onclick="closeBrandModal()">انصراف</button>' +
+      '</div>';
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeBrandModal();
+    });
+    document.body.appendChild(modal);
+  }
+
+  var list = document.getElementById('brandModalList');
+  list.innerHTML = '';
+
+  var picker = document.getElementById(pickerId);
+  var hiddenInput = picker.querySelector('input[type=hidden]');
+  var currentBrand = hiddenInput ? hiddenInput.value : '';
+
+  BRANDS.forEach(function(b){
+    var item = document.createElement('div');
+    item.className = 'brand-modal-item' + (b.id === currentBrand ? ' selected' : '');
+    item.innerHTML = '<img src="' + b.img + '" alt="' + b.name + '" onerror="this.style.display=\'none\';this.parentElement.textContent=\'' + b.name + '\'">';
+    item.onclick = function(){ pickBrand(b.id, b.img, b.form); };
+    list.appendChild(item);
+  });
+
+  modal.classList.add('show');
+}
+
+function closeBrandModal(){
+  var modal = document.getElementById('brandModal');
+  if(modal) modal.classList.remove('show');
+  currentBrandPickerId = null;
+}
+
+function pickBrand(brandId, img, formType){
+  if(!currentBrandPickerId) return;
+
+  var picker = document.getElementById(currentBrandPickerId);
+  if(!picker){ closeBrandModal(); return; }
+
+  var trigger = picker.querySelector('.brand-trigger');
+  var imgEl = trigger.querySelector('img');
+  var placeholder = trigger.querySelector('.placeholder');
+  var hiddenInput = picker.querySelector('input[type=hidden]');
+
+  if(imgEl){
+    imgEl.src = img;
+    imgEl.alt = brandId;
+    imgEl.style.display = 'block';
+    imgEl.setAttribute('data-brand', brandId);
+  }
+  if(placeholder) placeholder.style.display = 'none';
+  if(hiddenInput) hiddenInput.value = brandId;
+
+  if((currentBrandPickerId === 'bdBrandPicker' || currentBrandPickerId === 'bdTpsBrandPicker') && formType){
+    setBdForm(formType);
+  }
+
+  closeBrandModal();
+}
+
+function pickBrandDirect(pickerId, brandId, img){
+  var oldId = currentBrandPickerId;
+  currentBrandPickerId = pickerId;
+  pickBrand(brandId, img, null);
+  currentBrandPickerId = oldId;
+}
+
+// ═══════════════════════════════════════════════════════════════
 //  برند و ایستگاه
 // ═══════════════════════════════════════════════════════════════
 function setBdForm(brand){
@@ -2378,29 +2541,6 @@ function toggleStationName(){
     i.placeholder = 'نام ایستگاه';
   }
 }
-
-function toggleBrand(pid){
-  var p = document.getElementById(pid), dd = p.querySelector('.brand-dropdown');
-  document.querySelectorAll('.brand-dropdown.open').forEach(function(d){ if(d !== dd) d.classList.remove('open'); });
-  dd.classList.toggle('open');
-}
-
-function selectBrand(pid, brand, img){
-  var p = document.getElementById(pid), t = p.querySelector('.brand-trigger'), i = t.querySelector('img'),
-      ph = t.querySelector('.placeholder'), hi = p.querySelector('input[type=hidden]'), dd = p.querySelector('.brand-dropdown');
-  i.src = img; i.alt = brand; i.style.display = 'block'; i.setAttribute('data-brand', brand);
-  if(ph) ph.style.display = 'none';
-  hi.value = brand;
-  p.querySelectorAll('.brand-option').forEach(function(o){ o.classList.toggle('selected', o.getAttribute('data-brand') === brand); });
-  dd.classList.remove('open');
-  return false;
-}
-
-document.addEventListener('click', function(e){
-  if(!e.target.closest('.brand-picker')){
-    document.querySelectorAll('.brand-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
-  }
-});
 
 // ═══════════════════════════════════════════════════════════════
 //  USERS و LOGIN
@@ -2662,10 +2802,9 @@ function clearForm(prefix){
   ['plcBrandPicker','bdBrandPicker','bdTpsBrandPicker'].forEach(function(pid){
     var p = document.getElementById(pid); if(!p) return;
     var i = p.querySelector('.brand-trigger img'), ph = p.querySelector('.placeholder'), hi = p.querySelector('input[type=hidden]');
-    i.src = ''; i.style.display = 'none';
+    if(i){ i.src = ''; i.style.display = 'none'; }
     if(ph) ph.style.display = 'block';
-    hi.value = '';
-    p.querySelectorAll('.brand-option').forEach(function(o){ o.classList.remove('selected'); });
+    if(hi) hi.value = '';
   });
   setBdForm('selta');
   try{ localStorage.removeItem(prefix + '_form'); }catch(e){}
@@ -2694,18 +2833,18 @@ function loadAll(){
       if(k === 'bd_station_type' && data[k]) toggleStationName();
       if(k === 'plc_device' && data[k]){
         var bm = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png','ALCATEL':'Alcatel.png'};
-        if(bm[data[k]]) selectBrand('plcBrandPicker', data[k], bm[data[k]]);
+        if(bm[data[k]]) pickBrandDirect('plcBrandPicker', data[k], bm[data[k]]);
       }
       if(k === 'bd_plc_brand' && data[k]){
         var bm2 = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png'};
         if(bm2[data[k]]){
-          selectBrand('bdBrandPicker', data[k], bm2[data[k]]);
+          pickBrandDirect('bdBrandPicker', data[k], bm2[data[k]]);
           setBdForm(data[k] === 'DIMAT' ? 'dimat' : data[k] === 'ABB' ? 'abb' : 'selta');
         }
       }
       if(k === 'bd_tps_brand' && data[k]){
         var bm3 = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png'};
-        if(bm3[data[k]]) selectBrand('bdTpsBrandPicker', data[k], bm3[data[k]]);
+        if(bm3[data[k]]) pickBrandDirect('bdTpsBrandPicker', data[k], bm3[data[k]]);
       }
     });
   });
@@ -2738,7 +2877,7 @@ window.addEventListener('afterprint', function(){
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  ذخیره PDF مستقیم — خروجی یکسان با پرینت ویندوز
+//  ذخیره PDF در یک صفحه
 // ═══════════════════════════════════════════════════════════════
 function savePDF(prefix){
   if(typeof html2pdf === 'undefined'){
@@ -2760,121 +2899,112 @@ function savePDF(prefix){
   var fileName = titles[prefix] || 'form';
   if(currentDate){ fileName += '_' + currentDate.replace(/\//g, '-'); }
 
-  // کپی از فرم برای استایل پرینت
   var clone = form.cloneNode(true);
   clone.querySelectorAll('.actions, .tabs, .app-header, .welcome-notif, .print-header').forEach(function(el){ el.remove(); });
 
-  // ظرف مخفی با استایل A4
   var container = document.createElement('div');
-  container.style.cssText = 'position:fixed;left:-9999px;top:0;width:210mm;background:#fff;padding:5mm;direction:rtl;font-family:"BKoodB",Tahoma,sans-serif;';
   container.className = 'pdf-export-mode';
+  container.style.cssText = 'position:fixed;left:-9999px;top:0;background:#fff;direction:rtl;font-family:"BKoodB",Tahoma,sans-serif;';
 
-  // هدر پرینت
   var header = document.querySelector('.print-header');
   if(header){ container.appendChild(header.cloneNode(true)); }
 
   container.appendChild(clone);
   document.body.appendChild(container);
 
-  // استایل شبیه‌سازی @media print
   var styleFix = document.createElement('style');
   styleFix.id = 'pdf-export-style';
   styleFix.textContent = `
-    .pdf-export-mode { background:#fff !important; color:#000 !important; width:200mm !important; padding:0 !important; margin:0 !important; font-size:8px !important; }
+    .pdf-export-mode {
+      background:#fff !important; color:#000 !important;
+      width:794px !important; padding:10px !important;
+      font-size:7px !important; line-height:1.2 !important;
+    }
     .pdf-export-mode * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; box-sizing:border-box; }
-    .pdf-export-mode table.form-table { font-size:8px !important; margin-bottom:2px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode table.form-table th { font-size:10.5px !important; padding:1px 2px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; background:#334155 !important; color:#fff !important; border:1px solid #334155 !important; }
-    .pdf-export-mode table.form-table td { padding:1px 2px !important; font-size:8px !important; border:1px solid #cbd5e1 !important; background:#fff !important; }
-    .pdf-export-mode table.form-table td input,
-    .pdf-export-mode table.form-table td select { font-size:13px !important; padding:0 !important; line-height:1.1 !important; }
-    .pdf-export-mode .freq-cell { font-size:10px !important; padding:2px 5px !important; direction:ltr !important; text-align:left !important; }
-    .pdf-export-mode .freq-cell input { font-size:12px !important; padding:0 2px !important; }
-    .pdf-export-mode .freq-cell .eq-sign { font-size:22px !important; }
-    .pdf-export-mode .checklist-grid { margin-bottom:2px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode table.form-table { font-size:7px !important; margin-bottom:2px !important; width:100% !important; border-collapse:collapse !important; }
+    .pdf-export-mode table.form-table th { font-size:9.5px !important; padding:1px 2px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; background:#334155 !important; color:#fff !important; border:1px solid #334155 !important; }
+    .pdf-export-mode table.form-table td { padding:1px 2px !important; font-size:7px !important; border:1px solid #cbd5e1 !important; background:#fff !important; }
+    .pdf-export-mode table.form-table td input, .pdf-export-mode table.form-table td select { font-size:11px !important; padding:0 !important; line-height:1.1 !important; }
+    .pdf-export-mode .freq-cell { font-size:9px !important; padding:1px 3px !important; direction:ltr !important; text-align:left !important; }
+    .pdf-export-mode .freq-cell input { font-size:11px !important; padding:0 2px !important; }
+    .pdf-export-mode .freq-cell .eq-sign { font-size:18px !important; }
+    .pdf-export-mode .checklist-grid { margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
     .pdf-export-mode .check-item { width:50% !important; display:inline-block !important; vertical-align:top !important; padding:0 !important; border-bottom:1px solid #cbd5e1 !important; border-left:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .check-item .num { padding:1px 0 !important; font-size:9.5px !important; background:#334155 !important; color:#fff !important; width:32px !important; display:inline-block; text-align:center; }
-    .pdf-export-mode .check-item .txt { padding:1px 3px !important; font-size:11px !important; width:calc(100% - 32px - 150px) !important; display:inline-block; vertical-align:middle; }
-    .pdf-export-mode .check-item .opts { padding:0 2px !important; width:150px !important; display:inline-block; vertical-align:middle; }
-    .pdf-export-mode .check-item .opts label { font-size:11px !important; padding:0 3px !important; }
+    .pdf-export-mode .check-item .num { padding:1px 0 !important; font-size:9px !important; background:#334155 !important; color:#fff !important; width:28px !important; display:inline-block; text-align:center; }
+    .pdf-export-mode .check-item .txt { padding:1px 2px !important; font-size:10px !important; width:calc(100% - 28px - 130px) !important; display:inline-block; vertical-align:middle; }
+    .pdf-export-mode .check-item .opts { padding:0 2px !important; width:130px !important; display:inline-block; vertical-align:middle; }
+    .pdf-export-mode .check-item .opts label { font-size:10px !important; padding:0 2px !important; }
     .pdf-export-mode .check-item .opts input[type=radio] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .check-item input.inline-input { font-size:12px !important; width:55px !important; }
-    .pdf-export-mode .service-box { margin-bottom:2px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .service-row { padding:1px 4px !important; font-size:9px !important; border-bottom:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .service-row .label,
-    .pdf-export-mode .service-row .opts label,
-    .pdf-export-mode .lmu-service-label { font-size:11.5px !important; }
-    .pdf-export-mode .lmu-service-label span { font-size:11.5px !important; }
-    .pdf-export-mode .service-row .opts input[type=text] { font-size:12px !important; min-width:90px !important; }
-    .pdf-export-mode .service-row .opts input[type=checkbox],
-    .pdf-export-mode .service-row .label input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .section-title { font-size:12px !important; padding:3px 5px !important; background:#1e293b !important; color:#fff !important; text-align:center !important; }
-    .pdf-export-mode table.tele-table { font-size:8px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode table.tele-table th { padding:1px 2px !important; font-size:8.5px !important; background:#dbeafe !important; color:#1e293b !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode table.tele-table td { padding:1px 2px !important; font-size:8px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode table.tele-table td input { font-size:13px !important; padding:0 !important; }
-    .pdf-export-mode table.tele-table td select { font-size:13px !important; color:#1e293b !important; }
-    .pdf-export-mode .reset-row { padding:1px 4px !important; font-size:8px !important; margin:2px 0 !important; }
+    .pdf-export-mode .check-item input.inline-input { font-size:10px !important; width:50px !important; }
+    .pdf-export-mode .service-box { margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode .service-row { padding:1px 3px !important; font-size:8px !important; border-bottom:1px solid #cbd5e1 !important; }
+    .pdf-export-mode .service-row .label, .pdf-export-mode .service-row .opts label, .pdf-export-mode .lmu-service-label { font-size:10px !important; }
+    .pdf-export-mode .lmu-service-label span { font-size:10px !important; }
+    .pdf-export-mode .service-row .opts input[type=text] { font-size:11px !important; min-width:80px !important; }
+    .pdf-export-mode .service-row .opts input[type=checkbox], .pdf-export-mode .service-row .label input[type=checkbox] { width:9px !important; height:9px !important; }
+    .pdf-export-mode .section-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; text-align:center !important; }
+    .pdf-export-mode table.tele-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
+    .pdf-export-mode table.tele-table th { padding:1px 2px !important; font-size:8px !important; background:#dbeafe !important; color:#1e293b !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode table.tele-table td { padding:1px 2px !important; font-size:7px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode table.tele-table td input { font-size:11px !important; padding:0 !important; }
+    .pdf-export-mode table.tele-table td select { font-size:11px !important; color:#1e293b !important; }
+    .pdf-export-mode .reset-row { padding:1px 3px !important; font-size:7px !important; margin:1px 0 !important; }
     .pdf-export-mode .reset-row input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .usage-row { padding:2px 6px !important; font-size:9px !important; margin-bottom:3px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .usage-row .u-title,
-    .pdf-export-mode .usage-row label { font-size:10px !important; }
+    .pdf-export-mode .usage-row { padding:1px 4px !important; font-size:8px !important; margin-bottom:2px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode .usage-row .u-title, .pdf-export-mode .usage-row label { font-size:9px !important; }
     .pdf-export-mode .usage-row input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .signatures { margin-top:2px !important; }
-    .pdf-export-mode .sign-box { padding:2px 4px !important; font-size:7px !important; display:inline-block !important; width:49% !important; vertical-align:top !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode .signatures { margin-top:1px !important; }
+    .pdf-export-mode .sign-box { padding:1px 3px !important; font-size:6.5px !important; display:inline-block !important; width:49% !important; vertical-align:top !important; border:1px solid #cbd5e1 !important; }
     .pdf-export-mode .sign-box .row { margin-bottom:1px !important; }
-    .pdf-export-mode .sign-box .row label,
-    .pdf-export-mode .sign-box .sign-label-amp { font-size:12px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; font-weight:bold !important; }
-    .pdf-export-mode .sign-box .row input { font-size:12px !important; padding:0 !important; border:none !important; border-bottom:1.5px dashed #94a3b8 !important; }
-    .pdf-export-mode .sign-box div[style*="height:45px"],
-    .pdf-export-mode .sign-box div[style*="height:35px"] { height:14px !important; }
-    .pdf-export-mode .bd-station-box { padding:2px 5px !important; margin-bottom:2px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .bd-station-box .bd-title,
-    .pdf-export-mode .bd-station-box .bd-item label { font-size:10px !important; }
-    .pdf-export-mode .bd-station-box select.bd-station-select { font-size:12px !important; padding:0 4px !important; min-width:100px !important; }
-    .pdf-export-mode .bd-station-box input.bd-station-name { font-size:12px !important; padding:0 4px !important; min-width:150px !important; }
-    .pdf-export-mode #abbForm .abb-grid-table { font-size:8px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode #abbForm .abb-grid-table th,
-    .pdf-export-mode #abbForm .abb-grid-table td { padding:1px 2px !important; font-size:8.5px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode #abbForm .abb-grid-table td input[type=text] { font-size:13px !important; padding:0 !important; }
-    .pdf-export-mode #abbForm .abb-trans-title { font-size:12px !important; padding:3px 5px !important; background:#1e293b !important; color:#fff !important; }
-    .pdf-export-mode #dimatForm .dimat-trans-title { font-size:12px !important; padding:3px 5px !important; background:#1e293b !important; color:#fff !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table { font-size:8px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table th,
-    .pdf-export-mode #dimatForm .dimat-grid-table td { padding:1px 2px !important; font-size:8.5px !important; height:20px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table th { font-size:8.5px !important; padding:2px 1px !important; background:#dbeafe !important; color:#1e293b !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-label { font-size:9px !important; padding-left:5px !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-bold { font-size:9px !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td input[type=text] { font-size:11px !important; padding:0 !important; }
-    .pdf-export-mode #dimatForm .dimat-vertical { font-size:8px !important; padding:1px !important; }
-    .pdf-export-mode #dimatForm .dimat-cell-multiline input { font-size:10px !important; }
-    .pdf-export-mode .form-card { box-shadow:none !important; padding:0 !important; margin:0 0 2px 0 !important; border:none !important; }
+    .pdf-export-mode .sign-box .row label, .pdf-export-mode .sign-box .sign-label-amp { font-size:10px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; font-weight:bold !important; }
+    .pdf-export-mode .sign-box .row input { font-size:10px !important; padding:0 !important; border:none !important; border-bottom:1.5px dashed #94a3b8 !important; }
+    .pdf-export-mode .sign-box div[style*="height:45px"], .pdf-export-mode .sign-box div[style*="height:35px"] { height:10px !important; }
+    .pdf-export-mode .bd-station-box { padding:1px 4px !important; margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode .bd-station-box .bd-title, .pdf-export-mode .bd-station-box .bd-item label { font-size:9px !important; }
+    .pdf-export-mode .bd-station-box select.bd-station-select { font-size:11px !important; padding:0 3px !important; min-width:90px !important; }
+    .pdf-export-mode .bd-station-box input.bd-station-name { font-size:11px !important; padding:0 3px !important; min-width:130px !important; }
+    .pdf-export-mode #abbForm .abb-grid-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
+    .pdf-export-mode #abbForm .abb-grid-table th, .pdf-export-mode #abbForm .abb-grid-table td { padding:1px 2px !important; font-size:7.5px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode #abbForm .abb-grid-table td input[type=text] { font-size:11px !important; padding:0 !important; }
+    .pdf-export-mode #abbForm .abb-trans-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; }
+    .pdf-export-mode #dimatForm .dimat-trans-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table th, .pdf-export-mode #dimatForm .dimat-grid-table td { padding:1px 1px !important; font-size:7.5px !important; height:16px !important; border:1px solid #cbd5e1 !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table th { font-size:7.5px !important; padding:2px 1px !important; background:#dbeafe !important; color:#1e293b !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-label { font-size:8px !important; padding-left:3px !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-bold { font-size:8px !important; }
+    .pdf-export-mode #dimatForm .dimat-grid-table td input[type=text] { font-size:10px !important; padding:0 !important; }
+    .pdf-export-mode #dimatForm .dimat-vertical { font-size:7px !important; padding:0 !important; }
+    .pdf-export-mode #dimatForm .dimat-cell-multiline input { font-size:9px !important; }
+    .pdf-export-mode .form-card { box-shadow:none !important; padding:0 !important; margin:0 !important; border:none !important; }
     .pdf-export-mode h2 { display:none !important; }
     .pdf-export-mode .hidden { display:none !important; }
-    .pdf-export-mode .print-header { display:flex !important; align-items:center !important; justify-content:space-between !important; border-bottom:1.5px solid #1e293b !important; padding-bottom:5px !important; margin-bottom:5px !important; }
-    .pdf-export-mode .print-header .ph-logo-side img { max-height:60px !important; }
-    .pdf-export-mode .print-header .ph-tuv-side img { max-height:50px !important; }
-    .pdf-export-mode .print-header .ph-center h2 { display:block !important; font-size:15px !important; margin:0 0 3px !important; border:none !important; color:#1e293b !important; }
-    .pdf-export-mode .print-header .ph-center h3 { font-size:14px !important; margin:0 !important; border:none !important; color:#2d3748 !important; }
+    .pdf-export-mode .print-header { display:flex !important; align-items:center !important; justify-content:space-between !important; border-bottom:1px solid #1e293b !important; padding-bottom:3px !important; margin-bottom:3px !important; }
+    .pdf-export-mode .print-header .ph-logo-side img { max-height:42px !important; }
+    .pdf-export-mode .print-header .ph-tuv-side img { max-height:36px !important; }
+    .pdf-export-mode .print-header .ph-center h2 { display:block !important; font-size:12px !important; margin:0 0 2px !important; border:none !important; color:#1e293b !important; }
+    .pdf-export-mode .print-header .ph-center h3 { font-size:11px !important; margin:0 !important; border:none !important; color:#2d3748 !important; }
     .pdf-export-mode .brand-trigger { border:none !important; background:transparent !important; min-height:auto !important; padding:0 !important; }
-    .pdf-export-mode .brand-trigger img { max-height:22px !important; }
-    .pdf-export-mode .brand-dropdown { display:none !important; }
+    .pdf-export-mode .brand-trigger img { max-height:18px !important; }
   `;
   document.head.appendChild(styleFix);
 
   var opt = {
-    margin: 5,
+    margin: [4, 4, 4, 4],
     filename: fileName + '.pdf',
-    image: { type: 'jpeg', quality: 0.95 },
+    image: { type: 'jpeg', quality: 0.92 },
     html2canvas: {
-      scale: 2,
+      scale: 1.5,
       useCORS: true,
       letterRendering: true,
       scrollY: 0,
       scrollX: 0,
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
+      windowWidth: 794,
+      windowHeight: 1123
     },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'], before: '.form-card, .section-title' }
+    pagebreak: { mode: 'avoid-all' }
   };
 
   var loading = document.createElement('div');
