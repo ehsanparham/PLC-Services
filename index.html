@@ -10,7 +10,7 @@
 <meta name="description" content="سامانه ی دیجیتال سرویس های بخش PLC">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="PLC Services">
+<meta name="apple-mobile-web-app-title" content="PLC سرویس">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -190,7 +190,6 @@ table.form-table td select{width:100%;border:none;background:transparent;text-al
 .freq-cell input{text-align:left !important;direction:ltr;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
 .freq-cell .eq-sign{font-size:28px;font-weight:bold;color:#1e293b;vertical-align:middle;margin:0 3px;line-height:1;display:inline-block;}
 
-/* ═══════════ انتخاب برند (فقط select) ═══════════ */
 .brand-picker{position:relative;display:block;width:100%;}
 .brand-select{
   width:100%;border:none;background:transparent;text-align:center;
@@ -392,7 +391,7 @@ body.theme-navy #dimatForm .dimat-grid-table td.cell-label{background:#d8e8f5;}
 body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 
 /* ═══════════════════════════════════════════════════════════════
-   PRINT STYLES — حل قطعی مشکل دو صفحه‌ای + فونت 12px
+   PRINT STYLES — فونت 14px + جا شدن در یک صفحه
    ═══════════════════════════════════════════════════════════════ */
 @page{size:A4 portrait;margin:4mm;}
 
@@ -404,7 +403,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
     color-adjust:exact !important;
-    font-size:12px !important;
+    font-size:14px !important;
   }
 
   .app-header,.tabs,.actions,.welcome-notif,#loginPage,.app-footer,#dateModal{
@@ -413,7 +412,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 
   #appPage{max-width:none !important;margin:0 !important;padding:0 !important;width:100% !important;}
 
-  /* ═══ راه‌حل کلیدی: هر form-card در یک صفحه با zoom ═══ */
+  /* ═══ هر form-card یک صفحه — با zoom متناسب ═══ */
   .form-card{
     box-shadow:none !important;
     padding:0 !important;
@@ -427,7 +426,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     max-height:none !important;
     overflow:visible !important;
     width:100% !important;
-    zoom:0.72;
+    zoom:0.58;
   }
   .form-card:last-child{page-break-after:auto !important;break-after:auto !important;}
   .form-card h2{display:none !important;}
@@ -443,17 +442,17 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .print-header .ph-logo-side{display:flex;align-items:center;justify-content:flex-start;min-width:150px;}
   .print-header .ph-logo-side img{max-width:150px !important;max-height:52px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
   .print-header .ph-center{flex:1;text-align:center;padding-top:1px;}
-  .print-header .ph-center h2{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:12px !important;font-weight:bold;color:#1e293b;margin:0 0 2px;border:none !important;padding:0 !important;line-height:1.3;}
-  .print-header .ph-center h3{font-size:12px !important;font-weight:bold;color:#2d3748;margin:0;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-center h2{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:14px !important;font-weight:bold;color:#1e293b;margin:0 0 2px;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-center h3{font-size:14px !important;font-weight:bold;color:#2d3748;margin:0;border:none !important;padding:0 !important;line-height:1.3;}
   .print-header .ph-tuv-side{display:flex;align-items:center;justify-content:flex-end;min-width:125px;}
   .print-header .ph-tuv-side img{max-width:120px !important;max-height:44px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
 
-  /* ═══ قاعده کلی: هر متن با فونت BKoodB = 12px ═══ */
+  /* ═══ قاعده کلی: همه متن‌ها = 14px ═══ */
   body, body * {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
-  /* ═══ استثنا: سرتیترها با فونت BTitrBd ═══ */
+  /* ═══ سرتیترها با فونت BTitrBd = 14px ═══ */
   table.form-table th,
   table.tele-table th,
   #abbForm .abb-grid-table th,
@@ -465,7 +464,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .section-title,
   #abbForm .abb-trans-title,
   #dimatForm .dimat-trans-title {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BTitrBd', 'BKoodB', Tahoma, sans-serif !important;
   }
 
@@ -474,32 +473,40 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   table.tele-table td,
   #abbForm .abb-grid-table td,
   #dimatForm .dimat-grid-table td {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
-  /* ═══ input/select در جدول‌ها = 12px BKoodB ═══ */
+  /* ═══ input/select در جدول‌ها ═══ */
   table.form-table td input,
   table.form-table td select,
   table.tele-table td input,
   table.tele-table td select,
   #abbForm .abb-grid-table td input,
   #dimatForm .dimat-grid-table td input {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
 
   /* ═══ چک‌لیست ═══ */
   .check-item .txt {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
-    width: calc(100% - 28px - 135px) !important;
+    width: calc(100% - 32px - 155px) !important;
   }
   .check-item .opts label {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
+  .check-item .opts {
+    width: 155px !important;
+  }
+  .check-item .num {
+    width: 32px !important;
+    padding: 2px 0 !important;
+  }
   .check-item input.inline-input {
-    font-size: 12px !important;
+    font-size: 14px !important;
+    width: 65px !important;
   }
 
   /* ═══ service-row ═══ */
@@ -508,11 +515,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .service-row .opts label,
   .lmu-service-label,
   .lmu-service-label span {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
   .service-row .opts input[type=text] {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
   /* ═══ reset-row و usage-row ═══ */
@@ -521,13 +528,13 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .usage-row,
   .usage-row .u-title,
   .usage-row label {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
 
   /* ═══ امضاها ═══ */
   .sign-box .row input {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
 
@@ -536,29 +543,28 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .bd-station-box .bd-item label,
   .bd-station-box select.bd-station-select,
   .bd-station-box input.bd-station-name {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
 
   /* ═══ فیلدهای فرکانس ═══ */
   .freq-cell {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   .freq-cell input {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   .freq-cell .eq-sign {
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
 
-  /* ═══ یادداشت SELTA ═══ */
-  #seltaForm #selta_transmitter_note {
-    font-size: 12px !important;
+  /* ═══ هدر پرینت ═══ */
+  .print-header .ph-center h2,
+  .print-header .ph-center h3 {
+    font-size: 14px !important;
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-     select برند در پرینت — نمایش متن اسم برند (بدون لوگو)
-     ═══════════════════════════════════════════════════════════════ */
+  /* ═══ select برند در پرینت — نمایش متن ═══ */
   .brand-select {
     display: block !important;
     visibility: visible !important;
@@ -570,83 +576,88 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     text-align: center !important;
     padding: 0 !important;
     color: #1e293b !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-family: 'BKoodB', Tahoma, sans-serif !important;
   }
   .brand-select option {
     color: #1e293b !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
-  /* ═══ فشرده‌سازی برای جا شدن در یک صفحه ═══ */
-  table.form-table{font-size:12px !important;margin-bottom:2px !important;}
-  table.form-table th{font-size:12px !important;padding:1px 2px !important;}
-  table.form-table td{padding:1px 2px !important;font-size:12px !important;}
-  table.form-table td input,table.form-table td select{font-size:12px !important;padding:0 !important;line-height:1.1 !important;}
+  /* ═══ یادداشت SELTA ═══ */
+  #seltaForm #selta_transmitter_note {
+    font-size: 14px !important;
+  }
+
+  /* ═══ فشرده‌سازی padding برای جا شدن در یک صفحه ═══ */
+  table.form-table{font-size:14px !important;margin-bottom:2px !important;}
+  table.form-table th{font-size:14px !important;padding:1px 2px !important;}
+  table.form-table td{padding:1px 2px !important;font-size:14px !important;}
+  table.form-table td input,table.form-table td select{font-size:14px !important;padding:0 !important;line-height:1.1 !important;}
 
   .checklist-grid{gap:0 !important;margin-bottom:2px !important;}
   .check-item{padding:0 !important;}
-  .check-item .num{padding:1px 0 !important;font-size:12px !important;width:28px !important;}
-  .check-item .txt{padding:1px 3px !important;font-size:12px !important;}
-  .check-item .opts{padding:0 2px !important;width:135px !important;}
-  .check-item .opts label{font-size:12px !important;padding:0 3px !important;}
-  .check-item .opts input[type=radio]{width:9px !important;height:9px !important;}
-  .check-item input.inline-input{font-size:12px !important;width:55px !important;}
+  .check-item .num{padding:1px 0 !important;font-size:14px !important;width:32px !important;}
+  .check-item .txt{padding:1px 3px !important;font-size:14px !important;}
+  .check-item .opts{padding:0 2px !important;width:155px !important;}
+  .check-item .opts label{font-size:14px !important;padding:0 3px !important;}
+  .check-item .opts input[type=radio]{width:10px !important;height:10px !important;}
+  .check-item input.inline-input{font-size:14px !important;width:65px !important;}
 
   .service-box{margin-bottom:2px !important;}
-  .service-row{padding:1px 4px !important;font-size:12px !important;}
-  .service-row .opts input[type=text]{font-size:12px !important;min-width:80px !important;}
-  .service-row .opts input[type=checkbox],.service-row .label input[type=checkbox]{width:9px !important;height:9px !important;min-width:9px !important;min-height:9px !important;}
+  .service-row{padding:1px 4px !important;font-size:14px !important;}
+  .service-row .opts input[type=text]{font-size:14px !important;min-width:80px !important;}
+  .service-row .opts input[type=checkbox],.service-row .label input[type=checkbox]{width:10px !important;height:10px !important;min-width:10px !important;min-height:10px !important;}
 
-  .section-title{font-size:12px !important;padding:2px 5px !important;}
+  .section-title{font-size:14px !important;padding:2px 5px !important;}
 
-  table.tele-table{font-size:12px !important;}
-  table.tele-table th{padding:1px 2px !important;font-size:12px !important;}
-  table.tele-table td{padding:1px 2px !important;font-size:12px !important;}
-  table.tele-table td input{font-size:12px !important;padding:0 !important;}
-  table.tele-table td select{font-size:12px !important;color:#1e293b !important;}
+  table.tele-table{font-size:14px !important;}
+  table.tele-table th{padding:1px 2px !important;font-size:14px !important;}
+  table.tele-table td{padding:1px 2px !important;font-size:14px !important;}
+  table.tele-table td input{font-size:14px !important;padding:0 !important;}
+  table.tele-table td select{font-size:14px !important;color:#1e293b !important;}
   table.tele-table td select option[value=""]{color:transparent !important;font-size:0 !important;}
   table.tele-table td select:invalid,
   table.tele-table td select option:checked[value=""]{color:transparent !important;}
 
-  #lmuForm table.tele-table td.lmu-sig-desc{font-size:12px !important;font-weight:bold;}
+  #lmuForm table.tele-table td.lmu-sig-desc{font-size:14px !important;font-weight:bold;}
 
-  .reset-row{padding:1px 4px !important;font-size:12px !important;margin:2px 0 !important;}
-  .reset-row input[type=checkbox]{width:9px !important;height:9px !important;}
+  .reset-row{padding:1px 4px !important;font-size:14px !important;margin:2px 0 !important;}
+  .reset-row input[type=checkbox]{width:10px !important;height:10px !important;}
 
-  .usage-row{padding:2px 6px !important;font-size:12px !important;margin-bottom:3px !important;}
-  .usage-row input[type=checkbox]{width:9px !important;height:9px !important;}
+  .usage-row{padding:2px 6px !important;font-size:14px !important;margin-bottom:3px !important;}
+  .usage-row input[type=checkbox]{width:10px !important;height:10px !important;}
 
   .signatures{margin-top:2px !important;font-size:0;}
-  .sign-box{padding:2px 4px !important;font-size:12px !important;display:inline-block;width:49%;vertical-align:top;}
+  .sign-box{padding:2px 4px !important;font-size:14px !important;display:inline-block;width:49%;vertical-align:top;}
   .sign-box .row{margin-bottom:1px !important;}
-  .sign-box .row input{font-size:12px !important;padding:0 !important;}
+  .sign-box .row input{font-size:14px !important;padding:0 !important;}
   .sign-box div[style*="height:45px"],.sign-box div[style*="height:35px"]{height:12px !important;}
-  .small-label{font-size:12px !important;}
+  .small-label{font-size:14px !important;}
 
   .bd-station-box{padding:2px 5px !important;margin-bottom:2px !important;}
-  .bd-station-box select.bd-station-select{font-size:12px !important;padding:0 4px !important;min-width:90px !important;}
-  .bd-station-box input.bd-station-name{font-size:12px !important;padding:0 4px !important;min-width:140px !important;}
+  .bd-station-box select.bd-station-select{font-size:14px !important;padding:0 4px !important;min-width:90px !important;}
+  .bd-station-box input.bd-station-name{font-size:14px !important;padding:0 4px !important;min-width:140px !important;}
 
-  #abbForm .abb-grid-table{font-size:12px !important;}
-  #abbForm .abb-grid-table th,#abbForm .abb-grid-table td{padding:1px 2px !important;font-size:12px !important;}
-  #abbForm .abb-grid-table td input[type=text]{font-size:12px !important;padding:0 !important;}
-  #abbForm .abb-trans-title{font-size:12px !important;padding:2px 4px !important;}
+  #abbForm .abb-grid-table{font-size:14px !important;}
+  #abbForm .abb-grid-table th,#abbForm .abb-grid-table td{padding:1px 2px !important;font-size:14px !important;}
+  #abbForm .abb-grid-table td input[type=text]{font-size:14px !important;padding:0 !important;}
+  #abbForm .abb-trans-title{font-size:14px !important;padding:2px 4px !important;}
 
-  #dimatForm .dimat-trans-title{font-size:12px !important;padding:2px 4px !important;}
-  #dimatForm .dimat-grid-table{font-size:12px !important;}
+  #dimatForm .dimat-trans-title{font-size:14px !important;padding:2px 4px !important;}
+  #dimatForm .dimat-grid-table{font-size:14px !important;}
   #dimatForm .dimat-grid-table th,
-  #dimatForm .dimat-grid-table td{padding:1px 1px !important;font-size:12px !important;height:18px !important;}
-  #dimatForm .dimat-grid-table th{font-size:12px !important;padding:2px 1px !important;}
-  #dimatForm .dimat-grid-table td.cell-label{font-size:12px !important;padding-left:4px !important;}
-  #dimatForm .dimat-grid-table td.cell-bold{font-size:12px !important;}
-  #dimatForm .dimat-grid-table td input[type=text]{font-size:12px !important;padding:0 !important;}
-  #dimatForm .dimat-vertical{font-size:12px !important;padding:1px !important;}
-  #dimatForm .dimat-cell-multiline input{font-size:12px !important;}
+  #dimatForm .dimat-grid-table td{padding:1px 1px !important;font-size:14px !important;height:20px !important;}
+  #dimatForm .dimat-grid-table th{font-size:14px !important;padding:2px 1px !important;}
+  #dimatForm .dimat-grid-table td.cell-label{font-size:14px !important;padding-left:4px !important;}
+  #dimatForm .dimat-grid-table td.cell-bold{font-size:14px !important;}
+  #dimatForm .dimat-grid-table td input[type=text]{font-size:14px !important;padding:0 !important;}
+  #dimatForm .dimat-vertical{font-size:14px !important;padding:1px !important;}
+  #dimatForm .dimat-cell-multiline input{font-size:14px !important;}
 
   .check-item{width:50% !important;display:inline-block !important;vertical-align:top !important;}
-  .check-item .txt{width:calc(100% - 28px - 135px) !important;}
-  .check-item .opts{width:135px !important;}
+  .check-item .txt{width:calc(100% - 32px - 155px) !important;}
+  .check-item .opts{width:155px !important;}
   .sign-box{width:49% !important;display:inline-block !important;vertical-align:top !important;}
   .service-row .label{width:30% !important;}
   .service-row .opts{width:68% !important;}
@@ -1008,7 +1019,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('plc')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1101,7 +1112,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('lmu')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1286,7 +1297,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('bardasht')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1417,7 +1428,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('selta')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1543,7 +1554,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('abb')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1738,7 +1749,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
+      <button class="btn-print" onclick="doPrint()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('dimat')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1749,6 +1760,48 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 <div class="welcome-notif" id="welcomeNotif"></div>
 
 <script>
+// ═══════════════════════════════════════════════════════════════
+//  PRINT — تابع قوی با چند لایه fallback
+// ═══════════════════════════════════════════════════════════════
+function doPrint(){
+  console.log('🖨️ doPrint called');
+  try {
+    if(typeof window.print === 'function'){
+      window.print();
+      console.log('✅ window.print() called');
+      return;
+    }
+  } catch(err){
+    console.warn('window.print() failed:', err);
+  }
+
+  try {
+    if(document.execCommand){
+      var ok = document.execCommand('print', false, null);
+      console.log('execCommand print:', ok);
+      if(ok) return;
+    }
+  } catch(err){
+    console.warn('execCommand print failed:', err);
+  }
+
+  alert(
+    'مرورگر شما از پرینت مستقیم پشتیبانی نمی‌کند.\n\n' +
+    'لطفاً یکی از این کارها را انجام دهید:\n' +
+    '• از منوی مرورگر → Print استفاده کنید\n' +
+    '• یا اپ را در Chrome باز کنید'
+  );
+}
+
+// اگه URL شامل ?print=1 بود، خودکار پرینت بگیر
+if(window.location.search.indexOf('print=1') > -1){
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      try { window.print(); } catch(e){}
+    }, 800);
+  });
+}
+
 // ═══════════════════════════════════════════════════════════════
 //  THEME
 // ═══════════════════════════════════════════════════════════════
@@ -2017,7 +2070,6 @@ document.addEventListener('change', function(e){
       else { label.classList.remove('checked'); }
     });
   }
-  // تغییر برند در برداشت اطلاعات
   if(e.target.classList && e.target.classList.contains('brand-select')){
     if(e.target.id === 'bd_plc_brand' || e.target.id === 'bd_tps_brand'){
       var val = e.target.value.toLowerCase();
@@ -2138,7 +2190,7 @@ function loadAll(){
 }
 
 // ═══════════════════════════════════════════════════════════════
-//  پرینت — حذف متن select های خالی (به‌جز brand-select)
+//  پرینت — حذف متن select های خالی
 // ═══════════════════════════════════════════════════════════════
 window.addEventListener('beforeprint', function(){
   document.querySelectorAll('select').forEach(function(sel){
