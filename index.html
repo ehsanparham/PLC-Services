@@ -6,9 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>سامانه ی دیجیتال سرویس های دوره ای بخش PLC</title>
 
-<!-- ═══════════ PWA Meta Tags ═══════════ -->
 <meta name="theme-color" content="#1e3a8a">
-<meta name="description" content="سامانه ی دیجیتال سرویس های دوره ای بخش PLC — واحد اتوماسیون و مخابرات امور دیسپاچینگ جنوب">
+<meta name="description" content="سامانه ی دیجیتال سرویس های دوره ای بخش PLC">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PLC سرویس">
@@ -17,9 +16,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-<!-- ═══════════ End PWA Meta Tags ═══════════ -->
 
-<script src="./html2pdf.bundle.min.js"></script>
 <style>
 @font-face{font-family:'BKoodB';src:url('BKOODB.TTF') format('truetype');font-weight:normal;font-display:swap;}
 @font-face{font-family:'BTitrBd';src:url('BTITRBD.TTF') format('truetype');font-weight:bold;font-display:swap;}
@@ -42,218 +39,111 @@ input[type=checkbox]{
   cursor:pointer;vertical-align:middle;margin:0;
   -webkit-appearance:checkbox;appearance:checkbox;
 }
-input[type=radio]{
-  -webkit-appearance:radio;appearance:radio;
-}
+input[type=radio]{-webkit-appearance:radio;appearance:radio;}
 
 /* ═══════════ صفحه لاگین ═══════════ */
 #loginPage{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  padding:20px;
-  background-color:#0f172a;
-  background-image:url('login-bg.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  position:relative;
-  margin:-10px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;padding:20px;background-color:#0f172a;
+  background-image:url('login-bg.png');background-size:cover;
+  background-position:center;background-repeat:no-repeat;
+  background-attachment:fixed;position:relative;margin:-10px;
 }
-
 .login-box{
-  background:rgba(15,23,42,.55);
-  border-radius:24px;
-  padding:38px 34px 34px;
-  width:100%;
-  max-width:400px;
-  text-align:center;
-  border:1px solid rgba(255,255,255,.22);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.08),
-    0 30px 80px rgba(0,0,0,.45);
-  position:relative;
-  z-index:2;
-  color:#fff;
-}
-@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .login-box{
-    background:rgba(255,255,255,.06);
-    -webkit-backdrop-filter:blur(10px) saturate(160%);
-    backdrop-filter:blur(10px) saturate(160%);
-  }
-}
-
-.login-box .logo-placeholder{
-  width:200px;height:110px;margin:0 auto 16px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
-.login-box .logo-placeholder img{
-  max-width:100%;max-height:100%;object-fit:contain;
-}
-
-.login-subtitle{
-  font-size:15px;color:#fff;margin:0 0 22px;padding-bottom:16px;
-  border-bottom:1px solid rgba(255,255,255,.25);
-  font-weight:bold;line-height:1.75;
-}
-.login-subtitle strong{
-  display:block;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  color:#fff;font-size:17px;margin-top:8px;letter-spacing:.3px;
-}
-
-.login-box input{
-  width:100%;padding:14px 16px;margin-bottom:16px;
-  border:1px solid rgba(255,255,255,.25);border-radius:12px;
-  font-size:15px;background:rgba(255,255,255,.12);
-  transition:border-color .25s, background .25s;
-  color:#fff;font-family:'BKoodB',Tahoma,sans-serif;
-  text-align:right;direction:rtl;
-}
-.login-box input::placeholder{color:rgba(255,255,255,.65);}
-.login-box input:focus{
-  outline:none;border-color:#60a5fa;background:rgba(255,255,255,.22);
-}
-
-.login-box button{
-  width:100%;padding:15px;border:none;border-radius:12px;
-  background:#1e3a8a;
-  background-image:linear-gradient(135deg,#1e3a8a,#3b82f6);
-  color:#fff;font-size:17px;cursor:pointer;font-weight:bold;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;margin-top:6px;
-  transition:transform .25s, opacity .25s;
-}
-.login-box button:hover{
-  background-image:linear-gradient(135deg,#3b82f6,#60a5fa);
-  transform:translateY(-2px);
-}
-
-.error{
-  color:#fca5a5;font-size:14px;margin-bottom:8px;min-height:20px;font-weight:bold;
-}
-
-/* ═══════════ مودال تاریخ ═══════════ */
-#dateModal{
-  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-  z-index:99999;
-  background-color:#0f172a;
-  background-image:url('login-bg.png');
-  background-size:cover;background-position:center;background-repeat:no-repeat;
-  align-items:center;justify-content:center;padding:20px;
-}
-#dateModal.show{display:flex;}
-
-.date-modal-box{
-  background:rgba(15,23,42,.55);
-  border-radius:24px;padding:32px 30px 28px;width:100%;max-width:430px;
+  background:rgba(15,23,42,.55);border-radius:24px;
+  padding:38px 34px 34px;width:100%;max-width:400px;
   text-align:center;border:1px solid rgba(255,255,255,.22);
   box-shadow:0 0 0 1px rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.45);
   position:relative;z-index:2;color:#fff;
 }
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .date-modal-box{
-    background:rgba(255,255,255,.06);
-    -webkit-backdrop-filter:blur(10px) saturate(160%);
-    backdrop-filter:blur(10px) saturate(160%);
-  }
+  .login-box{background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);}
 }
+.login-box .logo-placeholder{width:200px;height:110px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.login-box .logo-placeholder img{max-width:100%;max-height:100%;object-fit:contain;}
+.login-subtitle{font-size:15px;color:#fff;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.25);font-weight:bold;line-height:1.75;}
+.login-subtitle strong{display:block;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#fff;font-size:17px;margin-top:8px;letter-spacing:.3px;}
+.login-box input{width:100%;padding:14px 16px;margin-bottom:16px;border:1px solid rgba(255,255,255,.25);border-radius:12px;font-size:15px;background:rgba(255,255,255,.12);transition:border-color .25s, background .25s;color:#fff;font-family:'BKoodB',Tahoma,sans-serif;text-align:right;direction:rtl;}
+.login-box input::placeholder{color:rgba(255,255,255,.65);}
+.login-box input:focus{outline:none;border-color:#60a5fa;background:rgba(255,255,255,.22);}
+.login-box button{width:100%;padding:15px;border:none;border-radius:12px;background:#1e3a8a;background-image:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;font-size:17px;cursor:pointer;font-weight:bold;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;margin-top:6px;transition:transform .25s, opacity .25s;}
+.login-box button:hover{background-image:linear-gradient(135deg,#3b82f6,#60a5fa);transform:translateY(-2px);}
+.error{color:#fca5a5;font-size:14px;margin-bottom:8px;min-height:20px;font-weight:bold;}
 
-.date-modal-box h3{
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#fff;
-  font-size:20px;margin:0 0 10px;
+/* ═══════════ مودال تاریخ ═══════════ */
+#dateModal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background-color:#0f172a;background-image:url('login-bg.png');background-size:cover;background-position:center;background-repeat:no-repeat;align-items:center;justify-content:center;padding:20px;}
+#dateModal.show{display:flex;}
+.date-modal-box{background:rgba(15,23,42,.55);border-radius:24px;padding:32px 30px 28px;width:100%;max-width:430px;text-align:center;border:1px solid rgba(255,255,255,.22);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.45);position:relative;z-index:2;color:#fff;}
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .date-modal-box{background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(10px) saturate(160%);backdrop-filter:blur(10px) saturate(160%);}
 }
-.date-modal-box p{
-  font-size:15px;color:#fff;margin:0 0 18px;padding-bottom:14px;
-  border-bottom:1px solid rgba(255,255,255,.25);
-}
-.date-modal-box input{
-  width:100%;padding:13px 15px;margin-bottom:14px;
-  border:1px solid rgba(255,255,255,.25);border-radius:12px;
-  font-size:17px;text-align:center;
-  font-family:'BTitrBd',Tahoma,sans-serif;
-  background:rgba(255,255,255,.12);color:#fff;font-weight:bold;outline:none;
-}
+.date-modal-box h3{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#fff;font-size:20px;margin:0 0 10px;}
+.date-modal-box p{font-size:15px;color:#fff;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.25);}
+.date-modal-box input{width:100%;padding:13px 15px;margin-bottom:14px;border:1px solid rgba(255,255,255,.25);border-radius:12px;font-size:17px;text-align:center;font-family:'BTitrBd',Tahoma,sans-serif;background:rgba(255,255,255,.12);color:#fff;font-weight:bold;outline:none;}
 .date-modal-box input::placeholder{color:rgba(255,255,255,.55);}
 .date-modal-box input:focus{border-color:#60a5fa;background:rgba(255,255,255,.22);}
-.date-modal-box button{
-  width:100%;padding:14px;border:none;border-radius:12px;
-  background:#1e3a8a;
-  background-image:linear-gradient(135deg,#1e3a8a,#3b82f6);
-  color:#fff;font-size:16px;cursor:pointer;font-weight:bold;
-  font-family:'BTitrBd','BKoodB',inherit;
-}
-.date-modal-box button:hover{
-  background-image:linear-gradient(135deg,#3b82f6,#60a5fa);
-  transform:translateY(-2px);
-}
-.date-modal-error{
-  color:#fca5a5;font-size:14px;min-height:18px;margin-bottom:8px;font-weight:bold;
-}
-.supervisor-info{
-  margin:0 0 16px;padding:12px 14px;
-  background:rgba(96,165,250,.14);
-  border:1px solid rgba(96,165,250,.35);
-  border-right:4px solid #60a5fa;
-  border-radius:12px;text-align:right;
-}
-.supervisor-info .si-label{
-  font-size:14.5px;color:#fff;font-weight:bold;margin-bottom:8px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.supervisor-info input{
-  width:100%;padding:10px 12px;
-  border:1px solid rgba(255,255,255,.25);border-radius:8px;
-  font-size:15px;background:rgba(255,255,255,.12);color:#fff;
-  font-weight:bold;outline:none;font-family:'BKoodB',Tahoma,sans-serif;
-}
+.date-modal-box button{width:100%;padding:14px;border:none;border-radius:12px;background:#1e3a8a;background-image:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;font-size:16px;cursor:pointer;font-weight:bold;font-family:'BTitrBd','BKoodB',inherit;}
+.date-modal-box button:hover{background-image:linear-gradient(135deg,#3b82f6,#60a5fa);transform:translateY(-2px);}
+.date-modal-error{color:#fca5a5;font-size:14px;min-height:18px;margin-bottom:8px;font-weight:bold;}
+.supervisor-info{margin:0 0 16px;padding:12px 14px;background:rgba(96,165,250,.14);border:1px solid rgba(96,165,250,.35);border-right:4px solid #60a5fa;border-radius:12px;text-align:right;}
+.supervisor-info .si-label{font-size:14.5px;color:#fff;font-weight:bold;margin-bottom:8px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.supervisor-info input{width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.25);border-radius:8px;font-size:15px;background:rgba(255,255,255,.12);color:#fff;font-weight:bold;outline:none;font-family:'BKoodB',Tahoma,sans-serif;}
 .supervisor-info input:focus{border-color:#60a5fa;background:rgba(255,255,255,.22);}
 
 /* ═══════════ اپلیکیشن ═══════════ */
 #appPage{display:none;max-width:1150px;margin:0 auto;}
+
+/* ═══════════ هدر جدید — همه در یک راستا ═══════════ */
 .app-header{
   background:#1e293b;
   background-image:linear-gradient(135deg,#1e293b 0%,#334155 100%);
-  color:#fff;border-radius:8px;padding:10px 16px;
-  display:flex;align-items:center;gap:14px;
+  color:#fff;border-radius:8px;padding:10px 14px;
+  display:flex;align-items:center;gap:12px;
   margin-bottom:10px;box-shadow:0 4px 14px rgba(15,23,42,.3);
-  flex-wrap:wrap;border-bottom:3px solid #3b82f6;
+  border-bottom:3px solid #3b82f6;
   position:relative;overflow:hidden;
-}
-.app-header .header-controls{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-right:auto;
-  position:relative;
-  z-index:1;
+  flex-wrap:nowrap;
 }
 .app-header .logo-placeholder{
-  width:60px;height:48px;background:#fff;border-radius:6px;
+  width:70px;height:56px;background:#fff;border-radius:6px;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;flex-shrink:0;padding:3px;position:relative;z-index:1;
 }
 .app-header .logo-placeholder img{max-width:100%;max-height:100%;object-fit:contain;}
-.app-header .titles{flex:1;min-width:180px;position:relative;z-index:1;}
+
+.app-header .titles{
+  flex:1;min-width:0;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:2px;position:relative;z-index:1;text-align:right;
+}
 .app-header h1{
   font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-size:18px;margin:0 0 3px;font-weight:bold;
+  font-size:15px;margin:0;font-weight:bold;line-height:1.3;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-.app-header p{font-size:15px;margin:0;opacity:.95;}
+.app-header p{
+  font-size:13px;margin:0;opacity:.95;line-height:1.3;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+.app-header .header-controls{
+  display:flex;align-items:center;gap:6px;
+  flex-shrink:0;position:relative;z-index:1;
+}
 .user-area{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.2);padding:6px 12px;border-radius:6px;
-  border:1px solid rgba(255,255,255,.35);position:relative;z-index:1;
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.2);padding:5px 9px;border-radius:6px;
+  border:1px solid rgba(255,255,255,.35);
+  position:relative;z-index:1;white-space:nowrap;
 }
 .user-area .uname{
-  font-size:15px;font-weight:bold;line-height:1.3;
+  font-size:13px;font-weight:bold;line-height:1.3;
   font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
   white-space:nowrap;
 }
 .user-area button{
-  background:#dc2626;color:#fff;border:none;padding:5px 10px;
-  border-radius:5px;cursor:pointer;font-size:13px;font-weight:bold;
+  background:#dc2626;color:#fff;border:none;padding:4px 8px;
+  border-radius:5px;cursor:pointer;font-size:11.5px;font-weight:bold;
   white-space:nowrap;
 }
 .user-area button:hover{background:#991b1b;}
@@ -263,24 +153,15 @@ input[type=radio]{
   border:1px solid rgba(255,255,255,.35);
   color:#fff;
   font-family:'BKoodB',Tahoma,sans-serif;
-  font-size:12px;
-  font-weight:bold;
-  border-radius:5px;
-  padding:5px 6px;
-  cursor:pointer;
-  outline:none;
-  max-width:95px;
+  font-size:11px;font-weight:bold;
+  border-radius:5px;padding:4px 5px;
+  cursor:pointer;outline:none;max-width:82px;
 }
-.theme-select-inline option{
-  background:#1e293b;
-  color:#fff;
-  font-family:'BKoodB',Tahoma,sans-serif;
-}
+.theme-select-inline option{background:#1e293b;color:#fff;font-family:'BKoodB',Tahoma,sans-serif;}
 
 .welcome-notif{
   position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:#1e7a3f;
-  background-image:linear-gradient(90deg,#1e7a3f,#2a9a52);
+  background:#1e7a3f;background-image:linear-gradient(90deg,#1e7a3f,#2a9a52);
   color:#fff;padding:12px 24px;border-radius:6px;font-size:17px;
   font-weight:bold;box-shadow:0 8px 24px rgba(30,122,63,.4);
   z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;
@@ -296,397 +177,111 @@ input[type=radio]{
   font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
 }
 .tabs button:hover{background:#dbeafe;}
-.tabs button.active{
-  background:#1d4ed8;
-  background-image:linear-gradient(180deg,#3b82f6,#1d4ed8);
-  color:#fff;border-color:#1e40af;
-}
+.tabs button.active{background:#1d4ed8;background-image:linear-gradient(180deg,#3b82f6,#1d4ed8);color:#fff;border-color:#1e40af;}
 
-.form-card{
-  background:#fff;border-radius:8px;padding:14px;
-  box-shadow:0 2px 10px rgba(15,23,42,.1);margin-bottom:14px;
-  border:1px solid #cbd5e1;border-top:4px solid #3b82f6;
-}
+.form-card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 2px 10px rgba(15,23,42,.1);margin-bottom:14px;border:1px solid #cbd5e1;border-top:4px solid #3b82f6;}
 
-table.form-table{
-  width:100%;border-collapse:collapse;margin-bottom:10px;
-  font-size:16px;table-layout:fixed;border:1px solid #cbd5e1;background:#fff;
-}
-table.form-table th{
-  background:#334155;
-  background-image:linear-gradient(180deg,#475569,#334155);
-  color:#fff;font-weight:bold;font-size:15.5px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  border:1px solid #334155;border-bottom:2px solid #3b82f6;
-  padding:6px 8px;text-align:center;vertical-align:middle;
-}
-table.form-table td{
-  border:1px solid #cbd5e1;padding:5px 6px;text-align:center;vertical-align:middle;
-}
+table.form-table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:16px;table-layout:fixed;border:1px solid #cbd5e1;background:#fff;}
+table.form-table th{background:#334155;background-image:linear-gradient(180deg,#475569,#334155);color:#fff;font-weight:bold;font-size:15.5px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;border:1px solid #334155;border-bottom:2px solid #3b82f6;padding:6px 8px;text-align:center;vertical-align:middle;}
+table.form-table td{border:1px solid #cbd5e1;padding:5px 6px;text-align:center;vertical-align:middle;}
 table.form-table tbody tr:nth-child(even) td{background:#f8fafc;}
 table.form-table tbody tr:nth-child(odd) td{background:#fff;}
 table.form-table tbody tr:hover td{background:#eff6ff;}
-table.form-table td input[type=text]{
-  width:100%;border:none;background:transparent;text-align:center;
-  font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;
-  outline:none;color:#1e293b;font-weight:bold;direction:ltr;
-}
+table.form-table td input[type=text]{width:100%;border:none;background:transparent;text-align:center;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;outline:none;color:#1e293b;font-weight:bold;direction:ltr;}
 table.form-table td input[type=text]:focus{background:#dbeafe;border-radius:3px;box-shadow:inset 0 0 0 1px #3b82f6;}
-table.form-table td select{
-  width:100%;border:none;background:transparent;text-align:center;
-  font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;
-  outline:none;color:#1e293b;font-weight:bold;
-}
-.freq-cell{
-  direction:ltr;
-  text-align:left;
-  padding:5px 8px !important;
-  font-size:20px;
-  font-weight:bold;
-  color:#1e293b;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.freq-cell input{
-  text-align:left !important;
-  direction:ltr;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.freq-cell .eq-sign{
-  font-size:28px;
-  font-weight:bold;
-  color:#1e293b;
-  vertical-align:middle;
-  margin:0 3px;
-  line-height:1;
-  display:inline-block;
-}
+table.form-table td select{width:100%;border:none;background:transparent;text-align:center;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;outline:none;color:#1e293b;font-weight:bold;cursor:pointer;}
+.freq-cell{direction:ltr;text-align:left;padding:5px 8px !important;font-size:20px;font-weight:bold;color:#1e293b;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.freq-cell input{text-align:left !important;direction:ltr;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.freq-cell .eq-sign{font-size:28px;font-weight:bold;color:#1e293b;vertical-align:middle;margin:0 3px;line-height:1;display:inline-block;}
 
-.brand-picker{position:relative;display:inline-block;width:100%;}
-.brand-trigger{
-  width:100%;border:1px dashed #94a3b8;background:#f0f9ff;
-  padding:3px 6px;border-radius:5px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  min-height:38px;transition:background .15s;
-}
-.brand-trigger:hover{background:#dbeafe;border-color:#3b82f6;}
-.brand-trigger img{max-height:28px;max-width:95%;object-fit:contain;}
-.brand-trigger .placeholder{color:#475569;font-size:15px;}
-
-/* ═══════════ مودال انتخاب برند ═══════════ */
-.brand-modal{
-  display:none;
-  position:fixed;
-  top:0;left:0;right:0;bottom:0;
-  background:rgba(15,23,42,.85);
-  z-index:99998;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-.brand-modal.show{display:flex;}
-
-.brand-modal-box{
-  background:#fff;
-  border-radius:16px;
-  padding:20px;
-  width:100%;
-  max-width:420px;
-  box-shadow:0 30px 80px rgba(0,0,0,.5);
-  max-height:80vh;
-  display:flex;
-  flex-direction:column;
-}
-
-.brand-modal-title{
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-size:17px;
-  font-weight:bold;
-  color:#1e293b;
-  text-align:center;
-  margin-bottom:16px;
-  padding-bottom:12px;
-  border-bottom:2px solid #dbeafe;
-}
-
-.brand-modal-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:14px;
-  overflow-y:auto;
-  flex:1;
-  padding:2px;
-}
-
-.brand-modal-item{
-  border:2px solid #cbd5e1;
-  border-radius:10px;
-  padding:14px 10px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  transition:all .2s;
-  min-height:70px;
-}
-.brand-modal-item:hover,
-.brand-modal-item:active{
-  background:#dbeafe;
-  border-color:#3b82f6;
-  transform:scale(1.02);
-}
-.brand-modal-item.selected{
-  background:#3b82f6;
-  border-color:#1e40af;
-  box-shadow:0 4px 12px rgba(59,130,246,.4);
-}
-.brand-modal-item.selected img{filter:brightness(0) invert(1);}
-.brand-modal-item img{
-  max-width:100%;
-  max-height:44px;
-  object-fit:contain;
-}
-
-.brand-modal-cancel{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#e2e8f0;
-  color:#1e293b;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-}
-.brand-modal-cancel:hover{background:#cbd5e1;}
-
-.checklist-grid{
-  display:block;margin-bottom:10px;
-  border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;
-  background:#fff;box-shadow:0 1px 3px rgba(15,23,42,.08);
-  font-size:0;
-}
-.check-item{
-  display:inline-block;width:50%;vertical-align:top;
-  border-bottom:1px solid #cbd5e1;border-left:1px solid #cbd5e1;
-  background:#fff;padding:0;transition:background .12s;
-  font-size:17px;text-align:right;box-sizing:border-box;
-}
-.checklist-grid .check-item:nth-child(odd){border-left:none;}
-.check-item:hover{background:#dbeafe;}
-.check-item .num{
-  display:inline-block;vertical-align:middle;
-  background:#334155;
-  background-image:linear-gradient(180deg,#475569,#334155);
-  color:#fff;font-weight:bold;text-align:center;font-size:14px;
-  width:32px;padding:10px 0;height:auto;
-}
-.check-item .txt{
-  display:inline-block;vertical-align:middle;
-  padding:4px 7px;text-align:right;color:#0f172a;font-size:16px;
-  line-height:1.4;width:calc(100% - 32px - 150px);box-sizing:border-box;
-}
-.check-item .opts{
-  display:inline-block;vertical-align:middle;
-  padding:2px 5px;text-align:left;width:150px;box-sizing:border-box;
-}
-.check-item .opts label{
-  display:inline-block;cursor:pointer;font-size:16px;
-  padding:3px 6px;border-radius:4px;background:#dbeafe;
-  border:1px solid #cbd5e1;transition:background .12s;
-  line-height:1.2;margin:1px;
-  vertical-align:middle;
-}
-.check-item .opts label:hover{background:#c5dcf0;}
-.check-item .opts input[type=radio]{
-  width:14px;height:14px;cursor:pointer;margin:0 3px 0 0;
-  vertical-align:middle;
-}
-.check-item .opts input[type=radio]:checked + span{font-weight:bold;}
-.check-item .opts label.opt-yes.checked{
-  background:#15803d !important;color:#fff !important;
-  border-color:#14532d !important;font-weight:bold;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.check-item .opts label.opt-no.checked{
-  background:#b91c1c !important;color:#fff !important;
-  border-color:#7f1d1d !important;font-weight:bold;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.check-item input.inline-input{
-  border:none;background:transparent;text-align:center;
-  font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;
-  outline:none;width:75px;border-bottom:2px solid #3b82f6;
-  color:#1e293b;font-weight:bold;direction:ltr;
-}
-
-.service-box{
-  border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;
-  margin-bottom:10px;background:#fff;
-}
-.service-row{
-  display:block;border-bottom:1px solid #cbd5e1;padding:6px 12px;font-size:16px;
-}
-.service-row:last-child{border-bottom:none;}
-.service-row:nth-child(even){background:#f8fafc;}
-.service-row .label{
-  display:inline-block;vertical-align:middle;width:30%;
-  font-weight:bold;color:#1e293b;font-size:16px;
-}
-.service-row .opts{
-  display:inline-block;vertical-align:middle;width:68%;
-}
-.service-row .opts label{
-  display:inline-block;cursor:pointer;font-size:16px;
-  margin:0 6px 0 0;vertical-align:middle;
-}
-.service-row .opts input[type=text]{
-  border:none;border-bottom:2px solid #3b82f6;background:transparent;
-  padding:4px 7px;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;
-  outline:none;min-width:130px;color:#1e293b;font-weight:bold;
-  text-align:center;direction:ltr;
-}
-.lmu-service-label{font-size:16px !important;font-weight:bold;}
-.lmu-service-label span{font-size:17px;}
-
-.section-title{
-  background:#1e293b;
-  background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);
-  color:#fff;font-weight:bold;padding:8px 12px;
-  border-radius:6px 6px 0 0;font-size:16px;
-  border-bottom:2px solid #dbeafe;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  text-align:center;letter-spacing:.5px;
-}
-
-table.tele-table{
-  width:100%;border-collapse:collapse;font-size:15.5px;
-  background:#fff;border:1px solid #cbd5e1;
-}
-table.tele-table th{
-  background:#dbeafe;color:#1e293b;font-weight:bold;font-size:15.5px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  border:1px solid #cbd5e1;border-bottom:2px solid #3b82f6;
-  padding:6px;text-align:center;
-}
-table.tele-table td{border:1px solid #cbd5e1;padding:5px;text-align:center;}
-table.tele-table tbody tr:nth-child(even) td{background:#f8fafc;}
-table.tele-table tbody tr:nth-child(odd) td{background:#fff;}
-table.tele-table td input{
-  width:100%;border:none;background:transparent;text-align:center;
-  font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;
-  outline:none;color:#1e293b;font-weight:bold;direction:ltr;
-}
-table.tele-table td select{
+/* ═══════════ انتخاب برند — select + لوگو برای پرینت ═══════════ */
+.brand-picker{position:relative;display:block;width:100%;}
+.brand-select{
   width:100%;border:none;background:transparent;text-align:center;
   font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;
   outline:none;color:#1e293b;font-weight:bold;cursor:pointer;
+  -webkit-appearance:menulist;appearance:menulist;
+}
+.brand-select:focus{background:#dbeafe;border-radius:3px;}
+
+.brand-print-img{
+  display:none;
+  max-height:32px;
+  max-width:100%;
+  object-fit:contain;
+  vertical-align:middle;
 }
 
-.usage-row{
-  padding:8px 12px;background:#fff;border:1px solid #cbd5e1;
-  border-radius:6px;margin-bottom:10px;font-size:16px;
-}
-.usage-row .u-title{
-  display:inline-block;font-weight:bold;color:#1e293b;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:16px;
-  margin:0 8px 0 0;vertical-align:middle;
-}
+.checklist-grid{display:block;margin-bottom:10px;border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(15,23,42,.08);font-size:0;}
+.check-item{display:inline-block;width:50%;vertical-align:top;border-bottom:1px solid #cbd5e1;border-left:1px solid #cbd5e1;background:#fff;padding:0;transition:background .12s;font-size:17px;text-align:right;box-sizing:border-box;}
+.checklist-grid .check-item:nth-child(odd){border-left:none;}
+.check-item:hover{background:#dbeafe;}
+.check-item .num{display:inline-block;vertical-align:middle;background:#334155;background-image:linear-gradient(180deg,#475569,#334155);color:#fff;font-weight:bold;text-align:center;font-size:14px;width:32px;padding:10px 0;height:auto;}
+.check-item .txt{display:inline-block;vertical-align:middle;padding:4px 7px;text-align:right;color:#0f172a;font-size:16px;line-height:1.4;width:calc(100% - 32px - 150px);box-sizing:border-box;}
+.check-item .opts{display:inline-block;vertical-align:middle;padding:2px 5px;text-align:left;width:150px;box-sizing:border-box;}
+.check-item .opts label{display:inline-block;cursor:pointer;font-size:16px;padding:3px 6px;border-radius:4px;background:#dbeafe;border:1px solid #cbd5e1;transition:background .12s;line-height:1.2;margin:1px;vertical-align:middle;}
+.check-item .opts label:hover{background:#c5dcf0;}
+.check-item .opts input[type=radio]{width:14px;height:14px;cursor:pointer;margin:0 3px 0 0;vertical-align:middle;}
+.check-item .opts input[type=radio]:checked + span{font-weight:bold;}
+.check-item .opts label.opt-yes.checked{background:#15803d !important;color:#fff !important;border-color:#14532d !important;font-weight:bold;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.check-item .opts label.opt-no.checked{background:#b91c1c !important;color:#fff !important;border-color:#7f1d1d !important;font-weight:bold;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.check-item input.inline-input{border:none;background:transparent;text-align:center;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;outline:none;width:75px;border-bottom:2px solid #3b82f6;color:#1e293b;font-weight:bold;direction:ltr;}
+
+.service-box{border:1px solid #cbd5e1;border-radius:6px;overflow:hidden;margin-bottom:10px;background:#fff;}
+.service-row{display:block;border-bottom:1px solid #cbd5e1;padding:6px 12px;font-size:16px;}
+.service-row:last-child{border-bottom:none;}
+.service-row:nth-child(even){background:#f8fafc;}
+.service-row .label{display:inline-block;vertical-align:middle;width:30%;font-weight:bold;color:#1e293b;font-size:16px;}
+.service-row .opts{display:inline-block;vertical-align:middle;width:68%;}
+.service-row .opts label{display:inline-block;cursor:pointer;font-size:16px;margin:0 6px 0 0;vertical-align:middle;}
+.service-row .opts input[type=text]{border:none;border-bottom:2px solid #3b82f6;background:transparent;padding:4px 7px;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;outline:none;min-width:130px;color:#1e293b;font-weight:bold;text-align:center;direction:ltr;}
+.lmu-service-label{font-size:16px !important;font-weight:bold;}
+.lmu-service-label span{font-size:17px;}
+
+.section-title{background:#1e293b;background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);color:#fff;font-weight:bold;padding:8px 12px;border-radius:6px 6px 0 0;font-size:16px;border-bottom:2px solid #dbeafe;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;text-align:center;letter-spacing:.5px;}
+
+table.tele-table{width:100%;border-collapse:collapse;font-size:15.5px;background:#fff;border:1px solid #cbd5e1;}
+table.tele-table th{background:#dbeafe;color:#1e293b;font-weight:bold;font-size:15.5px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;border:1px solid #cbd5e1;border-bottom:2px solid #3b82f6;padding:6px;text-align:center;}
+table.tele-table td{border:1px solid #cbd5e1;padding:5px;text-align:center;}
+table.tele-table tbody tr:nth-child(even) td{background:#f8fafc;}
+table.tele-table tbody tr:nth-child(odd) td{background:#fff;}
+table.tele-table td input{width:100%;border:none;background:transparent;text-align:center;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;outline:none;color:#1e293b;font-weight:bold;direction:ltr;}
+table.tele-table td select{width:100%;border:none;background:transparent;text-align:center;font-size:19px;font-family:'BKoodB',Tahoma,sans-serif;padding:3px;outline:none;color:#1e293b;font-weight:bold;cursor:pointer;}
+
+.usage-row{padding:8px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:6px;margin-bottom:10px;font-size:16px;}
+.usage-row .u-title{display:inline-block;font-weight:bold;color:#1e293b;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:16px;margin:0 8px 0 0;vertical-align:middle;}
 .usage-row .u-items{display:inline-block;vertical-align:middle;}
-.usage-row label{
-  display:inline-block;cursor:pointer;font-size:16px;
-  font-weight:bold;color:#1e293b;margin:0 10px 0 0;vertical-align:middle;
-}
+.usage-row label{display:inline-block;cursor:pointer;font-size:16px;font-weight:bold;color:#1e293b;margin:0 10px 0 0;vertical-align:middle;}
 
-.reset-row{
-  padding:8px 12px;background:#dbeafe;border:1px solid #cbd5e1;
-  border-right:4px solid #3b82f6;border-radius:6px;
-  margin:10px 0;font-size:16px;
-}
+.reset-row{padding:8px 12px;background:#dbeafe;border:1px solid #cbd5e1;border-right:4px solid #3b82f6;border-radius:6px;margin:10px 0;font-size:16px;}
 .small-label{font-size:15.5px !important;}
 .small-input{font-size:19px !important;}
 
 .signatures{margin-top:10px;font-size:0;}
-.sign-box{
-  display:inline-block;width:49%;vertical-align:top;
-  border:1px solid #cbd5e1;border-radius:6px;padding:10px;
-  background:#f0f9ff;font-size:16px;border-top:3px solid #3b82f6;
-  box-sizing:border-box;margin-left:1%;
-}
+.sign-box{display:inline-block;width:49%;vertical-align:top;border:1px solid #cbd5e1;border-radius:6px;padding:10px;background:#f0f9ff;font-size:16px;border-top:3px solid #3b82f6;box-sizing:border-box;margin-left:1%;}
 .sign-box:first-child{margin-left:0;}
 .sign-box .row{margin-bottom:6px;}
-.sign-box .row label{
-  font-weight:bold;color:#1e293b;font-size:17.5px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;display:block;
-}
-.sign-box .row input{
-  width:100%;border:none;border-bottom:1.5px dashed #94a3b8;
-  background:transparent;padding:4px;font-size:17px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;outline:none;
-  color:#1e293b;font-weight:bold;box-sizing:border-box;
-}
-.sign-box .row input[readonly]{
-  background:#dbeafe;padding:4px 6px;border-radius:4px;
-  border-bottom:1.5px solid #3b82f6;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-.sign-box .sign-label-amp{
-  font-weight:bold;color:#1e293b;margin-top:4px;font-size:15px;
-  font-family:'BKoodB',Tahoma,sans-serif;
-}
+.sign-box .row label{font-weight:bold;color:#1e293b;font-size:17.5px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;display:block;}
+.sign-box .row input{width:100%;border:none;border-bottom:1.5px dashed #94a3b8;background:transparent;padding:4px;font-size:17px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;outline:none;color:#1e293b;font-weight:bold;box-sizing:border-box;}
+.sign-box .row input[readonly]{background:#dbeafe;padding:4px 6px;border-radius:4px;border-bottom:1.5px solid #3b82f6;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+.sign-box .sign-label-amp{font-weight:bold;color:#1e293b;margin-top:4px;font-size:15px;font-family:'BKoodB',Tahoma,sans-serif;}
 
-.actions{
-  margin-top:12px;padding:10px;background:#fff;border-radius:8px;
-  box-shadow:0 -2px 10px rgba(15,23,42,.08);border:1px solid #cbd5e1;
-  font-size:0;
-}
-.actions button{
-  display:inline-block;padding:10px 20px;border:none;border-radius:6px;
-  font-size:16.5px;cursor:pointer;font-weight:bold;
-  transition:opacity .15s;font-family:'BTitrBd','BKoodB',inherit;
-  margin:0 4px 4px 0;vertical-align:middle;
-}
-.btn-save{background:#1d4ed8;background-image:linear-gradient(180deg,#3b82f6,#1d4ed8);color:#fff;}
+.actions{margin-top:12px;padding:10px;background:#fff;border-radius:8px;box-shadow:0 -2px 10px rgba(15,23,42,.08);border:1px solid #cbd5e1;font-size:0;}
+.actions button{display:inline-block;padding:10px 20px;border:none;border-radius:6px;font-size:16.5px;cursor:pointer;font-weight:bold;transition:opacity .15s;font-family:'BTitrBd','BKoodB',inherit;margin:0 4px 4px 0;vertical-align:middle;}
 .btn-print{background:#059669;color:#fff;}
-.btn-pdf{background:#dc2626;background-image:linear-gradient(180deg,#ef4444,#dc2626);color:#fff;}
 .btn-clear{background:#a01c1c;color:#fff;}
 .actions button:hover{opacity:.9;}
 
-.app-footer{
-  text-align:center;margin-top:14px;padding:10px;
-  color:#475569;font-size:15px;border-top:1px solid #cbd5e1;
-}
+.app-footer{text-align:center;margin-top:14px;padding:10px;color:#475569;font-size:15px;border-top:1px solid #cbd5e1;}
 .app-footer strong{color:#1e293b;font-size:16px;}
 
-.bd-station-box{
-  border:1px solid #cbd5e1;border-radius:6px;padding:10px 14px;
-  margin-bottom:10px;background:#f0f9ff;
-}
-.bd-station-box .bd-title{
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#1e293b;
-  font-size:16px;font-weight:bold;
-}
-.bd-station-box .bd-item{
-  display:inline-block;margin:0 14px 0 0;vertical-align:middle;
-}
-.bd-station-box .bd-item label{
-  font-weight:bold;color:#1e293b;font-size:16px;
-}
-.bd-station-box select.bd-station-select{
-  border:none;border-bottom:2px solid #3b82f6;background:transparent;
-  padding:4px 6px;font-size:17px;font-family:'BKoodB',Tahoma,sans-serif;
-  outline:none;text-align:center;color:#1e293b;font-weight:bold;
-  min-width:130px;cursor:pointer;
-}
+.bd-station-box{border:1px solid #cbd5e1;border-radius:6px;padding:10px 14px;margin-bottom:10px;background:#f0f9ff;}
+.bd-station-box .bd-title{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#1e293b;font-size:16px;font-weight:bold;}
+.bd-station-box .bd-item{display:inline-block;margin:0 14px 0 0;vertical-align:middle;}
+.bd-station-box .bd-item label{font-weight:bold;color:#1e293b;font-size:16px;}
+.bd-station-box select.bd-station-select{border:none;border-bottom:2px solid #3b82f6;background:transparent;padding:4px 6px;font-size:17px;font-family:'BKoodB',Tahoma,sans-serif;outline:none;text-align:center;color:#1e293b;font-weight:bold;min-width:130px;cursor:pointer;}
 .bd-station-box select.bd-station-select:focus{background:#dbeafe;border-radius:3px;}
-.bd-station-box input.bd-station-name{
-  border:none;border-bottom:2px solid #3b82f6;background:transparent;
-  padding:4px 6px;font-size:17px;font-family:'BKoodB',Tahoma,sans-serif;
-  outline:none;text-align:center;color:#1e293b;font-weight:bold;
-  min-width:200px;
-}
+.bd-station-box input.bd-station-name{border:none;border-bottom:2px solid #3b82f6;background:transparent;padding:4px 6px;font-size:17px;font-family:'BKoodB',Tahoma,sans-serif;outline:none;text-align:center;color:#1e293b;font-weight:bold;min-width:200px;}
 .bd-station-box input.bd-station-name:focus{background:#dbeafe;border-radius:3px;}
 .bd-station-box input.bd-station-name:disabled{opacity:.4;background:#f0f4f8;border-bottom-color:#ccc;cursor:not-allowed;}
 
@@ -727,57 +322,18 @@ table.tele-table td select{
 #abbForm .section-title{direction:ltr;}
 #abbForm .usage-row label{direction:ltr;}
 
-#abbForm .abb-grid-table{
-  width:100%;border-collapse:collapse;
-  font-size:15.5px;background:#fff;
-  border:1px solid #cbd5e1;
-  margin-bottom:10px;
-}
-#abbForm .abb-grid-table th{
-  background:#dbeafe;color:#1e293b;
-  font-weight:bold;font-size:15.5px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  border:1px solid #cbd5e1;border-bottom:2px solid #3b82f6;
-  padding:6px;text-align:center;
-}
-#abbForm .abb-grid-table td{
-  border:1px solid #cbd5e1;padding:5px;text-align:center;
-  background:#fff;font-size:15.5px;
-}
+#abbForm .abb-grid-table{width:100%;border-collapse:collapse;font-size:15.5px;background:#fff;border:1px solid #cbd5e1;margin-bottom:10px;}
+#abbForm .abb-grid-table th{background:#dbeafe;color:#1e293b;font-weight:bold;font-size:15.5px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;border:1px solid #cbd5e1;border-bottom:2px solid #3b82f6;padding:6px;text-align:center;}
+#abbForm .abb-grid-table td{border:1px solid #cbd5e1;padding:5px;text-align:center;background:#fff;font-size:15.5px;}
 #abbForm .abb-grid-table tbody tr:nth-child(even) td{background:#f8fafc;}
 #abbForm .abb-grid-table tbody tr:nth-child(odd) td{background:#fff;}
 #abbForm .abb-grid-table tbody tr:hover td{background:#eff6ff;}
-#abbForm .abb-grid-table td.cell-label{
-  text-align:left;padding-left:12px;font-weight:bold;
-  color:#1e293b;background:inherit;
-}
-#abbForm .abb-grid-table td.cell-vf{
-  text-align:center;font-weight:bold;color:#1e293b;
-  background:inherit;font-size:17px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-#abbForm .abb-grid-table td.cell-coax{
-  text-align:center;font-weight:bold;color:#1e293b;
-  background:inherit;font-size:17px;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-}
-#abbForm .abb-grid-table td input[type=text]{
-  width:100%;border:none;background:transparent;
-  text-align:center;font-size:17px;padding:3px;outline:none;
-  color:#1e293b;font-weight:bold;direction:ltr;
-  font-family:'BKoodB',Tahoma,sans-serif;
-}
-#abbForm .abb-grid-table td input[type=text]:focus{
-  background:#dbeafe;border-radius:3px;box-shadow:inset 0 0 0 1px #3b82f6;
-}
-#abbForm .abb-trans-title{
-  border:1px solid #cbd5e1;border-bottom:none;text-align:center;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-weight:bold;font-size:16px;padding:8px;
-  background:#1e293b;
-  background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);
-  color:#fff;letter-spacing:.5px;border-radius:6px 6px 0 0;
-}
+#abbForm .abb-grid-table td.cell-label{text-align:left;padding-left:12px;font-weight:bold;color:#1e293b;background:inherit;}
+#abbForm .abb-grid-table td.cell-vf{text-align:center;font-weight:bold;color:#1e293b;background:inherit;font-size:17px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+#abbForm .abb-grid-table td.cell-coax{text-align:center;font-weight:bold;color:#1e293b;background:inherit;font-size:17px;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;}
+#abbForm .abb-grid-table td input[type=text]{width:100%;border:none;background:transparent;text-align:center;font-size:17px;padding:3px;outline:none;color:#1e293b;font-weight:bold;direction:ltr;font-family:'BKoodB',Tahoma,sans-serif;}
+#abbForm .abb-grid-table td input[type=text]:focus{background:#dbeafe;border-radius:3px;box-shadow:inset 0 0 0 1px #3b82f6;}
+#abbForm .abb-trans-title{border:1px solid #cbd5e1;border-bottom:none;text-align:center;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-weight:bold;font-size:16px;padding:8px;background:#1e293b;background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);color:#fff;letter-spacing:.5px;border-radius:6px 6px 0 0;}
 #abbForm .abb-grid-table{border-radius:0 0 6px 6px;overflow:hidden;}
 #abbForm .abb-grid-table:last-of-type{margin-bottom:10px;}
 
@@ -793,82 +349,23 @@ table.tele-table td select{
 #dimatForm .actions{direction:rtl;text-align:right;}
 #dimatForm .section-title{direction:ltr;}
 
-#dimatForm .dimat-trans-title{
-  border:1px solid #cbd5e1;border-bottom:none;text-align:center;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-weight:bold;font-size:16px;padding:8px;
-  background:#1e293b;
-  background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);
-  color:#fff;letter-spacing:.5px;border-radius:6px 6px 0 0;
-}
+#dimatForm .dimat-trans-title{border:1px solid #cbd5e1;border-bottom:none;text-align:center;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-weight:bold;font-size:16px;padding:8px;background:#1e293b;background-image:linear-gradient(90deg,#1e293b,#3b82f6,#1e293b);color:#fff;letter-spacing:.5px;border-radius:6px 6px 0 0;}
 
-#dimatForm .dimat-grid-table{
-  width:100%;border-collapse:collapse;font-size:14px;
-  background:#fff;border:1px solid #cbd5e1;
-  margin-bottom:14px;table-layout:fixed;
-  border-radius:0 0 6px 6px;overflow:hidden;
-}
+#dimatForm .dimat-grid-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border:1px solid #cbd5e1;margin-bottom:14px;table-layout:fixed;border-radius:0 0 6px 6px;overflow:hidden;}
 #dimatForm .dimat-grid-table th,
-#dimatForm .dimat-grid-table td{
-  border:1px solid #cbd5e1;padding:5px 4px;
-  text-align:center;vertical-align:middle;
-  color:#1e293b;background:#fff;font-size:14px;
-  font-family:'BKoodB',Tahoma,sans-serif;font-weight:normal;
-}
-#dimatForm .dimat-grid-table th{
-  background:#dbeafe;color:#1e293b;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-weight:bold;font-size:14px;border-bottom:2px solid #3b82f6;
-  padding:6px 4px;
-}
-#dimatForm .dimat-grid-table td.cell-label{
-  text-align:left;padding-left:10px;font-weight:bold;
-  color:#1e293b;background:#f0f9ff;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-size:14.5px;
-}
-#dimatForm .dimat-grid-table td.cell-bold{
-  font-weight:bold;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  color:#1e293b;background:#f8fafc;
-}
+#dimatForm .dimat-grid-table td{border:1px solid #cbd5e1;padding:5px 4px;text-align:center;vertical-align:middle;color:#1e293b;background:#fff;font-size:14px;font-family:'BKoodB',Tahoma,sans-serif;font-weight:normal;}
+#dimatForm .dimat-grid-table th{background:#dbeafe;color:#1e293b;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-weight:bold;font-size:14px;border-bottom:2px solid #3b82f6;padding:6px 4px;}
+#dimatForm .dimat-grid-table td.cell-label{text-align:left;padding-left:10px;font-weight:bold;color:#1e293b;background:#f0f9ff;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:14.5px;}
+#dimatForm .dimat-grid-table td.cell-bold{font-weight:bold;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;color:#1e293b;background:#f8fafc;}
 #dimatForm .dimat-grid-table td.cell-empty{background:#fff;}
-#dimatForm .dimat-grid-table td input[type=text]{
-  width:100%;border:none;background:transparent;
-  text-align:center;font-size:15px;padding:2px;outline:none;
-  color:#1e293b;font-weight:bold;direction:ltr;
-  font-family:'BKoodB',Tahoma,sans-serif;
-}
-#dimatForm .dimat-grid-table td input[type=text]:focus{
-  background:#dbeafe;border-radius:2px;box-shadow:inset 0 0 0 1px #3b82f6;
-}
-#dimatForm .dimat-grid-table tbody tr:nth-child(even) td:not(.cell-empty){
-  background:#f8fafc;
-}
-#dimatForm .dimat-grid-table tbody tr:nth-child(even) td.cell-label{
-  background:#f0f9ff;
-}
-#dimatForm .dimat-grid-table tbody tr:hover td:not(.cell-empty){
-  background:#eff6ff;
-}
-#dimatForm .dimat-cell-multiline{
-  display:block;text-align:center;
-}
-#dimatForm .dimat-cell-multiline input{
-  text-align:center !important;font-size:13px !important;
-  display:block;width:100%;
-}
-#dimatForm .dimat-vertical{
-  writing-mode:vertical-rl;
-  -webkit-writing-mode:vertical-rl;
-  transform:rotate(180deg);
-  -webkit-transform:rotate(180deg);
-  white-space:nowrap;
-  font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-  font-size:12.5px;padding:4px 2px;text-align:center;
-  font-weight:bold;letter-spacing:.3px;
-  background:#dbeafe;color:#1e293b;
-}
+#dimatForm .dimat-grid-table td input[type=text]{width:100%;border:none;background:transparent;text-align:center;font-size:15px;padding:2px;outline:none;color:#1e293b;font-weight:bold;direction:ltr;font-family:'BKoodB',Tahoma,sans-serif;}
+#dimatForm .dimat-grid-table td input[type=text]:focus{background:#dbeafe;border-radius:2px;box-shadow:inset 0 0 0 1px #3b82f6;}
+#dimatForm .dimat-grid-table tbody tr:nth-child(even) td:not(.cell-empty){background:#f8fafc;}
+#dimatForm .dimat-grid-table tbody tr:nth-child(even) td.cell-label{background:#f0f9ff;}
+#dimatForm .dimat-grid-table tbody tr:hover td:not(.cell-empty){background:#eff6ff;}
+#dimatForm .dimat-cell-multiline{display:block;text-align:center;}
+#dimatForm .dimat-cell-multiline input{text-align:center !important;font-size:13px !important;display:block;width:100%;}
+#dimatForm .dimat-vertical{writing-mode:vertical-rl;-webkit-writing-mode:vertical-rl;transform:rotate(180deg);-webkit-transform:rotate(180deg);white-space:nowrap;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:12.5px;padding:4px 2px;text-align:center;font-weight:bold;letter-spacing:.3px;background:#dbeafe;color:#1e293b;}
 
 @media screen{.print-header{display:none !important;}}
 
@@ -888,14 +385,11 @@ body.theme-navy .form-card{border-top-color:#4a90c2;}
 body.theme-navy table.form-table th{background:#2c6690;background-image:linear-gradient(180deg,#4a90c2,#2c6690);border-color:#2c6690;border-bottom:2px solid #2c6690;}
 body.theme-navy table.form-table td input[type=text]:focus{box-shadow:inset 0 0 0 1px #4a90c2;}
 body.theme-navy table.tele-table th{border-bottom-color:#4a90c2;}
-body.theme-navy .actions button.btn-save{background:#1a4a75;background-image:linear-gradient(180deg,#4a90c2,#1a4a75);}
 body.theme-navy .actions button.btn-print{background:#1e7a3f;}
 body.theme-navy .reset-row{border-right-color:#4a90c2;}
 body.theme-navy .sign-box{border-top-color:#4a90c2;}
 body.theme-navy .sign-box .row input[readonly]{background:#d8e8f5;border-bottom-color:#4a90c2;}
 body.theme-navy .check-item .num{background:#1a4a75;}
-body.theme-navy .brand-trigger{border-color:#7eadd0;}
-body.theme-navy .brand-trigger:hover{border-color:#4a90c2;}
 body.theme-navy .service-row .opts input[type=text]{border-bottom-color:#4a90c2;}
 body.theme-navy .check-item input.inline-input{border-bottom-color:#4a90c2;}
 body.theme-navy .bd-station-box select.bd-station-select,
@@ -910,40 +404,50 @@ body.theme-navy #dimatForm .dimat-grid-table td.cell-label{background:#d8e8f5;}
 body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 
 /* ═══════════════════════════════════════════════════════════════
-   PRINT STYLES
+   PRINT STYLES — حل قطعی مشکل دو صفحه‌ای در موبایل
    ═══════════════════════════════════════════════════════════════ */
-@page{size:A4 portrait;margin:5mm;}
+@page{size:A4 portrait;margin:4mm;}
 
 @media print{
   html,body{
     background:#fff !important;
-    padding:0 !important;
-    margin:0 !important;
-    width:200mm !important;
+    padding:0 !important;margin:0 !important;
+    width:100% !important;
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
     color-adjust:exact !important;
+    font-size:7px !important;
   }
 
   .app-header,.tabs,.actions,.welcome-notif,#loginPage,.app-footer,#dateModal{
     display:none !important;
   }
 
-  #appPage{max-width:none !important;margin:0 !important;padding:0 !important;}
+  #appPage{
+    max-width:none !important;
+    margin:0 !important;padding:0 !important;
+    width:100% !important;
+  }
 
+  /* ═══ راه‌حل کلیدی: هر form-card یک صفحه A4 کامل، بدون تقسیم ═══ */
   .form-card{
     box-shadow:none !important;
     padding:0 !important;
-    margin:0 0 2px 0 !important;
+    margin:0 !important;
     border:none !important;
     border-top:none !important;
-    page-break-inside:avoid;
-    page-break-after:always;
-    break-inside:avoid;
-    max-height:287mm !important;
-    overflow:hidden !important;
+    page-break-inside:avoid !important;
+    break-inside:avoid !important;
+    page-break-after:always !important;
+    break-after:page !important;
+    /* ═══ مهم: max-height حذف شد تا محتوا خودش رو تنظیم کنه ═══ */
+    max-height:none !important;
+    overflow:visible !important;
+    width:100% !important;
+    /* ═══ مقیاس‌بندی خودکار محتوا به عرض A4 ═══ */
+    zoom:0.72;
   }
-  .form-card:last-child{page-break-after:auto;}
+  .form-card:last-child{page-break-after:auto !important;break-after:auto !important;}
   .form-card h2{display:none !important;}
   .hidden{display:none !important;}
 
@@ -953,133 +457,112 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     align-items:center;
     justify-content:space-between;
     border-bottom:1.5px solid #1e293b;
-    padding-bottom:5px;
-    margin-bottom:5px;
+    padding-bottom:4px;
+    margin-bottom:4px;
   }
+  .print-header .ph-logo-side{display:flex;align-items:center;justify-content:flex-start;min-width:150px;}
+  .print-header .ph-logo-side img{max-width:150px !important;max-height:52px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
+  .print-header .ph-center{flex:1;text-align:center;padding-top:1px;}
+  .print-header .ph-center h2{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:14px !important;font-weight:bold;color:#1e293b;margin:0 0 2px;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-center h3{font-size:13px !important;font-weight:bold;color:#2d3748;margin:0;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-tuv-side{display:flex;align-items:center;justify-content:flex-end;min-width:125px;}
+  .print-header .ph-tuv-side img{max-width:120px !important;max-height:44px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
 
-  .print-header .ph-logo-side{
-    display:flex;align-items:center;justify-content:flex-start;min-width:170px;
-  }
-  .print-header .ph-logo-side img{
-    max-width:165px !important;max-height:60px !important;
-    object-fit:contain;display:inline-block !important;visibility:visible !important;
-  }
+  /* ═══ اندازه‌های فشرده برای جا شدن در یک صفحه ═══ */
+  table.form-table{font-size:7.5px !important;margin-bottom:2px !important;}
+  table.form-table th{font-size:10px !important;padding:1px 2px !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
+  table.form-table td{padding:1px 2px !important;font-size:7.5px !important;}
+  table.form-table td input,table.form-table td select{font-size:12px !important;padding:0 !important;line-height:1.1 !important;}
 
-  .print-header .ph-center{
-    flex:1;text-align:center;padding-top:1px;
-  }
-  .print-header .ph-center h2{
-    font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;
-    font-size:15px !important;font-weight:bold;color:#1e293b;
-    margin:0 0 3px;border:none !important;padding:0 !important;line-height:1.3;
-  }
-  .print-header .ph-center h3{
-    font-size:14px !important;font-weight:bold;color:#2d3748;
-    margin:0;border:none !important;padding:0 !important;line-height:1.3;
-  }
+  .freq-cell{font-size:9px !important;padding:2px 4px !important;direction:ltr !important;text-align:left !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
+  .freq-cell input{font-size:11px !important;padding:0 2px !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
+  .freq-cell .eq-sign{font-size:18px !important;vertical-align:middle;}
 
-  .print-header .ph-tuv-side{
-    display:flex;align-items:center;justify-content:flex-end;min-width:140px;
+  /* ═══ انتخاب برند: مخفی کردن select، نمایش لوگو ═══ */
+  .brand-select{
+    display:none !important;
+    visibility:hidden !important;
   }
-  .print-header .ph-tuv-side img{
-    max-width:130px !important;max-height:50px !important;
-    object-fit:contain;display:inline-block !important;visibility:visible !important;
+  .brand-print-img{
+    display:inline-block !important;
+    visibility:visible !important;
+    max-height:26px !important;
+    max-width:100% !important;
+    object-fit:contain;
+    vertical-align:middle;
   }
-
-  body{font-size:8px !important;}
-  .brand-trigger{border:none !important;background:transparent !important;min-height:auto !important;padding:0 !important;}
-  .brand-trigger img{max-height:22px !important;}
-
-  table.form-table{font-size:8px !important;margin-bottom:2px !important;}
-  table.form-table th{font-size:10.5px !important;padding:1px 2px !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
-  table.form-table td{padding:1px 2px !important;font-size:8px !important;}
-  table.form-table td input,table.form-table td select{font-size:13px !important;padding:0 !important;line-height:1.1 !important;}
-
-  .freq-cell{
-    font-size:10px !important;
-    padding:2px 5px !important;
-    direction:ltr !important;
-    text-align:left !important;
-    font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;
-  }
-  .freq-cell input{
-    font-size:12px !important;
-    padding:0 2px !important;
-    font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;
-  }
-  .freq-cell .eq-sign{font-size:22px !important;vertical-align:middle;}
 
   .checklist-grid{gap:0 !important;margin-bottom:2px !important;}
   .check-item{padding:0 !important;}
-  .check-item .num{padding:1px 0 !important;font-size:9.5px !important;}
-  .check-item .txt{padding:1px 3px !important;font-size:11px !important;}
-  .check-item .opts{padding:0 2px !important;}
-  .check-item .opts label{font-size:11px !important;padding:0 3px !important;}
+  .check-item .num{padding:1px 0 !important;font-size:9px !important;width:28px !important;}
+  .check-item .txt{padding:1px 3px !important;font-size:10px !important;width:calc(100% - 28px - 135px) !important;}
+  .check-item .opts{padding:0 2px !important;width:135px !important;}
+  .check-item .opts label{font-size:10px !important;padding:0 3px !important;}
   .check-item .opts input[type=radio]{width:9px !important;height:9px !important;}
-  .check-item input.inline-input{font-size:12px !important;width:55px !important;}
+  .check-item input.inline-input{font-size:11px !important;width:55px !important;}
 
   .service-box{margin-bottom:2px !important;}
-  .service-row{padding:1px 4px !important;font-size:9px !important;}
-  .service-row .label,.service-row .opts label,.lmu-service-label{font-size:11.5px !important;}
-  .lmu-service-label span{font-size:11.5px !important;}
-  .service-row .opts input[type=text]{font-size:12px !important;min-width:90px !important;}
+  .service-row{padding:1px 4px !important;font-size:8.5px !important;}
+  .service-row .label,.service-row .opts label,.lmu-service-label{font-size:10.5px !important;}
+  .lmu-service-label span{font-size:10.5px !important;}
+  .service-row .opts input[type=text]{font-size:11px !important;min-width:80px !important;}
   .service-row .opts input[type=checkbox],.service-row .label input[type=checkbox]{width:9px !important;height:9px !important;min-width:9px !important;min-height:9px !important;}
 
-  .section-title{font-size:12px !important;padding:3px 5px !important;}
+  .section-title{font-size:11px !important;padding:2px 5px !important;}
 
-  table.tele-table{font-size:8px !important;}
-  table.tele-table th{padding:1px 2px !important;font-size:8.5px !important;}
-  table.tele-table td{padding:1px 2px !important;font-size:8px !important;}
-  table.tele-table td input{font-size:13px !important;padding:0 !important;}
-  table.tele-table td select{font-size:13px !important;color:#1e293b !important;}
+  table.tele-table{font-size:7.5px !important;}
+  table.tele-table th{padding:1px 2px !important;font-size:8px !important;}
+  table.tele-table td{padding:1px 2px !important;font-size:7.5px !important;}
+  table.tele-table td input{font-size:12px !important;padding:0 !important;}
+  table.tele-table td select{font-size:12px !important;color:#1e293b !important;}
   table.tele-table td select option[value=""]{color:transparent !important;font-size:0 !important;}
   table.tele-table td select:invalid,
   table.tele-table td select option:checked[value=""]{color:transparent !important;}
 
-  #lmuForm table.tele-table td.lmu-sig-desc{font-size:11.5px !important;font-weight:bold;}
+  #lmuForm table.tele-table td.lmu-sig-desc{font-size:10.5px !important;font-weight:bold;}
 
-  .reset-row{padding:1px 4px !important;font-size:8px !important;margin:2px 0 !important;}
+  .reset-row{padding:1px 4px !important;font-size:7.5px !important;margin:2px 0 !important;}
   .reset-row input[type=checkbox]{width:9px !important;height:9px !important;}
 
-  .usage-row{padding:2px 6px !important;font-size:9px !important;margin-bottom:3px !important;}
-  .usage-row .u-title,.usage-row label{font-size:10px !important;}
+  .usage-row{padding:2px 6px !important;font-size:8.5px !important;margin-bottom:3px !important;}
+  .usage-row .u-title,.usage-row label{font-size:9.5px !important;}
   .usage-row input[type=checkbox]{width:9px !important;height:9px !important;}
 
   .signatures{margin-top:2px !important;font-size:0;}
-  .sign-box{padding:2px 4px !important;font-size:7px !important;display:inline-block;width:49%;vertical-align:top;}
+  .sign-box{padding:2px 4px !important;font-size:6.5px !important;display:inline-block;width:49%;vertical-align:top;}
   .sign-box .row{margin-bottom:1px !important;}
-  .sign-box .row label{font-size:12px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
-  .sign-box .sign-label-amp{font-size:12px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
-  .sign-box .row input{font-size:12px !important;font-family:'BKoodB',Tahoma,sans-serif !important;padding:0 !important;}
+  .sign-box .row label{font-size:11px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
+  .sign-box .sign-label-amp{font-size:11px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
+  .sign-box .row input{font-size:11px !important;font-family:'BKoodB',Tahoma,sans-serif !important;padding:0 !important;}
 
-  .sign-box div[style*="height:45px"],.sign-box div[style*="height:35px"]{height:14px !important;}
-  .small-label{font-size:11px !important;}
-  .small-input{font-size:12px !important;}
+  .sign-box div[style*="height:45px"],.sign-box div[style*="height:35px"]{height:12px !important;}
+  .small-label{font-size:10.5px !important;}
+  .small-input{font-size:11px !important;}
 
   .bd-station-box{padding:2px 5px !important;margin-bottom:2px !important;}
-  .bd-station-box .bd-title,.bd-station-box .bd-item label{font-size:10px !important;}
-  .bd-station-box select.bd-station-select{font-size:12px !important;padding:0 4px !important;min-width:100px !important;}
-  .bd-station-box input.bd-station-name{font-size:12px !important;padding:0 4px !important;min-width:150px !important;}
+  .bd-station-box .bd-title,.bd-station-box .bd-item label{font-size:9.5px !important;}
+  .bd-station-box select.bd-station-select{font-size:11px !important;padding:0 4px !important;min-width:90px !important;}
+  .bd-station-box input.bd-station-name{font-size:11px !important;padding:0 4px !important;min-width:140px !important;}
 
-  #abbForm .abb-grid-table{font-size:8px !important;}
-  #abbForm .abb-grid-table th,#abbForm .abb-grid-table td{padding:1px 2px !important;font-size:8.5px !important;}
-  #abbForm .abb-grid-table td input[type=text]{font-size:13px !important;padding:0 !important;}
-  #abbForm .abb-trans-title{font-size:12px !important;padding:3px 5px !important;}
+  #abbForm .abb-grid-table{font-size:7.5px !important;}
+  #abbForm .abb-grid-table th,#abbForm .abb-grid-table td{padding:1px 2px !important;font-size:8px !important;}
+  #abbForm .abb-grid-table td input[type=text]{font-size:12px !important;padding:0 !important;}
+  #abbForm .abb-trans-title{font-size:11px !important;padding:2px 4px !important;}
 
-  #dimatForm .dimat-trans-title{font-size:12px !important;padding:3px 5px !important;}
-  #dimatForm .dimat-grid-table{font-size:8px !important;}
+  #dimatForm .dimat-trans-title{font-size:11px !important;padding:2px 4px !important;}
+  #dimatForm .dimat-grid-table{font-size:7.5px !important;}
   #dimatForm .dimat-grid-table th,
-  #dimatForm .dimat-grid-table td{padding:1px 2px !important;font-size:8.5px !important;height:20px !important;}
-  #dimatForm .dimat-grid-table th{font-size:8.5px !important;padding:2px 1px !important;}
-  #dimatForm .dimat-grid-table td.cell-label{font-size:9px !important;padding-left:5px !important;}
-  #dimatForm .dimat-grid-table td.cell-bold{font-size:9px !important;}
-  #dimatForm .dimat-grid-table td input[type=text]{font-size:11px !important;padding:0 !important;}
-  #dimatForm .dimat-vertical{font-size:8px !important;padding:1px !important;}
-  #dimatForm .dimat-cell-multiline input{font-size:10px !important;}
+  #dimatForm .dimat-grid-table td{padding:1px 1px !important;font-size:8px !important;height:18px !important;}
+  #dimatForm .dimat-grid-table th{font-size:8px !important;padding:2px 1px !important;}
+  #dimatForm .dimat-grid-table td.cell-label{font-size:8.5px !important;padding-left:4px !important;}
+  #dimatForm .dimat-grid-table td.cell-bold{font-size:8.5px !important;}
+  #dimatForm .dimat-grid-table td input[type=text]{font-size:10px !important;padding:0 !important;}
+  #dimatForm .dimat-vertical{font-size:7.5px !important;padding:1px !important;}
+  #dimatForm .dimat-cell-multiline input{font-size:9px !important;}
 
   .check-item{width:50% !important;display:inline-block !important;vertical-align:top !important;}
-  .check-item .txt{width:calc(100% - 32px - 150px) !important;}
-  .check-item .opts{width:150px !important;}
+  .check-item .txt{width:calc(100% - 28px - 135px) !important;}
+  .check-item .opts{width:135px !important;}
   .sign-box{width:49% !important;display:inline-block !important;vertical-align:top !important;}
   .service-row .label{width:30% !important;}
   .service-row .opts{width:68% !important;}
@@ -1108,61 +591,42 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 @media screen and (max-width: 700px) {
   body{padding:6px !important;font-size:15px !important;}
 
-  /* ═══ هدر ═══ */
+  /* ═══ هدر موبایل — همه در یک ردیف فشرده ═══ */
   .app-header{
-    padding:8px 10px !important;
-    flex-direction:column !important;
+    padding:7px 9px !important;
     gap:8px !important;
+    flex-wrap:nowrap !important;
   }
-  .app-header .logo-placeholder{width:48px !important;height:44px !important;}
-  .app-header h1{font-size:14px !important;line-height:1.4 !important;}
-  .app-header p{font-size:11.5px !important;}
-  .app-header .header-controls{
-    width:100% !important;
-    align-items:center !important;
-    justify-content:center !important;
-    margin-right:0 !important;
-  }
+  .app-header .logo-placeholder{width:52px !important;height:44px !important;}
+  .app-header h1{font-size:12px !important;line-height:1.25 !important;white-space:normal !important;overflow:visible !important;text-overflow:clip !important;}
+  .app-header p{font-size:10.5px !important;line-height:1.25 !important;white-space:normal !important;overflow:visible !important;text-overflow:clip !important;}
+  .app-header .titles{gap:1px !important;}
+  .app-header .header-controls{gap:4px !important;}
 
-  /* ═══ user-area افقی ═══ */
   .user-area{
     flex-wrap:nowrap !important;
-    gap:5px !important;
-    padding:5px 8px !important;
-    justify-content:center !important;
-    width:auto !important;
-    max-width:100% !important;
+    gap:4px !important;
+    padding:4px 7px !important;
   }
-  .user-area .uname{font-size:12.5px !important;}
-  .user-area button{padding:4px 8px !important;font-size:11.5px !important;}
-  .theme-select-inline{
-    font-size:11px !important;
-    padding:4px 5px !important;
-    max-width:78px !important;
-  }
+  .user-area .uname{font-size:11px !important;}
+  .user-area button{padding:3px 7px !important;font-size:10.5px !important;}
+  .theme-select-inline{font-size:10px !important;padding:3px 4px !important;max-width:72px !important;}
 
   /* ═══ تب‌ها ═══ */
   .tabs{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    overflow-x:auto !important;
-    -webkit-overflow-scrolling:touch !important;
-    gap:4px !important;
-    padding-bottom:6px !important;
-    margin-bottom:8px !important;
+    display:flex !important;flex-wrap:nowrap !important;
+    overflow-x:auto !important;-webkit-overflow-scrolling:touch !important;
+    gap:4px !important;padding-bottom:6px !important;margin-bottom:8px !important;
     scrollbar-width:thin;
   }
   .tabs::-webkit-scrollbar{height:5px;}
   .tabs::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px;}
   .tabs button{
-    flex:0 0 auto !important;
-    min-width:110px !important;
-    padding:9px 12px !important;
-    font-size:13.5px !important;
+    flex:0 0 auto !important;min-width:110px !important;
+    padding:9px 12px !important;font-size:13.5px !important;
     white-space:nowrap !important;
   }
 
-  /* ═══ کارت فرم — بدون اسکرول افقی ═══ */
   .form-card{padding:8px !important;overflow-x:visible !important;}
 
   /* ═══ جدول‌ها — فشرده بدون اسکرول ═══ */
@@ -1175,98 +639,87 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     table-layout:fixed !important;
   }
 
-  table.form-table{font-size:11px !important;}
+  table.form-table{font-size:10.5px !important;}
   table.form-table th{font-size:10px !important;padding:5px 2px !important;word-break:break-word;}
   table.form-table td{padding:4px 2px !important;}
   table.form-table td input[type=text],
-  table.form-table td select{font-size:13px !important;padding:4px 2px !important;min-height:30px;}
+  table.form-table td select{font-size:12px !important;padding:4px 2px !important;min-height:28px;}
 
-  table.tele-table{font-size:11px !important;}
+  table.tele-table{font-size:10.5px !important;}
   table.tele-table th{font-size:10px !important;padding:5px 2px !important;word-break:break-word;}
   table.tele-table td{padding:4px 2px !important;}
   table.tele-table td input,
-  table.tele-table td select{font-size:13px !important;padding:4px 2px !important;min-height:30px;}
+  table.tele-table td select{font-size:12px !important;padding:4px 2px !important;min-height:28px;}
 
   .abb-grid-table,
-  .dimat-grid-table{font-size:10px !important;}
+  .dimat-grid-table{font-size:9.5px !important;}
   #abbForm .abb-grid-table th,
-  #dimatForm .dimat-grid-table th{font-size:10px !important;padding:5px 1px !important;word-break:break-word;}
+  #dimatForm .dimat-grid-table th{font-size:9.5px !important;padding:4px 1px !important;word-break:break-word;}
   #abbForm .abb-grid-table td,
-  #dimatForm .dimat-grid-table td{padding:4px 1px !important;}
+  #dimatForm .dimat-grid-table td{padding:3px 1px !important;}
   #abbForm .abb-grid-table td input,
-  #dimatForm .dimat-grid-table td input{font-size:12px !important;padding:3px 1px !important;min-height:28px;}
+  #dimatForm .dimat-grid-table td input{font-size:11px !important;padding:3px 1px !important;min-height:26px;}
 
-  /* ═══ فیلدهای فرکانس ═══ */
-  .freq-cell{font-size:13px !important;padding:6px 3px !important;}
-  .freq-cell input{font-size:14px !important;min-height:30px;}
-  .freq-cell .eq-sign{font-size:18px !important;margin:0 1px !important;}
+  .freq-cell{font-size:12px !important;padding:5px 3px !important;}
+  .freq-cell input{font-size:13px !important;min-height:28px;}
+  .freq-cell .eq-sign{font-size:16px !important;margin:0 1px !important;}
+
+  /* ═══ select برند در موبایل ═══ */
+  .brand-select{font-size:13px !important;padding:3px 1px !important;}
 
   /* ═══ چک‌لیست ═══ */
   .check-item{width:100% !important;border-left:none !important;padding:4px 0 !important;}
-  .check-item .num{width:32px !important;font-size:13px !important;padding:12px 0 !important;}
+  .check-item .num{width:30px !important;font-size:12.5px !important;padding:12px 0 !important;}
   .check-item .txt{
-    width:calc(100% - 32px - 120px) !important;
-    font-size:13px !important;
-    padding:6px 6px !important;
+    width:calc(100% - 30px - 115px) !important;
+    font-size:12.5px !important;
+    padding:6px 5px !important;
     line-height:1.45 !important;
   }
-  .check-item .opts{width:120px !important;padding:4px 3px !important;}
-  .check-item .opts label{font-size:13px !important;padding:5px 7px !important;margin:1px !important;}
+  .check-item .opts{width:115px !important;padding:4px 3px !important;}
+  .check-item .opts label{font-size:12.5px !important;padding:5px 7px !important;margin:1px !important;}
   .check-item .opts input[type=radio]{width:16px !important;height:16px !important;}
 
-  /* ═══ service-row ═══ */
   .service-row{padding:7px 8px !important;}
-  .service-row .label{width:100% !important;font-size:13px !important;display:block;margin-bottom:6px;}
+  .service-row .label{width:100% !important;font-size:12.5px !important;display:block;margin-bottom:6px;}
   .service-row .opts{width:100% !important;}
   .service-row .opts label,
-  .lmu-service-label{font-size:13px !important;}
+  .lmu-service-label{font-size:12.5px !important;}
   .service-row .opts label{margin:0 8px 4px 0 !important;display:inline-block;}
-  .service-row .opts input[type=text]{width:100% !important;font-size:14px !important;min-height:34px;}
+  .service-row .opts input[type=text]{width:100% !important;font-size:13px !important;min-height:32px;}
 
-  /* ═══ چک‌باکس‌ها ═══ */
   input[type=checkbox]{width:20px !important;height:20px !important;min-width:20px !important;min-height:20px !important;}
 
-  /* ═══ دکمه‌ها — عمودی ═══ */
   .actions{padding:10px 8px !important;display:flex !important;flex-direction:column !important;gap:8px !important;}
   .actions button{width:100% !important;padding:14px !important;font-size:15px !important;margin:0 !important;}
 
-  /* ═══ امضاها ═══ */
   .signatures{display:block !important;}
   .sign-box{width:100% !important;margin:0 0 10px 0 !important;}
-  .sign-box .row label{font-size:14px !important;}
-  .sign-box .row input{font-size:14px !important;padding:7px !important;min-height:36px;}
+  .sign-box .row label{font-size:13.5px !important;}
+  .sign-box .row input{font-size:13.5px !important;padding:7px !important;min-height:34px;}
 
-  /* ═══ باکس ایستگاه ═══ */
   .bd-station-box{padding:10px 12px !important;}
   .bd-station-box .bd-item{display:block !important;margin:0 0 10px 0 !important;}
-  .bd-station-box .bd-item label{font-size:14px !important;display:block;margin-bottom:5px;}
+  .bd-station-box .bd-item label{font-size:13.5px !important;display:block;margin-bottom:5px;}
   .bd-station-box select.bd-station-select,
   .bd-station-box input.bd-station-name{
     width:100% !important;min-width:100% !important;
-    font-size:15px !important;padding:9px !important;min-height:40px;
+    font-size:14.5px !important;padding:9px !important;min-height:38px;
   }
-
-  /* ═══ مودال برند در موبایل ═══ */
-  .brand-modal-box{max-width:100% !important;padding:16px !important;}
-  .brand-modal-title{font-size:15.5px !important;}
-  .brand-modal-list{gap:8px !important;}
-  .brand-modal-item{min-height:60px !important;padding:10px 8px !important;}
-  .brand-modal-item img{max-height:38px !important;}
-  .brand-modal-cancel{padding:11px !important;font-size:14px !important;}
 }
 
 @media screen and (max-width: 400px) {
-  .check-item .txt{width:calc(100% - 32px - 105px) !important;font-size:12.5px !important;}
-  .check-item .opts{width:105px !important;}
-  .check-item .opts label{font-size:12.5px !important;padding:4px 6px !important;}
+  .check-item .txt{width:calc(100% - 30px - 100px) !important;font-size:12px !important;}
+  .check-item .opts{width:100px !important;}
+  .check-item .opts label{font-size:12px !important;padding:4px 6px !important;}
   .tabs button{min-width:100px !important;font-size:12.5px !important;}
-  .app-header h1{font-size:13px !important;}
-  .user-area .uname{font-size:11.5px !important;}
-  .user-area button{padding:3px 7px !important;font-size:11px !important;}
-  .theme-select-inline{font-size:10.5px !important;max-width:70px !important;}
+  .app-header h1{font-size:11px !important;}
+  .app-header p{font-size:9.5px !important;}
+  .user-area .uname{font-size:10px !important;}
+  .user-area button{padding:2px 6px !important;font-size:9.5px !important;}
+  .theme-select-inline{font-size:9.5px !important;max-width:66px !important;}
 }
 
-/* ═══ لمسی ═══ */
 @media (hover: none) and (pointer: coarse) {
   button, input[type=submit], select {
     min-height:42px;
@@ -1331,6 +784,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     <div class="ph-tuv-side"><img src="tuv.png" alt="TUV" onerror="this.style.display='none'"></div>
   </div>
 
+  <!-- ═══════════ هدر جدید — همه در یک راستا ═══════════ -->
   <header class="app-header">
     <div class="logo-placeholder"><img src="logo.png" alt="لوگو" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'color:#999;font-size:11px\'>لوگو</span>'"></div>
     <div class="titles">
@@ -1359,20 +813,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   </div>
 
   <datalist id="areaList">
-    <option value="بوشهر"></option>
-    <option value="پاسارگاد"></option>
-    <option value="جهرم"></option>
-    <option value="داراب"></option>
-    <option value="سورمق"></option>
-    <option value="شیراز"></option>
-    <option value="فسا"></option>
-    <option value="فیروزآباد"></option>
-    <option value="قائمیه"></option>
-    <option value="کازرون"></option>
-    <option value="لار"></option>
-    <option value="لامرد"></option>
-    <option value="مرودشت"></option>
-    <option value="نیریز"></option>
+    <option value="بوشهر"></option><option value="پاسارگاد"></option><option value="جهرم"></option>
+    <option value="داراب"></option><option value="سورمق"></option><option value="شیراز"></option>
+    <option value="فسا"></option><option value="فیروزآباد"></option><option value="قائمیه"></option>
+    <option value="کازرون"></option><option value="لار"></option><option value="لامرد"></option>
+    <option value="مرودشت"></option><option value="نیریز"></option>
   </datalist>
 
   <!-- PLC Form -->
@@ -1390,11 +835,14 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td rowspan="2"><input type="text" id="plc_line_no"></td>
           <td rowspan="2">
             <div class="brand-picker" id="plcBrandPicker">
-              <div class="brand-trigger" onclick="openBrandModal('plcBrandPicker')">
-                <span class="placeholder">انتخاب برند</span>
-                <img src="" alt="" style="display:none;">
-              </div>
-              <input type="hidden" id="plc_device" value="">
+              <select id="plc_device" class="brand-select">
+                <option value="">— انتخاب برند —</option>
+                <option value="SELTA">SELTA</option>
+                <option value="ABB">ABB</option>
+                <option value="DIMAT">DIMAT</option>
+                <option value="ALCATEL">ALCATEL</option>
+              </select>
+              <img class="brand-print-img" id="plc_brand_print_img" src="" alt="">
             </div>
           </td>
           <td class="freq-cell">TX <span class="eq-sign">=</span> <input type="text" id="plc_tx" style="width:55%;display:inline-block;"></td>
@@ -1496,8 +944,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('plc')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('plc')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1529,12 +976,8 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         <td>
           <select id="lmu_phase">
             <option value="">انتخاب کنید</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="A,B">A,B</option>
-            <option value="B,C">B,C</option>
-            <option value="A,B,C">A,B,C</option>
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option>
+            <option value="A,B">A,B</option><option value="B,C">B,C</option><option value="A,B,C">A,B,C</option>
           </select>
         </td>
         <td><select id="lmu_coupling"><option value="">انتخاب کنید</option><option value="فاز به فاز">فاز به فاز</option><option value="فاز به زمین">فاز به زمین</option></select></td>
@@ -1594,8 +1037,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('lmu')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('lmu')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1630,11 +1072,13 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         <td><input type="text" id="bd_plc_device" value="PLC Terminal"></td>
         <td>
           <div class="brand-picker" id="bdBrandPicker">
-            <div class="brand-trigger" onclick="openBrandModal('bdBrandPicker')">
-              <span class="placeholder">انتخاب برند</span>
-              <img src="" alt="" style="display:none;">
-            </div>
-            <input type="hidden" id="bd_plc_brand" value="">
+            <select id="bd_plc_brand" class="brand-select" onchange="setBdForm(this.value.toLowerCase());">
+              <option value="">— انتخاب —</option>
+              <option value="SELTA">SELTA</option>
+              <option value="ABB">ABB</option>
+              <option value="DIMAT">DIMAT</option>
+            </select>
+            <img class="brand-print-img" id="bd_plc_brand_print_img" src="" alt="">
           </div>
         </td>
         <td>
@@ -1702,11 +1146,13 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         <td><input type="text" id="bd_tps_device" value="TPS Terminal"></td>
         <td>
           <div class="brand-picker" id="bdTpsBrandPicker">
-            <div class="brand-trigger" onclick="openBrandModal('bdTpsBrandPicker')">
-              <span class="placeholder">انتخاب برند</span>
-              <img src="" alt="" style="display:none;">
-            </div>
-            <input type="hidden" id="bd_tps_brand" value="">
+            <select id="bd_tps_brand" class="brand-select" onchange="setBdForm(this.value.toLowerCase());">
+              <option value="">— انتخاب —</option>
+              <option value="SELTA">SELTA</option>
+              <option value="ABB">ABB</option>
+              <option value="DIMAT">DIMAT</option>
+            </select>
+            <img class="brand-print-img" id="bd_tps_brand_print_img" src="" alt="">
           </div>
         </td>
         <td><select id="bd_tps_model"><option value=""></option><option value="TPS-N">TPS-N</option><option value="TPS-NU">TPS-NU</option></select></td>
@@ -1778,8 +1224,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('bardasht')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('bardasht')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1787,16 +1232,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   <!-- SELTA Form -->
   <div id="seltaForm" class="form-card hidden">
     <div class="section-title">SELTA PLC — Test Sheet</div>
-
     <table class="form-table" style="margin-top:10px;">
       <thead>
         <tr>
-          <th style="width:13%;">Station</th>
-          <th style="width:11%;">Direction</th>
-          <th style="width:10%;">Link No</th>
-          <th colspan="2">Channel</th>
-          <th colspan="2">Frequency</th>
-          <th colspan="2">Power Supply</th>
+          <th style="width:13%;">Station</th><th style="width:11%;">Direction</th><th style="width:10%;">Link No</th>
+          <th colspan="2">Channel</th><th colspan="2">Frequency</th><th colspan="2">Power Supply</th>
         </tr>
         <tr>
           <th></th><th></th><th></th>
@@ -1815,13 +1255,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td><input type="text" id="selta_tx"></td>
           <td><input type="text" id="selta_rx_field"></td>
           <td><input type="text" id="selta_voltage" value="50 ولت"></td>
-          <td>
-            <select id="selta_amp">
-              <option value="">انتخاب کنید</option>
-              <option value="20W">20W</option>
-              <option value="40W">40W</option>
-            </select>
-          </td>
+          <td><select id="selta_amp"><option value="">انتخاب کنید</option><option value="20W">20W</option><option value="40W">40W</option></select></td>
         </tr>
       </tbody>
     </table>
@@ -1846,64 +1280,44 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
       <thead>
         <tr>
           <th rowspan="2" style="width:12%;">Signal</th>
-          <th colspan="2">10W</th>
-          <th colspan="2">20W</th>
-          <th colspan="2">40W</th>
-          <th rowspan="2" style="width:9%;">Load</th>
-          <th rowspan="2" style="width:9%;">Line</th>
-          <th rowspan="2" style="width:9%;">Coaxial</th>
+          <th colspan="2">10W</th><th colspan="2">20W</th><th colspan="2">40W</th>
+          <th rowspan="2" style="width:9%;">Load</th><th rowspan="2" style="width:9%;">Line</th><th rowspan="2" style="width:9%;">Coaxial</th>
         </tr>
-        <tr>
-          <th>Single</th><th>Double</th>
-          <th>Single</th><th>Double</th>
-          <th>Single</th><th>Double</th>
-        </tr>
+        <tr><th>Single</th><th>Double</th><th>Single</th><th>Double</th><th>Single</th><th>Double</th></tr>
       </thead>
       <tbody>
         <tr>
           <td>Carrier</td>
-          <td><input type="text" id="selta_carrier_10s" value="_27"></td>
-          <td><input type="text" id="selta_carrier_10d" value="_33"></td>
-          <td><input type="text" id="selta_carrier_20s" value="_24"></td>
-          <td><input type="text" id="selta_carrier_20d" value="_30"></td>
-          <td><input type="text" id="selta_carrier_40s" value="_21"></td>
-          <td><input type="text" id="selta_carrier_40d" value="_27"></td>
+          <td><input type="text" id="selta_carrier_10s" value="_27"></td><td><input type="text" id="selta_carrier_10d" value="_33"></td>
+          <td><input type="text" id="selta_carrier_20s" value="_24"></td><td><input type="text" id="selta_carrier_20d" value="_30"></td>
+          <td><input type="text" id="selta_carrier_40s" value="_21"></td><td><input type="text" id="selta_carrier_40d" value="_27"></td>
           <td><input type="text" id="selta_carrier_load"></td>
           <td><input type="text" id="selta_carrier_line"></td>
           <td><input type="text" id="selta_carrier_coax"></td>
         </tr>
         <tr>
           <td>Signalling</td>
-          <td><input type="text" id="selta_sig_10s" value="_31"></td>
-          <td><input type="text" id="selta_sig_10d" value="_37"></td>
-          <td><input type="text" id="selta_sig_20s" value="_28"></td>
-          <td><input type="text" id="selta_sig_20d" value="_34"></td>
-          <td><input type="text" id="selta_sig_40s" value="_25"></td>
-          <td><input type="text" id="selta_sig_40d" value="_31"></td>
+          <td><input type="text" id="selta_sig_10s" value="_31"></td><td><input type="text" id="selta_sig_10d" value="_37"></td>
+          <td><input type="text" id="selta_sig_20s" value="_28"></td><td><input type="text" id="selta_sig_20d" value="_34"></td>
+          <td><input type="text" id="selta_sig_40s" value="_25"></td><td><input type="text" id="selta_sig_40d" value="_31"></td>
           <td><input type="text" id="selta_sig_load"></td>
           <td><input type="text" id="selta_sig_line"></td>
           <td><input type="text" id="selta_sig_coax"></td>
         </tr>
         <tr>
           <td>Speech</td>
-          <td><input type="text" id="selta_speech_10s" value="_19"></td>
-          <td><input type="text" id="selta_speech_10d" value="_25"></td>
-          <td><input type="text" id="selta_speech_20s" value="_16"></td>
-          <td><input type="text" id="selta_speech_20d" value="_22"></td>
-          <td><input type="text" id="selta_speech_40s" value="_13"></td>
-          <td><input type="text" id="selta_speech_40d" value="_19"></td>
+          <td><input type="text" id="selta_speech_10s" value="_19"></td><td><input type="text" id="selta_speech_10d" value="_25"></td>
+          <td><input type="text" id="selta_speech_20s" value="_16"></td><td><input type="text" id="selta_speech_20d" value="_22"></td>
+          <td><input type="text" id="selta_speech_40s" value="_13"></td><td><input type="text" id="selta_speech_40d" value="_19"></td>
           <td><input type="text" id="selta_speech_load"></td>
           <td><input type="text" id="selta_speech_line"></td>
           <td><input type="text" id="selta_speech_coax"></td>
         </tr>
         <tr>
           <td>Telegraphy</td>
-          <td><input type="text" id="selta_tele_10s" value="_31"></td>
-          <td><input type="text" id="selta_tele_10d" value="_37"></td>
-          <td><input type="text" id="selta_tele_20s" value="_28"></td>
-          <td><input type="text" id="selta_tele_20d" value="_34"></td>
-          <td><input type="text" id="selta_tele_40s" value="_25"></td>
-          <td><input type="text" id="selta_tele_40d" value="_31"></td>
+          <td><input type="text" id="selta_tele_10s" value="_31"></td><td><input type="text" id="selta_tele_10d" value="_37"></td>
+          <td><input type="text" id="selta_tele_20s" value="_28"></td><td><input type="text" id="selta_tele_20d" value="_34"></td>
+          <td><input type="text" id="selta_tele_40s" value="_25"></td><td><input type="text" id="selta_tele_40d" value="_31"></td>
           <td><input type="text" id="selta_tele_load"></td>
           <td><input type="text" id="selta_tele_line"></td>
           <td><input type="text" id="selta_tele_coax"></td>
@@ -1913,12 +1327,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
 
     <div class="section-title">Receive Levels:</div>
     <table class="tele-table">
-      <thead>
-        <tr>
-          <th style="width:40%;">Receive Level On Coaxial</th>
-          <th>Value</th>
-        </tr>
-      </thead>
+      <thead><tr><th style="width:40%;">Receive Level On Coaxial</th><th>Value</th></tr></thead>
       <tbody>
         <tr><td style="text-align:right;">F- Carrier:</td><td><input type="text" id="selta_f_carrier"></td></tr>
         <tr><td style="text-align:right;">F-Signalling ( + ):</td><td><input type="text" id="selta_f_sig_plus"></td></tr>
@@ -1946,8 +1355,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('selta')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('selta')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -1955,16 +1363,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   <!-- ABB Form -->
   <div id="abbForm" class="form-card hidden">
     <div class="section-title">ABB PLC — Test Sheet</div>
-
     <table class="form-table" style="margin-top:10px;">
       <thead>
         <tr>
-          <th style="width:13%;">Station</th>
-          <th style="width:11%;">Direction</th>
-          <th style="width:10%;">Link No</th>
-          <th colspan="2">Channel</th>
-          <th colspan="2">Frequency</th>
-          <th colspan="2">Power Supply</th>
+          <th style="width:13%;">Station</th><th style="width:11%;">Direction</th><th style="width:10%;">Link No</th>
+          <th colspan="2">Channel</th><th colspan="2">Frequency</th><th colspan="2">Power Supply</th>
         </tr>
         <tr>
           <th></th><th></th><th></th>
@@ -1983,13 +1386,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td><input type="text" id="abb_tx"></td>
           <td><input type="text" id="abb_rx_field"></td>
           <td><input type="text" id="abb_voltage" value="50 ولت"></td>
-          <td>
-            <select id="abb_amp">
-              <option value="">انتخاب کنید</option>
-              <option value="20W">20W</option>
-              <option value="40W">40W</option>
-            </select>
-          </td>
+          <td><select id="abb_amp"><option value="">انتخاب کنید</option><option value="20W">20W</option><option value="40W">40W</option></select></td>
         </tr>
       </tbody>
     </table>
@@ -2084,8 +1481,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('abb')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('abb')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -2093,16 +1489,11 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   <!-- DIMAT Form -->
   <div id="dimatForm" class="form-card hidden">
     <div class="section-title">DIMAT PLC — Test Sheet</div>
-
     <table class="form-table" style="margin-top:10px;">
       <thead>
         <tr>
-          <th style="width:13%;">Station</th>
-          <th style="width:13%;">Direction</th>
-          <th style="width:11%;">Link No</th>
-          <th colspan="2">Channel</th>
-          <th colspan="2">Frequency</th>
-          <th colspan="2">Power Supply</th>
+          <th style="width:13%;">Station</th><th style="width:13%;">Direction</th><th style="width:11%;">Link No</th>
+          <th colspan="2">Channel</th><th colspan="2">Frequency</th><th colspan="2">Power Supply</th>
         </tr>
         <tr>
           <th></th><th></th><th></th>
@@ -2121,13 +1512,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td><input type="text" id="dimat_tx"></td>
           <td><input type="text" id="dimat_rx_field"></td>
           <td><input type="text" id="dimat_voltage" value="50 ولت"></td>
-          <td>
-            <select id="dimat_amp">
-              <option value="">انتخاب کنید</option>
-              <option value="20W">20W</option>
-              <option value="40W">40W</option>
-            </select>
-          </td>
+          <td><select id="dimat_amp"><option value="">انتخاب کنید</option><option value="20W">20W</option><option value="40W">40W</option></select></td>
         </tr>
       </tbody>
     </table>
@@ -2135,18 +1520,9 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     <div class="dimat-trans-title">TRANSMIT Levels:</div>
     <table class="dimat-grid-table">
       <colgroup>
-        <col style="width:9%;">
-        <col style="width:5%;">
-        <col style="width:9%;">
-        <col style="width:9%;">
-        <col style="width:9%;">
-        <col style="width:8%;">
-        <col style="width:8%;">
-        <col style="width:8%;">
-        <col style="width:8%;">
-        <col style="width:8%;">
-        <col style="width:9%;">
-        <col style="width:9%;">
+        <col style="width:9%;"><col style="width:5%;"><col style="width:9%;"><col style="width:9%;">
+        <col style="width:9%;"><col style="width:8%;"><col style="width:8%;"><col style="width:8%;">
+        <col style="width:8%;"><col style="width:8%;"><col style="width:9%;"><col style="width:9%;">
         <col style="width:1%;">
       </colgroup>
       <thead>
@@ -2159,26 +1535,16 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <th rowspan="3" style="border:none;background:transparent;"></th>
         </tr>
         <tr>
-          <th rowspan="2">Channel 1</th>
-          <th rowspan="2">Channel 2</th>
-          <th rowspan="2">Freq (KH)</th>
-          <th rowspan="2">Level (dB)</th>
-          <th colspan="4">Channel 1</th>
-          <th colspan="2">Channel 2</th>
+          <th rowspan="2">Channel 1</th><th rowspan="2">Channel 2</th>
+          <th rowspan="2">Freq (KH)</th><th rowspan="2">Level (dB)</th>
+          <th colspan="4">Channel 1</th><th colspan="2">Channel 2</th>
         </tr>
         <tr>
-          <th colspan="2">Single Ch</th>
-          <th colspan="2">Double Ch</th>
-          <th colspan="2">Double Ch</th>
+          <th colspan="2">Single Ch</th><th colspan="2">Double Ch</th><th colspan="2">Double Ch</th>
         </tr>
         <tr>
           <th colspan="6"></th>
-          <th>20W</th>
-          <th>40W</th>
-          <th>20W</th>
-          <th>40W</th>
-          <th>20W</th>
-          <th>40W</th>
+          <th>20W</th><th>40W</th><th>20W</th><th>40W</th><th>20W</th><th>40W</th>
           <th style="border:none;background:transparent;"></th>
         </tr>
       </thead>
@@ -2199,8 +1565,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td style="border:none;background:transparent;"></td>
         </tr>
         <tr>
-          <td class="cell-empty"></td>
-          <td class="cell-empty"></td>
+          <td class="cell-empty"></td><td class="cell-empty"></td>
           <td class="cell-empty"><input type="text" id="dimat_pilot_row2_ch1"></td>
           <td class="cell-empty"><input type="text" id="dimat_pilot_row2_ch2"></td>
           <td class="cell-empty"></td>
@@ -2229,8 +1594,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <td style="border:none;background:transparent;"></td>
         </tr>
         <tr>
-          <td class="cell-empty"></td>
-          <td class="cell-empty"></td>
+          <td class="cell-empty"></td><td class="cell-empty"></td>
           <td class="cell-empty"><input type="text" id="dimat_sig_row2_ch1"></td>
           <td class="cell-empty"><input type="text" id="dimat_sig_row2_ch2"></td>
           <td class="cell-empty"></td>
@@ -2249,11 +1613,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     <div class="dimat-trans-title">RECEIVE Levels:</div>
     <table class="dimat-grid-table">
       <colgroup>
-        <col style="width:16%;">
-        <col style="width:20%;">
-        <col style="width:20%;">
-        <col style="width:22%;">
-        <col style="width:22%;">
+        <col style="width:16%;"><col style="width:20%;"><col style="width:20%;"><col style="width:22%;"><col style="width:22%;">
       </colgroup>
       <thead>
         <tr>
@@ -2262,27 +1622,14 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
           <th colspan="2">Nominal Output Impedance 600Ω</th>
         </tr>
         <tr>
-          <th>Channel 1</th>
-          <th>Channel 2</th>
-          <th>Frequency</th>
-          <th>Level(dB)</th>
+          <th>Channel 1</th><th>Channel 2</th><th>Frequency</th><th>Level(dB)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="cell-label">VTF</td>
-          <td>
-            <div class="dimat-cell-multiline">
-              <input type="text" id="dimat_vtf_ch1_a" value="ZOPC – BB1">
-              <input type="text" id="dimat_vtf_ch1_b" value="9-10 or 11-12" style="font-size:12px;">
-            </div>
-          </td>
-          <td>
-            <div class="dimat-cell-multiline">
-              <input type="text" id="dimat_vtf_ch2_a" value="ZBBA.14">
-              <input type="text" id="dimat_vtf_ch2_b" value="9-10 or 11-12" style="font-size:12px;">
-            </div>
-          </td>
+          <td><div class="dimat-cell-multiline"><input type="text" id="dimat_vtf_ch1_a" value="ZOPC – BB1"><input type="text" id="dimat_vtf_ch1_b" value="9-10 or 11-12" style="font-size:12px;"></div></td>
+          <td><div class="dimat-cell-multiline"><input type="text" id="dimat_vtf_ch2_a" value="ZBBA.14"><input type="text" id="dimat_vtf_ch2_b" value="9-10 or 11-12" style="font-size:12px;"></div></td>
           <td rowspan="2" class="cell-bold">Whole Band</td>
           <td><input type="text" id="dimat_vtf_level" value="-6"></td>
         </tr>
@@ -2294,18 +1641,8 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
         </tr>
         <tr>
           <td class="cell-label">Teleprotection</td>
-          <td>
-            <div class="dimat-cell-multiline">
-              <input type="text" id="dimat_tp_ch1_a" value="ZOPC – BB1">
-              <input type="text" id="dimat_tp_ch1_b" value="9-10">
-            </div>
-          </td>
-          <td>
-            <div class="dimat-cell-multiline">
-              <input type="text" id="dimat_tp_ch2_a" value="ZBBA.14">
-              <input type="text" id="dimat_tp_ch2_b" value="9-10">
-            </div>
-          </td>
+          <td><div class="dimat-cell-multiline"><input type="text" id="dimat_tp_ch1_a" value="ZOPC – BB1"><input type="text" id="dimat_tp_ch1_b" value="9-10"></div></td>
+          <td><div class="dimat-cell-multiline"><input type="text" id="dimat_tp_ch2_a" value="ZBBA.14"><input type="text" id="dimat_tp_ch2_b" value="9-10"></div></td>
           <td><input type="text" id="dimat_tp_freq" value="800"></td>
           <td><input type="text" id="dimat_tp_level" value="7"></td>
         </tr>
@@ -2339,8 +1676,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     </div>
 
     <div class="actions">
-      <button class="btn-print" onclick="window.print()">🖨️ پرینت</button>
-      <button class="btn-pdf" onclick="savePDF('dimat')">📄 ذخیره PDF</button>
+      <button class="btn-print" onclick="window.print()">🖨️ پرینت و ذخیره PDF</button>
       <button class="btn-clear" onclick="clearForm('dimat')">🗑️ پاک کردن</button>
     </div>
   </div>
@@ -2418,98 +1754,31 @@ function isDateField(el){
 });
 
 // ═══════════════════════════════════════════════════════════════
-//  انتخاب برند با مودال
-// ═══════════════════════════════════════════════════════════════
-var BRANDS = [
-  { id: 'SELTA',   name: 'SELTA',   img: 'Selta.png',   form: 'selta' },
-  { id: 'ABB',     name: 'ABB',     img: 'Abb.png',     form: 'abb' },
-  { id: 'DIMAT',   name: 'DIMAT',   img: 'Dimat.png',   form: 'dimat' },
-  { id: 'ALCATEL', name: 'ALCATEL', img: 'Alcatel.png', form: null }
-];
-
-var currentBrandPickerId = null;
-
-function openBrandModal(pickerId){
-  currentBrandPickerId = pickerId;
-
-  var modal = document.getElementById('brandModal');
-  if(!modal){
-    modal = document.createElement('div');
-    modal.id = 'brandModal';
-    modal.className = 'brand-modal';
-    modal.innerHTML =
-      '<div class="brand-modal-box">' +
-        '<div class="brand-modal-title">انتخاب برند دستگاه</div>' +
-        '<div class="brand-modal-list" id="brandModalList"></div>' +
-        '<button class="brand-modal-cancel" onclick="closeBrandModal()">انصراف</button>' +
-      '</div>';
-    modal.addEventListener('click', function(e){
-      if(e.target === modal) closeBrandModal();
-    });
-    document.body.appendChild(modal);
-  }
-
-  var list = document.getElementById('brandModalList');
-  list.innerHTML = '';
-
-  var picker = document.getElementById(pickerId);
-  var hiddenInput = picker.querySelector('input[type=hidden]');
-  var currentBrand = hiddenInput ? hiddenInput.value : '';
-
-  BRANDS.forEach(function(b){
-    var item = document.createElement('div');
-    item.className = 'brand-modal-item' + (b.id === currentBrand ? ' selected' : '');
-    item.innerHTML = '<img src="' + b.img + '" alt="' + b.name + '" onerror="this.style.display=\'none\';this.parentElement.textContent=\'' + b.name + '\'">';
-    item.onclick = function(){ pickBrand(b.id, b.img, b.form); };
-    list.appendChild(item);
-  });
-
-  modal.classList.add('show');
-}
-
-function closeBrandModal(){
-  var modal = document.getElementById('brandModal');
-  if(modal) modal.classList.remove('show');
-  currentBrandPickerId = null;
-}
-
-function pickBrand(brandId, img, formType){
-  if(!currentBrandPickerId) return;
-
-  var picker = document.getElementById(currentBrandPickerId);
-  if(!picker){ closeBrandModal(); return; }
-
-  var trigger = picker.querySelector('.brand-trigger');
-  var imgEl = trigger.querySelector('img');
-  var placeholder = trigger.querySelector('.placeholder');
-  var hiddenInput = picker.querySelector('input[type=hidden]');
-
-  if(imgEl){
-    imgEl.src = img;
-    imgEl.alt = brandId;
-    imgEl.style.display = 'block';
-    imgEl.setAttribute('data-brand', brandId);
-  }
-  if(placeholder) placeholder.style.display = 'none';
-  if(hiddenInput) hiddenInput.value = brandId;
-
-  if((currentBrandPickerId === 'bdBrandPicker' || currentBrandPickerId === 'bdTpsBrandPicker') && formType){
-    setBdForm(formType);
-  }
-
-  closeBrandModal();
-}
-
-function pickBrandDirect(pickerId, brandId, img){
-  var oldId = currentBrandPickerId;
-  currentBrandPickerId = pickerId;
-  pickBrand(brandId, img, null);
-  currentBrandPickerId = oldId;
-}
-
-// ═══════════════════════════════════════════════════════════════
 //  برند و ایستگاه
 // ═══════════════════════════════════════════════════════════════
+var BRAND_IMG_MAP = {
+  'SELTA':   'Selta.png',
+  'ABB':     'Abb.png',
+  'DIMAT':   'Dimat.png',
+  'ALCATEL': 'Alcatel.png'
+};
+
+function updateBrandPrintImg(selectEl){
+  if(!selectEl) return;
+  var brand = selectEl.value;
+  var picker = selectEl.closest('.brand-picker');
+  if(!picker) return;
+  var img = picker.querySelector('.brand-print-img');
+  if(!img) return;
+  if(brand && BRAND_IMG_MAP[brand]){
+    img.src = BRAND_IMG_MAP[brand];
+    img.alt = brand;
+  } else {
+    img.src = '';
+    img.alt = '';
+  }
+}
+
 function setBdForm(brand){
   var ids = ['bdCardsSelta','bdCardsDimat','bdCardsAbb','bdTpsSelta','bdTpsDimat','bdTpsAbb'];
   ids.forEach(function(id){ var el = document.getElementById(id); if(el) el.classList.add('hidden'); });
@@ -2665,33 +1934,24 @@ function showTab(tab){
   else if(tab === 'abb') pt.textContent = 'ABB PLC — Test Sheet';
   else pt.textContent = 'DIMAT PLC — Test Sheet';
 
+  // پر کردن نام کاربر و تاریخ در امضاها
+  ['plc','lmu','selta','abb','dimat'].forEach(function(p){
+    if(tab === p && currentUser){
+      var rn = document.getElementById(p + '_rep_name'); if(rn) rn.value = currentUser.name;
+      var sn = document.getElementById(p + '_sup_name'); if(sn) sn.value = currentSupervisor;
+      if(currentDate){
+        var rd = document.getElementById(p + '_rep_date'); if(rd) rd.value = currentDate;
+        var sd = document.getElementById(p + '_sup_date'); if(sd) sd.value = currentDate;
+      }
+    }
+  });
   if(tab === 'bardasht' && currentUser){
     var bn = document.getElementById('bd_rep_name'); if(bn) bn.value = currentUser.name;
-    var sn = document.getElementById('bd_sup_name'); if(sn) sn.value = currentSupervisor;
-    if(currentDate){ document.getElementById('bd_rep_date').value = currentDate; document.getElementById('bd_sup_date').value = currentDate; }
-  }
-  if(tab === 'selta' && currentUser){
-    var sn2 = document.getElementById('selta_rep_name'); if(sn2) sn2.value = currentUser.name;
-    var ssn = document.getElementById('selta_sup_name'); if(ssn) ssn.value = currentSupervisor;
-    if(currentDate){ document.getElementById('selta_rep_date').value = currentDate; document.getElementById('selta_sup_date').value = currentDate; }
-  }
-  if(tab === 'abb' && currentUser){
-    var an = document.getElementById('abb_rep_name'); if(an) an.value = currentUser.name;
-    var asn = document.getElementById('abb_sup_name'); if(asn) asn.value = currentSupervisor;
-    if(currentDate){ document.getElementById('abb_rep_date').value = currentDate; document.getElementById('abb_sup_date').value = currentDate; }
-  }
-  if(tab === 'dimat' && currentUser){
-    var dn = document.getElementById('dimat_rep_name'); if(dn) dn.value = currentUser.name;
-    var dsn = document.getElementById('dimat_sup_name'); if(dsn) dsn.value = currentSupervisor;
-    if(currentDate){ document.getElementById('dimat_rep_date').value = currentDate; document.getElementById('dimat_sup_date').value = currentDate; }
-  }
-  if(tab === 'plc' && currentUser){
-    var pn = document.getElementById('plc_rep_name'); if(pn) pn.value = currentUser.name;
-    var psn = document.getElementById('plc_sup_name'); if(psn) psn.value = currentSupervisor;
-  }
-  if(tab === 'lmu' && currentUser){
-    var ln = document.getElementById('lmu_rep_name'); if(ln) ln.value = currentUser.name;
-    var lsn = document.getElementById('lmu_sup_name'); if(lsn) lsn.value = currentSupervisor;
+    var sn2 = document.getElementById('bd_sup_name'); if(sn2) sn2.value = currentSupervisor;
+    if(currentDate){
+      var rd2 = document.getElementById('bd_rep_date'); if(rd2) rd2.value = currentDate;
+      var sd2 = document.getElementById('bd_sup_date'); if(sd2) sd2.value = currentDate;
+    }
   }
 
   updateCheckItemLabels();
@@ -2718,6 +1978,14 @@ document.addEventListener('change', function(e){
       if(radio.checked){ label.classList.add('checked'); }
       else { label.classList.remove('checked'); }
     });
+  }
+  // بروزرسانی تصویر لوگو در پرینت برای brand-select
+  if(e.target.classList && e.target.classList.contains('brand-select')){
+    updateBrandPrintImg(e.target);
+    if(e.target.id === 'bd_plc_brand' || e.target.id === 'bd_tps_brand'){
+      var val = e.target.value.toLowerCase();
+      if(val) setBdForm(val);
+    }
   }
 });
 
@@ -2747,6 +2015,7 @@ function clearForm(prefix){
     else if(el.id === 'selta_voltage'){ el.value = '50 ولت'; }
     else if(el.id === 'abb_voltage'){ el.value = '50 ولت'; }
     else if(el.id === 'dimat_voltage'){ el.value = '50 ولت'; }
+    else if(el.classList && el.classList.contains('brand-select')){ el.value = ''; updateBrandPrintImg(el); }
     else el.value = '';
   });
   if(prefix === 'lmu'){
@@ -2799,13 +2068,6 @@ function clearForm(prefix){
   if(bn){ bn.disabled = true; bn.value = ''; }
   var bl = document.getElementById('bd_station_name_label');
   if(bl) bl.textContent = 'نام ایستگاه:';
-  ['plcBrandPicker','bdBrandPicker','bdTpsBrandPicker'].forEach(function(pid){
-    var p = document.getElementById(pid); if(!p) return;
-    var i = p.querySelector('.brand-trigger img'), ph = p.querySelector('.placeholder'), hi = p.querySelector('input[type=hidden]');
-    if(i){ i.src = ''; i.style.display = 'none'; }
-    if(ph) ph.style.display = 'block';
-    if(hi) hi.value = '';
-  });
   setBdForm('selta');
   try{ localStorage.removeItem(prefix + '_form'); }catch(e){}
   updateCheckItemLabels();
@@ -2829,35 +2091,31 @@ function loadAll(){
         els[0].checked = data[k];
       } else {
         els[0].value = data[k];
-      }
-      if(k === 'bd_station_type' && data[k]) toggleStationName();
-      if(k === 'plc_device' && data[k]){
-        var bm = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png','ALCATEL':'Alcatel.png'};
-        if(bm[data[k]]) pickBrandDirect('plcBrandPicker', data[k], bm[data[k]]);
-      }
-      if(k === 'bd_plc_brand' && data[k]){
-        var bm2 = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png'};
-        if(bm2[data[k]]){
-          pickBrandDirect('bdBrandPicker', data[k], bm2[data[k]]);
-          setBdForm(data[k] === 'DIMAT' ? 'dimat' : data[k] === 'ABB' ? 'abb' : 'selta');
+        if(els[0].classList && els[0].classList.contains('brand-select')){
+          updateBrandPrintImg(els[0]);
         }
       }
-      if(k === 'bd_tps_brand' && data[k]){
-        var bm3 = {'SELTA':'Selta.png','ABB':'Abb.png','DIMAT':'Dimat.png'};
-        if(bm3[data[k]]) pickBrandDirect('bdTpsBrandPicker', data[k], bm3[data[k]]);
-      }
+      if(k === 'bd_station_type' && data[k]) toggleStationName();
+      if(k === 'bd_plc_brand' && data[k]) setBdForm(data[k].toLowerCase());
+      if(k === 'bd_tps_brand' && data[k]) setBdForm(data[k].toLowerCase());
     });
   });
   updateCheckItemLabels();
 }
 
 // ═══════════════════════════════════════════════════════════════
-//  پرینت — حذف متن select های خالی
+//  پرینت — قبل و بعد
 // ═══════════════════════════════════════════════════════════════
 window.addEventListener('beforeprint', function(){
+  // اطمینان از اینکه تصاویر لوگو برند به‌روز هستن
+  document.querySelectorAll('.brand-select').forEach(function(sel){
+    updateBrandPrintImg(sel);
+  });
+  // حذف متن select های خالی
   document.querySelectorAll('select').forEach(function(sel){
+    if(sel.classList.contains('brand-select')) return;
     var selectedOpt = sel.options[sel.selectedIndex];
-    if(!sel.value || sel.value.trim() === ''){
+    if(selectedOpt && (!sel.value || sel.value.trim() === '')){
       sel.setAttribute('data-orig-text', selectedOpt.textContent);
       selectedOpt.textContent = '';
       sel.setAttribute('data-emptied', '1');
@@ -2875,159 +2133,6 @@ window.addEventListener('afterprint', function(){
     }
   });
 });
-
-// ═══════════════════════════════════════════════════════════════
-//  ذخیره PDF در یک صفحه
-// ═══════════════════════════════════════════════════════════════
-function savePDF(prefix){
-  if(typeof html2pdf === 'undefined'){
-    alert('کتابخانه html2pdf لود نشده است. لطفاً صفحه را دوباره باز کنید.');
-    return;
-  }
-
-  var form = document.getElementById(prefix + 'Form');
-  if(!form){ alert('فرم پیدا نشد!'); return; }
-
-  var titles = {
-    plc: 'چک-لیست-PLC',
-    lmu: 'چک-لیست-LMU',
-    bardasht: 'برداشت-اطلاعات',
-    selta: 'تست-شیت-SELTA',
-    abb: 'تست-شیت-ABB',
-    dimat: 'تست-شیت-DIMAT'
-  };
-  var fileName = titles[prefix] || 'form';
-  if(currentDate){ fileName += '_' + currentDate.replace(/\//g, '-'); }
-
-  var clone = form.cloneNode(true);
-  clone.querySelectorAll('.actions, .tabs, .app-header, .welcome-notif, .print-header').forEach(function(el){ el.remove(); });
-
-  var container = document.createElement('div');
-  container.className = 'pdf-export-mode';
-  container.style.cssText = 'position:fixed;left:-9999px;top:0;background:#fff;direction:rtl;font-family:"BKoodB",Tahoma,sans-serif;';
-
-  var header = document.querySelector('.print-header');
-  if(header){ container.appendChild(header.cloneNode(true)); }
-
-  container.appendChild(clone);
-  document.body.appendChild(container);
-
-  var styleFix = document.createElement('style');
-  styleFix.id = 'pdf-export-style';
-  styleFix.textContent = `
-    .pdf-export-mode {
-      background:#fff !important; color:#000 !important;
-      width:794px !important; padding:10px !important;
-      font-size:7px !important; line-height:1.2 !important;
-    }
-    .pdf-export-mode * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; box-sizing:border-box; }
-    .pdf-export-mode table.form-table { font-size:7px !important; margin-bottom:2px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode table.form-table th { font-size:9.5px !important; padding:1px 2px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; background:#334155 !important; color:#fff !important; border:1px solid #334155 !important; }
-    .pdf-export-mode table.form-table td { padding:1px 2px !important; font-size:7px !important; border:1px solid #cbd5e1 !important; background:#fff !important; }
-    .pdf-export-mode table.form-table td input, .pdf-export-mode table.form-table td select { font-size:11px !important; padding:0 !important; line-height:1.1 !important; }
-    .pdf-export-mode .freq-cell { font-size:9px !important; padding:1px 3px !important; direction:ltr !important; text-align:left !important; }
-    .pdf-export-mode .freq-cell input { font-size:11px !important; padding:0 2px !important; }
-    .pdf-export-mode .freq-cell .eq-sign { font-size:18px !important; }
-    .pdf-export-mode .checklist-grid { margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .check-item { width:50% !important; display:inline-block !important; vertical-align:top !important; padding:0 !important; border-bottom:1px solid #cbd5e1 !important; border-left:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .check-item .num { padding:1px 0 !important; font-size:9px !important; background:#334155 !important; color:#fff !important; width:28px !important; display:inline-block; text-align:center; }
-    .pdf-export-mode .check-item .txt { padding:1px 2px !important; font-size:10px !important; width:calc(100% - 28px - 130px) !important; display:inline-block; vertical-align:middle; }
-    .pdf-export-mode .check-item .opts { padding:0 2px !important; width:130px !important; display:inline-block; vertical-align:middle; }
-    .pdf-export-mode .check-item .opts label { font-size:10px !important; padding:0 2px !important; }
-    .pdf-export-mode .check-item .opts input[type=radio] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .check-item input.inline-input { font-size:10px !important; width:50px !important; }
-    .pdf-export-mode .service-box { margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .service-row { padding:1px 3px !important; font-size:8px !important; border-bottom:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .service-row .label, .pdf-export-mode .service-row .opts label, .pdf-export-mode .lmu-service-label { font-size:10px !important; }
-    .pdf-export-mode .lmu-service-label span { font-size:10px !important; }
-    .pdf-export-mode .service-row .opts input[type=text] { font-size:11px !important; min-width:80px !important; }
-    .pdf-export-mode .service-row .opts input[type=checkbox], .pdf-export-mode .service-row .label input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .section-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; text-align:center !important; }
-    .pdf-export-mode table.tele-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode table.tele-table th { padding:1px 2px !important; font-size:8px !important; background:#dbeafe !important; color:#1e293b !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode table.tele-table td { padding:1px 2px !important; font-size:7px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode table.tele-table td input { font-size:11px !important; padding:0 !important; }
-    .pdf-export-mode table.tele-table td select { font-size:11px !important; color:#1e293b !important; }
-    .pdf-export-mode .reset-row { padding:1px 3px !important; font-size:7px !important; margin:1px 0 !important; }
-    .pdf-export-mode .reset-row input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .usage-row { padding:1px 4px !important; font-size:8px !important; margin-bottom:2px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .usage-row .u-title, .pdf-export-mode .usage-row label { font-size:9px !important; }
-    .pdf-export-mode .usage-row input[type=checkbox] { width:9px !important; height:9px !important; }
-    .pdf-export-mode .signatures { margin-top:1px !important; }
-    .pdf-export-mode .sign-box { padding:1px 3px !important; font-size:6.5px !important; display:inline-block !important; width:49% !important; vertical-align:top !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .sign-box .row { margin-bottom:1px !important; }
-    .pdf-export-mode .sign-box .row label, .pdf-export-mode .sign-box .sign-label-amp { font-size:10px !important; font-family:'BTitrBd',Tahoma,sans-serif !important; font-weight:bold !important; }
-    .pdf-export-mode .sign-box .row input { font-size:10px !important; padding:0 !important; border:none !important; border-bottom:1.5px dashed #94a3b8 !important; }
-    .pdf-export-mode .sign-box div[style*="height:45px"], .pdf-export-mode .sign-box div[style*="height:35px"] { height:10px !important; }
-    .pdf-export-mode .bd-station-box { padding:1px 4px !important; margin-bottom:1px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode .bd-station-box .bd-title, .pdf-export-mode .bd-station-box .bd-item label { font-size:9px !important; }
-    .pdf-export-mode .bd-station-box select.bd-station-select { font-size:11px !important; padding:0 3px !important; min-width:90px !important; }
-    .pdf-export-mode .bd-station-box input.bd-station-name { font-size:11px !important; padding:0 3px !important; min-width:130px !important; }
-    .pdf-export-mode #abbForm .abb-grid-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode #abbForm .abb-grid-table th, .pdf-export-mode #abbForm .abb-grid-table td { padding:1px 2px !important; font-size:7.5px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode #abbForm .abb-grid-table td input[type=text] { font-size:11px !important; padding:0 !important; }
-    .pdf-export-mode #abbForm .abb-trans-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; }
-    .pdf-export-mode #dimatForm .dimat-trans-title { font-size:11px !important; padding:2px 4px !important; background:#1e293b !important; color:#fff !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table { font-size:7px !important; width:100% !important; border-collapse:collapse !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table th, .pdf-export-mode #dimatForm .dimat-grid-table td { padding:1px 1px !important; font-size:7.5px !important; height:16px !important; border:1px solid #cbd5e1 !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table th { font-size:7.5px !important; padding:2px 1px !important; background:#dbeafe !important; color:#1e293b !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-label { font-size:8px !important; padding-left:3px !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td.cell-bold { font-size:8px !important; }
-    .pdf-export-mode #dimatForm .dimat-grid-table td input[type=text] { font-size:10px !important; padding:0 !important; }
-    .pdf-export-mode #dimatForm .dimat-vertical { font-size:7px !important; padding:0 !important; }
-    .pdf-export-mode #dimatForm .dimat-cell-multiline input { font-size:9px !important; }
-    .pdf-export-mode .form-card { box-shadow:none !important; padding:0 !important; margin:0 !important; border:none !important; }
-    .pdf-export-mode h2 { display:none !important; }
-    .pdf-export-mode .hidden { display:none !important; }
-    .pdf-export-mode .print-header { display:flex !important; align-items:center !important; justify-content:space-between !important; border-bottom:1px solid #1e293b !important; padding-bottom:3px !important; margin-bottom:3px !important; }
-    .pdf-export-mode .print-header .ph-logo-side img { max-height:42px !important; }
-    .pdf-export-mode .print-header .ph-tuv-side img { max-height:36px !important; }
-    .pdf-export-mode .print-header .ph-center h2 { display:block !important; font-size:12px !important; margin:0 0 2px !important; border:none !important; color:#1e293b !important; }
-    .pdf-export-mode .print-header .ph-center h3 { font-size:11px !important; margin:0 !important; border:none !important; color:#2d3748 !important; }
-    .pdf-export-mode .brand-trigger { border:none !important; background:transparent !important; min-height:auto !important; padding:0 !important; }
-    .pdf-export-mode .brand-trigger img { max-height:18px !important; }
-  `;
-  document.head.appendChild(styleFix);
-
-  var opt = {
-    margin: [4, 4, 4, 4],
-    filename: fileName + '.pdf',
-    image: { type: 'jpeg', quality: 0.92 },
-    html2canvas: {
-      scale: 1.5,
-      useCORS: true,
-      letterRendering: true,
-      scrollY: 0,
-      scrollX: 0,
-      backgroundColor: '#ffffff',
-      windowWidth: 794,
-      windowHeight: 1123
-    },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: 'avoid-all' }
-  };
-
-  var loading = document.createElement('div');
-  loading.textContent = '⏳ در حال ساخت PDF...';
-  loading.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1e3a8a;color:#fff;padding:12px 24px;border-radius:6px;z-index:99999;font-weight:bold;box-shadow:0 8px 24px rgba(0,0,0,.3);font-family:Tahoma;';
-  document.body.appendChild(loading);
-
-  html2pdf().set(opt).from(container).save()
-    .then(function(){
-      loading.remove();
-      container.remove();
-      var sf = document.getElementById('pdf-export-style');
-      if(sf) sf.remove();
-    })
-    .catch(function(err){
-      console.error('PDF error:', err);
-      loading.remove();
-      container.remove();
-      var sf = document.getElementById('pdf-export-style');
-      if(sf) sf.remove();
-      alert('خطا در ساخت PDF: ' + (err && err.message ? err.message : err));
-    });
-}
 
 // ═══════════════════════════════════════════════════════════════
 //  SERVICE WORKER
@@ -3062,6 +2167,8 @@ if('serviceWorker' in navigator){
 
 document.addEventListener('DOMContentLoaded', function(){
   updateCheckItemLabels();
+  // بروزرسانی تصاویر برند در بارگذاری اولیه
+  document.querySelectorAll('.brand-select').forEach(function(sel){ updateBrandPrintImg(sel); });
 });
 </script>
 </body>
