@@ -416,7 +416,6 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
     color-adjust:exact !important;
-    font-size:7px !important;
   }
 
   .app-header,.tabs,.actions,.welcome-notif,#loginPage,.app-footer,#dateModal{
@@ -442,7 +441,7 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     max-height:none !important;
     overflow:visible !important;
     width:100% !important;
-    zoom:0.80;
+    zoom:0.45;
   }
   .form-card:last-child{page-break-after:auto !important;break-after:auto !important;}
   .form-card h2{display:none !important;}
@@ -460,26 +459,15 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
   .print-header .ph-logo-side{display:flex;align-items:center;justify-content:flex-start;min-width:150px;}
   .print-header .ph-logo-side img{max-width:150px !important;max-height:52px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
   .print-header .ph-center{flex:1;text-align:center;padding-top:1px;}
-  .print-header .ph-center h2{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:14px !important;font-weight:bold;color:#1e293b;margin:0 0 2px;border:none !important;padding:0 !important;line-height:1.3;}
-  .print-header .ph-center h3{font-size:13px !important;font-weight:bold;color:#2d3748;margin:0;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-center h2{font-family:'BTitrBd','BKoodB',Tahoma,sans-serif;font-size:15px !important;font-weight:bold;color:#1e293b;margin:0 0 2px;border:none !important;padding:0 !important;line-height:1.3;}
+  .print-header .ph-center h3{font-size:14px !important;font-weight:bold;color:#2d3748;margin:0;border:none !important;padding:0 !important;line-height:1.3;}
   .print-header .ph-tuv-side{display:flex;align-items:center;justify-content:flex-end;min-width:125px;}
   .print-header .ph-tuv-side img{max-width:120px !important;max-height:44px !important;object-fit:contain;display:inline-block !important;visibility:visible !important;}
-
-  /* ═══ اندازه‌های فشرده ═══ */
-  table.form-table{font-size:7.5px !important;margin-bottom:2px !important;}
-  table.form-table th{font-size:10px !important;padding:1px 2px !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
-  table.form-table td{padding:1px 2px !important;font-size:7.5px !important;}
-  table.form-table td input,table.form-table td select{font-size:12px !important;padding:0 !important;line-height:1.1 !important;}
-
-  .freq-cell{font-size:9px !important;padding:2px 4px !important;direction:ltr !important;text-align:left !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
-  .freq-cell input{font-size:11px !important;padding:0 2px !important;font-family:'BTitrBd','BKoodB',Tahoma,sans-serif !important;}
-  .freq-cell .eq-sign{font-size:18px !important;vertical-align:middle;}
 
   /* ═══ انتخاب برند: نمایش نام برند به صورت متن در پرینت ═══ */
   .brand-select{
     display:block !important;
     visibility:visible !important;
-    font-size:12px !important;
     color:#1e293b !important;
     font-weight:bold !important;
     text-align:center !important;
@@ -498,195 +486,246 @@ body.theme-navy #dimatForm .dimat-vertical{background:#d8e8f5;}
     visibility:hidden !important;
   }
 
-  .checklist-grid{gap:0 !important;margin-bottom:2px !important;}
-  .check-item{padding:0 !important;}
-  .check-item .num{padding:1px 0 !important;font-size:9px !important;width:28px !important;}
-  .check-item .txt{padding:1px 3px !important;font-size:10px !important;width:calc(100% - 28px - 135px) !important;}
-  .check-item .opts{padding:0 2px !important;width:135px !important;}
-  .check-item .opts label{font-size:10px !important;padding:0 3px !important;}
-  .check-item .opts input[type=radio]{width:9px !important;height:9px !important;}
-  .check-item input.inline-input{font-size:11px !important;width:55px !important;}
-
-  .service-box{margin-bottom:2px !important;}
-  .service-row{padding:1px 4px !important;font-size:8.5px !important;}
-  .service-row .label,.service-row .opts label,.lmu-service-label{font-size:10.5px !important;}
-  .lmu-service-label span{font-size:10.5px !important;}
-  .service-row .opts input[type=text]{font-size:11px !important;min-width:80px !important;}
-  .service-row .opts input[type=checkbox],.service-row .label input[type=checkbox]{width:9px !important;height:9px !important;min-width:9px !important;min-height:9px !important;}
-
-  .section-title{font-size:11px !important;padding:2px 5px !important;}
-
-  table.tele-table{font-size:7.5px !important;}
-  table.tele-table th{padding:1px 2px !important;font-size:8px !important;}
-  table.tele-table td{padding:1px 2px !important;font-size:7.5px !important;}
-  table.tele-table td input{font-size:12px !important;padding:0 !important;}
-  table.tele-table td select{font-size:12px !important;color:#1e293b !important;}
-  table.tele-table td select option[value=""]{color:transparent !important;font-size:0 !important;}
-  table.tele-table td select:invalid,
-  table.tele-table td select option:checked[value=""]{color:transparent !important;}
-
-  #lmuForm table.tele-table td.lmu-sig-desc{font-size:10.5px !important;font-weight:bold;}
-
-  .reset-row{padding:1px 4px !important;font-size:7.5px !important;margin:2px 0 !important;}
-  .reset-row input[type=checkbox]{width:9px !important;height:9px !important;}
-
-  .usage-row{padding:2px 6px !important;font-size:8.5px !important;margin-bottom:3px !important;}
-  .usage-row .u-title,.usage-row label{font-size:9.5px !important;}
-  .usage-row input[type=checkbox]{width:9px !important;height:9px !important;}
-
-  .signatures{margin-top:2px !important;font-size:0;}
-  .sign-box{padding:2px 4px !important;font-size:6.5px !important;display:inline-block;width:49%;vertical-align:top;}
-  .sign-box .row{margin-bottom:1px !important;}
-  .sign-box .row label{font-size:11px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
-  .sign-box .sign-label-amp{font-size:11px !important;font-family:'BTitrBd',Tahoma,sans-serif !important;font-weight:bold !important;}
-  .sign-box .row input{font-size:11px !important;font-family:'BKoodB',Tahoma,sans-serif !important;padding:0 !important;}
-
-  .sign-box div[style*="height:45px"],.sign-box div[style*="height:35px"]{height:12px !important;}
-  .small-label{font-size:10.5px !important;}
-  .small-input{font-size:11px !important;}
-
-  .bd-station-box{padding:2px 5px !important;margin-bottom:2px !important;}
-  .bd-station-box .bd-title,.bd-station-box .bd-item label{font-size:9.5px !important;}
-  .bd-station-box select.bd-station-select{font-size:11px !important;padding:0 4px !important;min-width:90px !important;}
-  .bd-station-box input.bd-station-name{font-size:11px !important;padding:0 4px !important;min-width:140px !important;}
-
-  #abbForm .abb-grid-table{font-size:7.5px !important;}
-  #abbForm .abb-grid-table th,#abbForm .abb-grid-table td{padding:1px 2px !important;font-size:8px !important;}
-  #abbForm .abb-grid-table td input[type=text]{font-size:12px !important;padding:0 !important;}
-  #abbForm .abb-trans-title{font-size:11px !important;padding:2px 4px !important;}
-
-  #dimatForm .dimat-trans-title{font-size:11px !important;padding:2px 4px !important;}
-  #dimatForm .dimat-grid-table{font-size:7.5px !important;}
-  #dimatForm .dimat-grid-table th,
-  #dimatForm .dimat-grid-table td{padding:1px 1px !important;font-size:8px !important;height:18px !important;}
-  #dimatForm .dimat-grid-table th{font-size:8px !important;padding:2px 1px !important;}
-  #dimatForm .dimat-grid-table td.cell-label{font-size:8.5px !important;padding-left:4px !important;}
-  #dimatForm .dimat-grid-table td.cell-bold{font-size:8.5px !important;}
-  #dimatForm .dimat-grid-table td input[type=text]{font-size:10px !important;padding:0 !important;}
-  #dimatForm .dimat-vertical{font-size:7.5px !important;padding:1px !important;}
-  #dimatForm .dimat-cell-multiline input{font-size:9px !important;}
-
   .check-item{width:50% !important;display:inline-block !important;vertical-align:top !important;}
-  .check-item .txt{width:calc(100% - 28px - 135px) !important;}
-  .check-item .opts{width:135px !important;}
   .sign-box{width:49% !important;display:inline-block !important;vertical-align:top !important;}
-  .service-row .label{width:30% !important;}
-  .service-row .opts{width:68% !important;}
-  .usage-row .u-title{display:inline-block !important;}
-  .usage-row .u-items{display:inline-block !important;}
-  .usage-row label{display:inline-block !important;}
   .actions{display:none !important;}
 
   /* ═══════════════════════════════════════════════════════════════
-     یکسان‌سازی اندازه فونت‌ها در پرینت — همه 11px / تیترها 11.5px
+     اندازه فونت‌های پرینت — دقیقاً معادل اندازه‌های صفحه‌نمایش
      ═══════════════════════════════════════════════════════════════ */
-  html, body,
-  table.form-table,
-  table.form-table th,
-  table.form-table td,
+
+  /* ─── متن‌های پایه ─── */
+  html, body {
+    font-size: 17px !important;
+  }
+
+  /* ─── جدول‌های اصلی form-table ─── */
+  table.form-table {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+  }
+  table.form-table th {
+    font-size: 15.5px !important;
+    padding: 6px 8px !important;
+    font-family: 'BTitrBd','BKoodB',Tahoma,sans-serif !important;
+  }
+  table.form-table td {
+    font-size: 16px !important;
+    padding: 5px 6px !important;
+  }
   table.form-table td input,
-  table.form-table td select,
-  table.tele-table,
-  table.tele-table th,
-  table.tele-table td,
-  table.tele-table td input,
-  table.tele-table td select,
-  .freq-cell,
-  .freq-cell input,
-  .check-item,
-  .check-item .txt,
-  .check-item .opts label,
-  .check-item input.inline-input,
-  .service-row,
-  .service-row .label,
-  .service-row .opts label,
-  .service-row .opts input[type=text],
-  .lmu-service-label,
-  .lmu-service-label span,
-  .reset-row,
-  .usage-row,
-  .usage-row .u-title,
-  .usage-row label,
-  .sign-box,
-  .sign-box .row label,
-  .sign-box .sign-label-amp,
-  .sign-box .row input,
-  .small-label,
-  .small-input,
-  .bd-station-box,
-  .bd-station-box .bd-title,
-  .bd-station-box .bd-item label,
-  .bd-station-box select.bd-station-select,
-  .bd-station-box input.bd-station-name,
-  #abbForm .abb-grid-table,
-  #abbForm .abb-grid-table th,
-  #abbForm .abb-grid-table td,
-  #abbForm .abb-grid-table td input[type=text],
-  #abbForm .abb-grid-table td.cell-label,
-  #abbForm .abb-grid-table td.cell-vf,
-  #abbForm .abb-grid-table td.cell-coax,
-  #dimatForm .dimat-grid-table,
-  #dimatForm .dimat-grid-table th,
-  #dimatForm .dimat-grid-table td,
-  #dimatForm .dimat-grid-table td input[type=text],
-  #dimatForm .dimat-grid-table td.cell-label,
-  #dimatForm .dimat-grid-table td.cell-bold,
-  #dimatForm .dimat-cell-multiline input,
-  .brand-select {
-    font-size: 11px !important;
-    line-height: 1.2 !important;
+  table.form-table td select {
+    font-size: 19px !important;
+    padding: 3px !important;
   }
 
-  /* تیترها و عنوان بخش‌ها کمی بزرگ‌تر و پررنگ */
-  table.form-table th,
-  table.tele-table th,
-  .section-title,
-  #abbForm .abb-trans-title,
-  #dimatForm .dimat-trans-title,
-  #abbForm .abb-grid-table th,
-  #dimatForm .dimat-grid-table th,
-  .sign-box .row label,
-  .sign-box .sign-label-amp {
-    font-size: 11.5px !important;
-    font-weight: bold !important;
+  /* ─── فرکانس ─── */
+  .freq-cell {
+    font-size: 20px !important;
+    padding: 5px 8px !important;
   }
-
-  /* شماره ردیف چک‌لیست */
-  .check-item .num {
-    font-size: 10.5px !important;
+  .freq-cell input {
+    font-size: 19px !important;
+    padding: 3px !important;
   }
-
-  /* علامت مساوی در فرکانس */
   .freq-cell .eq-sign {
+    font-size: 28px !important;
+  }
+
+  /* ─── چک‌لیست ─── */
+  .check-item {
+    font-size: 17px !important;
+  }
+  .check-item .num {
+    font-size: 14px !important;
+    width: 32px !important;
+    padding: 10px 0 !important;
+  }
+  .check-item .txt {
+    font-size: 16px !important;
+    padding: 4px 7px !important;
+    width: calc(100% - 32px - 150px) !important;
+  }
+  .check-item .opts {
+    width: 150px !important;
+    padding: 2px 5px !important;
+  }
+  .check-item .opts label {
+    font-size: 16px !important;
+    padding: 3px 6px !important;
+  }
+  .check-item .opts input[type=radio] {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .check-item input.inline-input {
+    font-size: 19px !important;
+    width: 75px !important;
+  }
+
+  /* ─── سرویس‌ها ─── */
+  .service-row {
+    font-size: 16px !important;
+    padding: 6px 12px !important;
+  }
+  .service-row .label,
+  .service-row .opts label {
     font-size: 16px !important;
   }
-
-  /* هدر پرینت */
-  .print-header .ph-center h2 { font-size: 15px !important; }
-  .print-header .ph-center h3 { font-size: 14px !important; }
-
-  /* عمودی DIMAT */
-  #dimatForm .dimat-vertical { font-size: 10.5px !important; }
-
-  /* جلوگیری از شکستن خطوط */
-  table.form-table td input,
-  table.tele-table td input,
-  #abbForm .abb-grid-table td input,
-  #dimatForm .dimat-grid-table td input {
-    line-height: 1.15 !important;
-    height: auto !important;
+  .lmu-service-label,
+  .lmu-service-label span {
+    font-size: 16px !important;
+  }
+  .service-row .opts input[type=text] {
+    font-size: 19px !important;
+    padding: 4px 7px !important;
+    min-width: 130px !important;
+  }
+  .service-row .opts input[type=checkbox],
+  .service-row .label input[type=checkbox] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
   }
 
-  /* فشرده‌سازی padding ها متناسب با فونت جدید */
-  table.form-table th,
-  table.form-table td,
-  table.tele-table th,
-  table.tele-table td,
+  /* ─── عنوان بخش ─── */
+  .section-title {
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+  }
+
+  /* ─── جدول Teleprotection ─── */
+  table.tele-table {
+    font-size: 15.5px !important;
+  }
+  table.tele-table th {
+    font-size: 15.5px !important;
+    padding: 6px !important;
+    font-family: 'BTitrBd','BKoodB',Tahoma,sans-serif !important;
+  }
+  table.tele-table td {
+    font-size: 15.5px !important;
+    padding: 5px !important;
+  }
+  table.tele-table td input,
+  table.tele-table td select {
+    font-size: 19px !important;
+    padding: 3px !important;
+  }
+  #lmuForm table.tele-table td.lmu-sig-desc {
+    font-size: 15.5px !important;
+  }
+
+  /* ─── ردیف ریست و Usage ─── */
+  .reset-row {
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+  }
+  .reset-row input[type=checkbox] {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .usage-row {
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+  }
+  .usage-row .u-title,
+  .usage-row label {
+    font-size: 16px !important;
+  }
+  .usage-row input[type=checkbox] {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* ─── امضاها ─── */
+  .sign-box {
+    font-size: 16px !important;
+    padding: 10px !important;
+  }
+  .sign-box .row label {
+    font-size: 17.5px !important;
+    font-family: 'BTitrBd','BKoodB',Tahoma,sans-serif !important;
+  }
+  .sign-box .sign-label-amp {
+    font-size: 15px !important;
+  }
+  .sign-box .row input {
+    font-size: 17px !important;
+    padding: 4px !important;
+    font-family: 'BTitrBd','BKoodB',Tahoma,sans-serif !important;
+  }
+  .small-label {
+    font-size: 15.5px !important;
+  }
+  .small-input {
+    font-size: 19px !important;
+  }
+
+  /* ─── جعبه ایستگاه برداشت اطلاعات ─── */
+  .bd-station-box {
+    padding: 10px 14px !important;
+  }
+  .bd-station-box .bd-title,
+  .bd-station-box .bd-item label {
+    font-size: 16px !important;
+  }
+  .bd-station-box select.bd-station-select,
+  .bd-station-box input.bd-station-name {
+    font-size: 17px !important;
+    padding: 4px 6px !important;
+  }
+
+  /* ─── جدول‌های ABB ─── */
+  #abbForm .abb-grid-table {
+    font-size: 15.5px !important;
+  }
   #abbForm .abb-grid-table th,
-  #abbForm .abb-grid-table td,
+  #abbForm .abb-grid-table td {
+    font-size: 15.5px !important;
+    padding: 6px !important;
+  }
+  #abbForm .abb-grid-table td input[type=text] {
+    font-size: 17px !important;
+    padding: 3px !important;
+  }
+  #abbForm .abb-grid-table td.cell-label,
+  #abbForm .abb-grid-table td.cell-vf,
+  #abbForm .abb-grid-table td.cell-coax {
+    font-size: 15.5px !important;
+  }
+  #abbForm .abb-trans-title {
+    font-size: 16px !important;
+    padding: 8px !important;
+  }
+
+  /* ─── جدول‌های DIMAT ─── */
+  #dimatForm .dimat-grid-table {
+    font-size: 14px !important;
+  }
   #dimatForm .dimat-grid-table th,
   #dimatForm .dimat-grid-table td {
-    padding: 1px 2px !important;
+    font-size: 14px !important;
+    padding: 5px 4px !important;
+  }
+  #dimatForm .dimat-grid-table td input[type=text] {
+    font-size: 15px !important;
+    padding: 2px !important;
+  }
+  #dimatForm .dimat-grid-table td.cell-label,
+  #dimatForm .dimat-grid-table td.cell-bold {
+    font-size: 14.5px !important;
+  }
+  #dimatForm .dimat-trans-title {
+    font-size: 16px !important;
+    padding: 8px !important;
+  }
+  #dimatForm .dimat-vertical {
+    font-size: 12.5px !important;
+  }
+  #dimatForm .dimat-cell-multiline input {
+    font-size: 13px !important;
   }
 }
 
@@ -2187,7 +2226,6 @@ function loadAll(){
 //  پرینت — قبل و بعد
 // ═══════════════════════════════════════════════════════════════
 window.addEventListener('beforeprint', function(){
-  // حذف متن select های خالی (غیر از brand)
   document.querySelectorAll('select').forEach(function(sel){
     if(sel.classList.contains('brand-select')) return;
     var selectedOpt = sel.options[sel.selectedIndex];
